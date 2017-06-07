@@ -19,6 +19,7 @@ import static org.junit.Assert.*;
  */
 public class BaZiTest {
 
+
     @Test
     public void testBaZi() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

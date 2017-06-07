@@ -17,10 +17,10 @@ public class ScriptingAPITester {
     public static void main(String[] args) throws Exception {
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("JavaScript");
-        testScriptVariables(engine);//演示如何暴露Java对象为脚本语言的全局变量
+//        testScriptVariables(engine);//演示如何暴露Java对象为脚本语言的全局变量
         testInvokeScriptMethod(engine);//演示如何在Java中调用脚本语言的方法
-        testScriptInterface(engine);//演示脚本语言如何实现Java的接口
-        testUsingJDKClasses(engine);//演示脚本语言如何使用JDK平台下的类
+//        testScriptInterface(engine);//演示脚本语言如何实现Java的接口
+//        testUsingJDKClasses(engine);//演示脚本语言如何使用JDK平台下的类
     }
 
     public static void testScriptVariables(ScriptEngine engine) throws ScriptException {
