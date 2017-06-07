@@ -3,7 +3,9 @@ package com.lzy.demo;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -31,5 +33,22 @@ public class BaZiTest {
             e.printStackTrace();
         }
 
+    }
+
+    @Test
+    public void testLogic(){
+
+        List<BaziAlgorithm> baziAlgorithms = new ArrayList<>();
+        //初始化
+        baziAlgorithms.add(new WuXingQueYi());
+        baziAlgorithms.add(new AllYinYang());
+
+        for (BaziAlgorithm baziAlgorithm : baziAlgorithms) {
+            ComputedResult compute = baziAlgorithm.compute();
+            if (compute!=null) {
+                System.out.println("【"+compute.getSubject()+"】");
+            }
+
+        }
     }
 }
