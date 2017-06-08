@@ -10,7 +10,7 @@ import java.util.Date;
  * Date: 2016/11/28
  * Time: 10:10
  */
-public class BaZi {
+public class BaZiBak {
     private int year;
     private int month;
     private int day;
@@ -216,7 +216,7 @@ public class BaZi {
      * @param cal
      * @return
      */
-    public BaZi(Calendar cal) {
+    public BaZiBak(Calendar cal) {
         this.cal=cal;
         int yearCyl,  monCyl,  dayCyl;
         int leapMonth = 0;
