@@ -2,6 +2,7 @@ package com.lzy.demo;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import com.lzy.common.DiZhiEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,21 +39,40 @@ public class BaZi {
 //    public final static String[] canggan = {"癸", "辛癸己", "甲丙戊", "乙", "癸戊乙", "丙戊", "丁己", "丁己乙",
 //            "戊庚壬", "辛", "戊丁辛", "甲壬"};
 
+//    //地支藏干
+//    public final static ImmutableMap<String,ImmutableSet<String>> cangganMap = ImmutableMap.<String, ImmutableSet<String>>builder()
+//            .put("子", ImmutableSet.of( "癸"))
+//            .put("丑", ImmutableSet.of( "辛","癸","己"))
+//            .put("寅", ImmutableSet.of( "甲","丙","戊"))
+//            .put("卯", ImmutableSet.of( "乙"))
+//            .put("辰", ImmutableSet.of( "癸","戊","乙"))
+//            .put("巳", ImmutableSet.of( "丙","戊"))
+//            .put("午", ImmutableSet.of( "丁","己"))
+//            .put("未", ImmutableSet.of( "丁","己","乙"))
+//            .put("申", ImmutableSet.of( "戊","庚","壬"))
+//            .put("酉", ImmutableSet.of( "辛"))
+//            .put("戌", ImmutableSet.of( "戊","丁","辛"))
+//            .put("亥", ImmutableSet.of( "甲","壬"))
+//            .build();
+
+
     //地支藏干
-    public final static ImmutableMap<String,ImmutableSet<String>> cangganMap = ImmutableMap.<String, ImmutableSet<String>>builder()
-            .put("子", ImmutableSet.of( "癸"))
-            .put("丑", ImmutableSet.of( "辛","癸","己"))
-            .put("寅", ImmutableSet.of( "甲","丙","戊"))
-            .put("卯", ImmutableSet.of( "乙"))
-            .put("辰", ImmutableSet.of( "癸","戊","乙"))
-            .put("巳", ImmutableSet.of( "丙","戊"))
-            .put("午", ImmutableSet.of( "丁","己"))
-            .put("未", ImmutableSet.of( "丁","己","乙"))
-            .put("申", ImmutableSet.of( "戊","庚","壬"))
-            .put("酉", ImmutableSet.of( "辛"))
-            .put("戌", ImmutableSet.of( "戊","丁","辛"))
-            .put("亥", ImmutableSet.of( "甲","壬"))
+    public final static ImmutableMap<String,DiZhiEnum> cangganMap = ImmutableMap.<String,
+            DiZhiEnum>builder()
+            .put("子", DiZhiEnum.ZI)
+            .put("丑", DiZhiEnum.ZI)
+            .put("寅", DiZhiEnum.ZI)
+            .put("卯", DiZhiEnum.ZI)
+            .put("辰", DiZhiEnum.ZI)
+            .put("巳", DiZhiEnum.ZI)
+            .put("午", DiZhiEnum.ZI)
+            .put("未", DiZhiEnum.ZI)
+            .put("申", DiZhiEnum.ZI)
+            .put("酉", DiZhiEnum.ZI)
+            .put("戌", DiZhiEnum.ZI)
+            .put("亥", DiZhiEnum.ZI)
             .build();
+
 
 
 //    public final static String[] shishen = {"比肩", "劫财", "食神", "伤官", "偏财", "正财", "七杀", "正官", "偏印", "正印"};
@@ -217,6 +237,85 @@ public class BaZi {
 
     //农历月
     public final static String lunarMonth[] = {"正", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "腊"};
+
+
+
+
+    /**
+     * 十天干生旺死绝表
+     *
+     * 天干 长生 沐浴 冠带 临官 帝旺 衰 病 死 墓 绝 胎 养      *
+     * 甲 亥 子 丑 寅 卯 辰 巳 午 未 申 酉 戌
+     * 丙 寅 卯 辰 巳 午 未 申 酉 戌 亥 子 丑
+     * 戊 寅 卯 辰 巳 午 未 申 酉 戌 亥 子 丑
+     * 庚 巳 午 未 申 酉 戌 亥 子 丑 寅 卯 辰
+     * 壬 申 酉 戌 亥 子 丑 寅 卯 辰 巳 午 未
+     * 乙 午 巳 辰 卯 寅 丑 子 亥 戌 酉 申 未
+     * 丁 酉 申 未 午 巳 辰 卯 寅 丑 子 亥 戌
+     * 己 酉 申 未 午 巳 辰 卯 寅 丑 子 亥 戌
+     * 辛 子 亥 戌 酉 申 未 午 巳 辰 卯 寅 丑
+     * 癸 卯 寅 丑 子 亥 戌 酉 申 未 午 巳 辰
+     *
+     * @param paramString1
+     * @param paramString2
+     * @return
+     */
+
+    /**
+     * 地支三合组合
+     */
+    ImmutableMap<String,String> sanheMap =
+            ImmutableMap.<String, String>builder()
+                    .put("亥卯未","木")
+                    .put("亥未卯","木")
+                    .put("卯亥未","木")
+                    .put("卯未亥","木")
+                    .put("未卯亥","木")
+                    .put("未亥卯","木")
+
+                    .put("寅午戌","火")
+                    .put("寅戌午","火")
+                    .put("午戌寅","火")
+                    .put("午寅戌","火")
+                    .put("戌午寅","火")
+                    .put("戌寅午","火")
+
+
+                    .put("巳酉丑","金")
+                    .put("巳丑酉","金")
+                    .put("酉丑巳","金")
+                    .put("酉巳丑","金")
+                    .put("丑巳酉","金")
+                    .put("丑酉巳","金")
+
+                    .put("申子辰","水")
+                    .put("申辰子","水")
+                    .put("子申辰","水")
+                    .put("子辰申","水")
+                    .put("辰申子","水")
+                    .put("辰子申","水")
+
+
+                    .build();
+
+    /**
+     * 判断地支三合
+     * @return 成功返回五行,失败返回空字符串
+     */
+    public String matchSanHe(String di1, String di2, String di3){
+
+//        boolean containsKey = sanheMap.containsKey(String.format("%s%s%s", di1, di2, di3));
+        String s = sanheMap.get(String.format("%s%s%s", di1, di2, di3));
+        return s;
+    }
+
+    /**
+     * 判断地支半三合
+     */
+    String dizhiBanSanHe(String di1, String di2){
+
+        return "";
+    }
 
 
 

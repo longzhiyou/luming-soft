@@ -19,15 +19,16 @@ public class BaZiTest {
     public void testBaZi() throws Exception {
         BaZi baZi = new BaZi("甲","子","丙","子","丙","戌","辛","卯");
 
-        Integer ret=1;
-        Assert.assertEquals(ret,baZi.nianGanMatch("甲"));
-        Assert.assertEquals(ret,baZi.nianZhiMatch("子"));
-        Assert.assertEquals(ret,baZi.yueGanMatch("丙"));
-        Assert.assertEquals(ret,baZi.yueZhiMatch("子"));
-        Assert.assertEquals(ret,baZi.riGanMatch("丙"));
-        Assert.assertEquals(ret,baZi.riZhiMatch("戌"));
-        Assert.assertEquals(ret,baZi.shiGanMatch("辛"));
-        Assert.assertEquals(ret,baZi.shiZhiMatch("卯"));
+        baZi.matchSanHe("巳","酉","丑1");
+//        Integer ret=1;
+//        Assert.assertEquals(ret,baZi.nianGanMatch("甲"));
+//        Assert.assertEquals(ret,baZi.nianZhiMatch("子"));
+//        Assert.assertEquals(ret,baZi.yueGanMatch("丙"));
+//        Assert.assertEquals(ret,baZi.yueZhiMatch("子"));
+//        Assert.assertEquals(ret,baZi.riGanMatch("丙"));
+//        Assert.assertEquals(ret,baZi.riZhiMatch("戌"));
+//        Assert.assertEquals(ret,baZi.shiGanMatch("辛"));
+//        Assert.assertEquals(ret,baZi.shiZhiMatch("卯"));
 
 
     }
