@@ -1,5 +1,11 @@
 package com.lzy.demo;
 
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * User: longzhiyou
  * Date: 2016/11/28
@@ -31,6 +37,9 @@ public class BaZi {
      * [2017-06-08 add by longzhiyou]
      */
     public Integer nianGanMatch(String gan){
+
+//        String temp = canggan[1];
+
 
         for (int i = 0; i < 10; i++) {
 
@@ -110,7 +119,12 @@ public class BaZi {
         return 0;
     }
 
-    public Integer ganShu(String gan){
+    /**
+     * 获取天干序数
+     * @param gan 天干字符串
+     * @return 天干索引
+     */
+    public Integer getGanShu(String gan){
 
         for (int i = 0; i < tiangan.length; i++) {
             if (tiangan[i].equals(gan)) {
@@ -119,6 +133,30 @@ public class BaZi {
         }
         return 0;
     }
+
+
+    // 将天干转为index
+    int computeGanIndex(char gan) {
+        int i;
+        for (i = 0; i < 10; i++)
+            if (sTianGan.charAt(i) == gan)
+                break;
+        if (i >= 10)
+            return -1;
+        return i;
+    }
+
+    // 将地支转为index
+    int ComputeZhiIndex(char zhi) {
+        int i;
+        for (i = 0; i < 12; i++)
+            if (sDiZhi.charAt(i) == zhi)
+                break;
+        if (i >= 12)
+            return -1;
+        return i;
+    }
+
 
     private String nianGan;
     private String nianZhi;
@@ -142,6 +180,23 @@ public class BaZi {
     public final static String[] tiangan = {"甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"};
 
     public final static String[] dizhi = {"子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"};
+    public final static String[] canggan = {"癸", "辛癸己", "甲丙戊", "乙", "癸戊乙", "丙戊", "丁己", "丁己乙",
+            "戊庚壬", "辛", "戊丁辛", "甲壬"};
+
+    public final static ImmutableMap<String,ImmutableSet<String>> cangganMap = ImmutableMap.<String, ImmutableSet<String>>builder()
+            .put("子", ImmutableSet.of( "癸"))
+            .put("丑", ImmutableSet.of( "辛","癸","己"))
+            .put("寅", ImmutableSet.of( "甲","丙","戊"))
+            .put("卯", ImmutableSet.of( "乙"))
+            .put("辰", ImmutableSet.of( "癸","戊","乙"))
+            .put("巳", ImmutableSet.of( "丙","戊"))
+            .put("午", ImmutableSet.of( "丁","己"))
+            .put("未", ImmutableSet.of( "丁","己","乙"))
+            .put("申", ImmutableSet.of( "戊","庚","壬"))
+            .put("酉", ImmutableSet.of( "辛"))
+            .put("戌", ImmutableSet.of( "戊","丁","辛"))
+            .put("亥", ImmutableSet.of( "甲","壬"))
+            .build();
 
 
 //    public final static String[] shishen = {"比肩", "劫财", "食神", "伤官", "偏财", "正财", "七杀", "正官", "偏印", "正印"};
@@ -190,6 +245,8 @@ public class BaZi {
             "甲辰", "乙巳", "丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子", "癸丑",
             "甲寅", "乙卯", "丙辰", "丁巳", "戊午", "己未", "庚申", "辛酉", "壬戌", "癸亥"
     };
+
+
 
     //农历月
     public final static String lunarMonth[] = {"正", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "腊"};
