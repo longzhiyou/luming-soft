@@ -60,7 +60,31 @@ public enum DiZhiEnum {
         this.month = month;
         this.canggan =canggan;
     }
-    
+
+    public String display(){
+        return this.display;
+    }
+
+    public int value(){
+        return value;
+    }
+
+    public int month(){
+        return month;
+    }
+
+    public YinYangEnum getYinYang(){
+        return this.yinYang;
+    }
+
+    public WuXingEnum getWuXing(){
+        return this.wuXing;
+    }
+
+    public ImmutableSet<String> getCanggan() {
+        return canggan;
+    }
+
     public static DiZhiEnum getDiZhi(String display){
         for (DiZhiEnum tiangan:DiZhiEnum.values()){
             if (tiangan.display.equals(display)){
@@ -86,24 +110,55 @@ public enum DiZhiEnum {
         return current;
     }
 
+    /**
+     * 是否是五行木
+     * @return
+     */
+    public  boolean isMu() {
 
-    public String display(){
-        return this.display;
+        return this.getWuXing().getDisplay().equals("木");
+
     }
-    
-    public int value(){
-        return value;
+
+    /**
+     * 是否是五行火
+     * @return
+     */
+    public   boolean isHuo() {
+        return this.getWuXing().getDisplay().equals("火");
+
     }
-    
-    public int month(){
-        return month;
+
+    /**
+     * 是否是五行土
+     * @return
+     */
+    public   boolean isTu() {
+        return this.getWuXing().getDisplay().equals("土");
+
     }
-    
-    public YinYangEnum getYinYang(){
-        return this.yinYang;
+
+    /**
+     * 是否是五行金
+     * @return
+     */
+    public   boolean isJin() {
+
+        return this.getWuXing().getDisplay().equals("金");
+
     }
-    
-    public WuXingEnum getWuXing(){
-        return this.wuXing;
+
+    /**
+     * 是否是五行水
+     * @return
+     */
+    public  boolean isShui() {
+
+        return this.getWuXing().getDisplay().equals("水");
+
     }
+
+
+
+
 }

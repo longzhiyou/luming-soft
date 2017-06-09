@@ -19,7 +19,7 @@ public class BaZiTest {
     public void testBaZi() throws Exception {
         BaZi baZi = new BaZi("甲","子","丙","子","丙","戌","辛","卯");
 
-        baZi.matchSanHe("巳","酉","丑1");
+//        baZi.matchSanHe("巳","酉","丑1");
 //        Integer ret=1;
 //        Assert.assertEquals(ret,baZi.nianGanMatch("甲"));
 //        Assert.assertEquals(ret,baZi.nianZhiMatch("子"));

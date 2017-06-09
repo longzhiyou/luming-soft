@@ -133,61 +133,52 @@ public enum TianGanEnum {
 
     /**
      * 是否是五行木
-     * @param gan
      * @return
      */
-    public  static boolean isMu(String gan) {
+    public  boolean isMu() {
 
-        TianGanEnum tianGan = getTianGan(gan);
-        return tianGan != null && tianGan.getWuXing().getDisplay().equals("木");
+        return this.getWuXing().getDisplay().equals("木");
 
     }
 
     /**
      * 是否是五行火
-     * @param gan
      * @return
      */
-    public  static boolean isHuo(String gan) {
-
-        TianGanEnum tianGan = getTianGan(gan);
-        return tianGan != null && tianGan.getWuXing().getDisplay().equals("火");
+    public   boolean isHuo() {
+        return this.getWuXing().getDisplay().equals("火");
 
     }
 
     /**
      * 是否是五行土
-     * @param gan
      * @return
      */
-    public  static boolean isTu(String gan) {
+    public   boolean isTu() {
 
-        TianGanEnum tianGan = getTianGan(gan);
-        return tianGan != null && tianGan.getWuXing().getDisplay().equals("土");
+        return this.getWuXing().getDisplay().equals("土");
 
     }
 
     /**
      * 是否是五行金
-     * @param gan
      * @return
      */
-    public  static boolean isJin(String gan) {
+    public   boolean isJin() {
 
-        TianGanEnum tianGan = getTianGan(gan);
-        return tianGan != null && tianGan.getWuXing().getDisplay().equals("金");
+//        TianGanEnum tianGan = getTianGan(gan);
+        return this.getWuXing().getDisplay().equals("金");
 
     }
 
     /**
      * 是否是五行水
-     * @param gan
      * @return
      */
-    public  static boolean isShui(String gan) {
+    public  boolean isShui() {
 
-        TianGanEnum tianGan = getTianGan(gan);
-        return tianGan != null && tianGan.getWuXing().getDisplay().equals("水");
+//        TianGanEnum tianGan = getTianGan(gan);
+        return this.getWuXing().getDisplay().equals("水");
 
     }
 

@@ -34,6 +34,63 @@ public class BaZi {
     private String shiZhi;
 
 
+    private int muCount;
+    private int huoCount;
+    private int tuCount;
+    private int jinCount;
+    private int shuiCount;
+
+    public String getNianGan() {
+        return nianGan;
+    }
+
+    public String getNianZhi() {
+        return nianZhi;
+    }
+
+    public String getYueGan() {
+        return yueGan;
+    }
+
+    public String getYueZhi() {
+        return yueZhi;
+    }
+
+    public String getRiGan() {
+        return riGan;
+    }
+
+    public String getRiZhi() {
+        return riZhi;
+    }
+
+    public String getShiGan() {
+        return shiGan;
+    }
+
+    public String getShiZhi() {
+        return shiZhi;
+    }
+
+    public int getMuCount() {
+        return muCount;
+    }
+
+    public int getHuoCount() {
+        return huoCount;
+    }
+
+    public int getTuCount() {
+        return tuCount;
+    }
+
+    public int getJinCount() {
+        return jinCount;
+    }
+
+    public int getShuiCount() {
+        return shuiCount;
+    }
 
     /**
      * 十神
@@ -162,6 +219,27 @@ public class BaZi {
 
 
                     .build();
+    private boolean cangganCount;
+
+
+    public BaZi() {
+    }
+
+    public BaZi(String nianGan, String nianZhi,
+                String yueGan, String yueZhi,
+                String riGan, String riZhi,
+                String shiGan, String shiZhi) {
+        this.nianGan = nianGan;
+        this.nianZhi = nianZhi;
+        this.yueGan = yueGan;
+        this.yueZhi = yueZhi;
+        this.riGan = riGan;
+        this.riZhi = riZhi;
+        this.shiGan = shiGan;
+        this.shiZhi = shiZhi;
+
+        this.wuxingCount(true);
+    }
 
     /**
      * 判断地支三合
@@ -183,22 +261,85 @@ public class BaZi {
     }
 
 
+    /**
+     * 计算五行个数
+     * cangan: 默认计算藏干
+     */
+    public void wuxingCount(boolean cangan){
 
-    public BaZi() {
+        //干
+        TianGanEnum tianGan = TianGanEnum.getTianGan(nianGan);
+        wuxingTianGanCount(tianGan);
+
+        tianGan = TianGanEnum.getTianGan(yueGan);
+        wuxingTianGanCount(tianGan);
+
+        tianGan = TianGanEnum.getTianGan(riGan);
+        wuxingTianGanCount(tianGan);
+
+        tianGan = TianGanEnum.getTianGan(shiGan);
+        wuxingTianGanCount(tianGan);
+
+        DiZhiEnum diZhi = DiZhiEnum.getDiZhi(nianZhi);
+        wuxingDiZhiCount(diZhi,cangan);
+        diZhi = DiZhiEnum.getDiZhi(yueZhi);
+        wuxingDiZhiCount(diZhi,cangan);
+        diZhi = DiZhiEnum.getDiZhi(riZhi);
+        wuxingDiZhiCount(diZhi,cangan);
+        diZhi = DiZhiEnum.getDiZhi(shiZhi);
+        wuxingDiZhiCount(diZhi,cangan);
+
+        if (cangan) {
+            System.out.println("【藏干");
+        }else {
+            System.out.println("【不藏干");
+        }
+        System.out.println(String.format("【木:】%d",muCount));
+        System.out.println(String.format("【火:】%d",huoCount));
+        System.out.println(String.format("【土:】%d",tuCount));
+        System.out.println(String.format("【金:】%d",jinCount));
+        System.out.println(String.format("【水:】%d",shuiCount));
+
+
     }
 
-    public BaZi(String nianGan, String nianZhi,
-                String yueGan, String yueZhi,
-                String riGan, String riZhi,
-                String shiGan, String shiZhi) {
-        this.nianGan = nianGan;
-        this.nianZhi = nianZhi;
-        this.yueGan = yueGan;
-        this.yueZhi = yueZhi;
-        this.riGan = riGan;
-        this.riZhi = riZhi;
-        this.shiGan = shiGan;
-        this.shiZhi = shiZhi;
+    public void wuxingTianGanCount(TianGanEnum tianGan){
+        if (tianGan.isMu()) {
+            muCount+=1;
+        }else if (tianGan.isHuo()) {
+            huoCount+=1;
+        }else if (tianGan.isTu()) {
+            tuCount+=1;
+        }else if (tianGan.isJin()) {
+            jinCount+=1;
+        }else {
+            shuiCount+=1;
+        }
+    }
+
+    public void wuxingDiZhiCount(DiZhiEnum diZhi,boolean cangan){
+
+        if (cangan) {
+
+            ImmutableSet<String> cangganSet = diZhi.getCanggan();
+            for (String gan : cangganSet) {
+                TianGanEnum tianGan = TianGanEnum.getTianGan(gan);
+                wuxingTianGanCount(tianGan);
+            }
+        }else {
+            if (diZhi.isMu()) {
+                muCount+=1;
+            }else if (diZhi.isHuo()) {
+                huoCount+=1;
+            }else if (diZhi.isTu()) {
+                tuCount+=1;
+            }else if (diZhi.isJin()) {
+                jinCount+=1;
+            }else {
+                shuiCount+=1;
+            }
+        }
+
     }
 
     /**

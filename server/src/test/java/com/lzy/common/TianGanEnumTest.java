@@ -133,16 +133,8 @@ public void testIsMu() throws Exception {
     //TODO: Test goes here...
     boolean ke = false;
 
-    ke = TianGanEnum.isMu("甲");
-    ke = TianGanEnum.isMu("乙");
-    ke = TianGanEnum.isHuo("丙");
-    ke = TianGanEnum.isHuo("丁");
-    ke = TianGanEnum.isTu("戊");
-    ke = TianGanEnum.isTu("己");
-    ke = TianGanEnum.isJin("庚");
-    ke = TianGanEnum.isJin("辛");
-    ke = TianGanEnum.isShui("壬");
-    ke = TianGanEnum.isShui("癸");
+    ke = TianGanEnum.JIA.isMu();
+
     Assert.assertTrue(ke);
 } 
 
