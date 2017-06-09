@@ -3,6 +3,7 @@ package com.lzy.demo;
 import org.junit.Assert;
 import org.junit.Test;
 
+import javax.print.DocFlavor;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
@@ -18,6 +19,11 @@ public class BaZiTest {
     @Test
     public void testBaZi() throws Exception {
         BaZi baZi = new BaZi("甲","子","丙","子","丙","戌","辛","卯");
+
+        GroovyRule groovyRule = new GroovyRule();
+        Object result = groovyRule.matchRule(baZi);
+        System.out.println("GroovyRule:"+result.toString());
+
 
 //        baZi.matchSanHe("巳","酉","丑1");
 //        Integer ret=1;
