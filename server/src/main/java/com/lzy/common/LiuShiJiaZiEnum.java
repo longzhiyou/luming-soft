@@ -72,17 +72,33 @@ public enum LiuShiJiaZiEnum {
     private final TianGanEnum tiangan;
     private final DiZhiEnum dizhi;
     
-    private LiuShiJiaZiEnum(String display , int value,TianGanEnum tianGanEnum, DiZhiEnum diZhiEnum){
+    LiuShiJiaZiEnum(String display, int value, TianGanEnum tianGanEnum, DiZhiEnum diZhiEnum){
         this.value = value;
         this.display = display;
         this.tiangan = tianGanEnum;
         this.dizhi = diZhiEnum;
     }
-    
-    public static LiuShiJiaZiEnum getLiuShiJiaZiEnum(int value){
+
+    /**
+     * 根据序号查找
+     * @param value
+     * @return
+     */
+    public static LiuShiJiaZiEnum getByValue(int value){
         LiuShiJiaZiEnum current = null;
         for (LiuShiJiaZiEnum liuShiJiaZiEnum:LiuShiJiaZiEnum.values()){
             if (liuShiJiaZiEnum.value() == value){
+                current = liuShiJiaZiEnum;
+                break;
+            }
+        }
+        return current;
+    }
+
+    public static LiuShiJiaZiEnum getByDisplay(String display){
+        LiuShiJiaZiEnum current = null;
+        for (LiuShiJiaZiEnum liuShiJiaZiEnum:LiuShiJiaZiEnum.values()){
+            if (liuShiJiaZiEnum.display().equals(display)){
                 current = liuShiJiaZiEnum;
                 break;
             }

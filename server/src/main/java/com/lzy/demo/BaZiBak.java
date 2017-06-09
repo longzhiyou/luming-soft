@@ -1,5 +1,9 @@
 package com.lzy.demo;
 
+import com.google.common.collect.ImmutableMap;
+import com.lzy.common.LiuShiJiaZiEnum;
+import com.lzy.common.WuXingEnum;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -11,6 +15,257 @@ import java.util.Date;
  * Time: 10:10
  */
 public class BaZiBak {
+
+
+
+//    /**
+//     * 天干map
+//     * [2017-06-09 add by longzhiyou]
+//     */
+//    public final static ImmutableMap<String,TianGanEnum> tianganMap = ImmutableMap.<String,
+//            TianGanEnum>builder()
+//            .put(TianGanEnum.JIA.display(), TianGanEnum.JIA)
+//            .put(TianGanEnum.YI.display(), TianGanEnum.YI)
+//            .put(TianGanEnum.BING.display(), TianGanEnum.BING)
+//            .put(TianGanEnum.DING.display(), TianGanEnum.DING)
+//            .put(TianGanEnum.WU.display(), TianGanEnum.WU)
+//            .put(TianGanEnum.JI.display(), TianGanEnum.JI)
+//            .put(TianGanEnum.GENG.display(), TianGanEnum.GENG)
+//            .put(TianGanEnum.XIN.display(), TianGanEnum.XIN)
+//            .put(TianGanEnum.REN.display(), TianGanEnum.REN)
+//            .put(TianGanEnum.GUI.display(), TianGanEnum.GUI)
+//            .build();
+//    /**
+//     * 地支map
+//     * [2017-06-09 add by longzhiyou]
+//     */
+//    public final static ImmutableMap<String,DiZhiEnum> dizhiMap = ImmutableMap.<String,
+//            DiZhiEnum>builder()
+//            .put("子", DiZhiEnum.ZI)
+//            .put("丑", DiZhiEnum.ZI)
+//            .put("寅", DiZhiEnum.ZI)
+//            .put("卯", DiZhiEnum.ZI)
+//            .put("辰", DiZhiEnum.ZI)
+//            .put("巳", DiZhiEnum.ZI)
+//            .put("午", DiZhiEnum.ZI)
+//            .put("未", DiZhiEnum.ZI)
+//            .put("申", DiZhiEnum.ZI)
+//            .put("酉", DiZhiEnum.ZI)
+//            .put("戌", DiZhiEnum.ZI)
+//            .put("亥", DiZhiEnum.ZI)
+//            .build();
+//
+//    /**
+//     * 五行map
+//     * [2017-06-09 add by longzhiyou]
+//     */
+//    public final static ImmutableMap<String,WuXingEnum> wuxingMap = ImmutableMap.<String,
+//            WuXingEnum>builder()
+//            .put( WuXingEnum.MU.display(), WuXingEnum.MU)
+//            .put( WuXingEnum.HUO.display(), WuXingEnum.HUO)
+//            .put( WuXingEnum.TU.display(), WuXingEnum.TU)
+//            .put( WuXingEnum.JIN.display(), WuXingEnum.JIN)
+//            .put( WuXingEnum.SHUI.display(), WuXingEnum.SHUI)
+//            .build();
+
+    /**
+     * 60甲子map
+     * [2017-06-09 add by longzhiyou]
+     */
+//    public final static ImmutableMap<String,LiuShiJiaZiEnum> liushijiaziMap = ImmutableMap.<String,
+//            LiuShiJiaZiEnum>builder()
+//            .put(LiuShiJiaZiEnum.JIAZI.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.YICHOU.display(), LiuShiJiaZiEnum.YICHOU)
+//            .put(LiuShiJiaZiEnum.BINGYIN.display(), LiuShiJiaZiEnum.BINGYIN)
+//            .put(LiuShiJiaZiEnum.DINGMAO.display(), LiuShiJiaZiEnum.DINGMAO)
+//            .put(LiuShiJiaZiEnum.WUCHEN.display(), LiuShiJiaZiEnum.WUCHEN)
+//            .put(LiuShiJiaZiEnum.JISI.display(), LiuShiJiaZiEnum.JISI)
+//            .put(LiuShiJiaZiEnum.GENGSWU.display(), LiuShiJiaZiEnum.GENGSWU)
+//            .put(LiuShiJiaZiEnum.XINWEI.display(), LiuShiJiaZiEnum.XINWEI)
+//            .put(LiuShiJiaZiEnum.RENSHEN.display(), LiuShiJiaZiEnum.RENSHEN)
+//            .put(LiuShiJiaZiEnum.GUIYOU.display(), LiuShiJiaZiEnum.GUIYOU)
+//            .put(LiuShiJiaZiEnum.JIAXU.display(), LiuShiJiaZiEnum.JIAXU)
+//            .put(LiuShiJiaZiEnum.YIHAI.display(), LiuShiJiaZiEnum.YIHAI)
+//            .put(LiuShiJiaZiEnum.BINGZI.display(), LiuShiJiaZiEnum.BINGZI)
+//            .put(LiuShiJiaZiEnum.DINGCHOU.display(), LiuShiJiaZiEnum.DINGCHOU)
+//            .put(LiuShiJiaZiEnum.WUYIN.display(), LiuShiJiaZiEnum.WUYIN)
+//            .put(LiuShiJiaZiEnum.JIMAO.display(), LiuShiJiaZiEnum.JIMAO)
+//            .put(LiuShiJiaZiEnum.GENCHEN.display(), LiuShiJiaZiEnum.GENCHEN)
+//            .put(LiuShiJiaZiEnum.XINSI.display(), LiuShiJiaZiEnum.XINSI)
+//            .put(LiuShiJiaZiEnum.RENWU.display(), LiuShiJiaZiEnum.RENWU)
+//            .put(LiuShiJiaZiEnum.GUIWEI.display(), LiuShiJiaZiEnum.GUIWEI)
+//            .put(LiuShiJiaZiEnum.JIASHEN.display(), LiuShiJiaZiEnum.JIASHEN)
+//            .put(LiuShiJiaZiEnum.YIYOU.display(), LiuShiJiaZiEnum.YIYOU)
+//            .put(LiuShiJiaZiEnum.BINGXU.display(), LiuShiJiaZiEnum.BINGXU)
+//            .put(LiuShiJiaZiEnum.DINGHAI.display(), LiuShiJiaZiEnum.DINGHAI)
+//            .put(LiuShiJiaZiEnum.WUZI.display(), LiuShiJiaZiEnum.WUZI)
+//            .put(LiuShiJiaZiEnum.JICHOU.display(), LiuShiJiaZiEnum.JICHOU)
+//            .put(LiuShiJiaZiEnum.GENGYIN.display(), LiuShiJiaZiEnum.GENGYIN)
+//            .put(LiuShiJiaZiEnum.XINMAO.display(), LiuShiJiaZiEnum.XINMAO)
+//            .put(LiuShiJiaZiEnum.RENCHEN.display(), LiuShiJiaZiEnum.RENCHEN)
+//            .put(LiuShiJiaZiEnum.GUISI.display(), LiuShiJiaZiEnum.RENCHEN)
+//            .put(LiuShiJiaZiEnum.JIAWU.display(), LiuShiJiaZiEnum.JIAWU)
+//            .put(LiuShiJiaZiEnum.YIWEI.display(), LiuShiJiaZiEnum.YIWEI)
+//            .put(LiuShiJiaZiEnum.BINGSHEN.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.DINGYOU.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.WUXU.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.JIHAI.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.GENGZI.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.XINCHOU.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.RENYIN.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.GUIMAO.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.JIACHEN.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.YISI.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.BINGWU.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.DINGWEI.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.WUSHEN.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.JIYOU.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.GENGXU.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.XINHAI.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.RENZI.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.GUICHOU.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.JIAYIN.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.YIMAO.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.BINGCHEN.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.DINGSI.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.WUWU.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.JIWEI.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.GENGSHEN.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.XINYOU.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.RENXU.display(), LiuShiJiaZiEnum.JIAZI)
+//            .put(LiuShiJiaZiEnum.GUIHAI.display(), LiuShiJiaZiEnum.JIAZI)
+//            .build();
+
+
+//    public final static String[] shishen = {"比肩", "劫财", "食神", "伤官", "偏财", "正财", "七杀", "正官", "偏印", "正印"};
+
+
+//    /**
+//     * 六十甲子
+//     */
+//    public static final String[] jiazi = {
+//            "甲子", "乙丑", "丙寅", "丁卯", "戊辰", "己巳", "庚午", "辛未", "壬申", "癸酉",
+//            "甲戌", "乙亥", "丙子", "丁丑", "戊寅", "己卯", "庚辰", "辛巳", "壬午", "癸未",
+//            "甲申", "乙酉", "丙戌", "丁亥", "戊子", "己丑", "庚寅", "辛卯", "壬辰", "癸巳",
+//            "甲午", "乙未", "丙申", "丁酉", "戊戌", "己亥", "庚子", "辛丑", "壬寅", "癸卯",
+//            "甲辰", "乙巳", "丙午", "丁未", "戊申", "己酉", "庚戌", "辛亥", "壬子", "癸丑",
+//            "甲寅", "乙卯", "丙辰", "丁巳", "戊午", "己未", "庚申", "辛酉", "壬戌", "癸亥"
+//    };
+//
+//    public final static ImmutableMap<String,String> jiaziMap = ImmutableMap.<String, String>builder()
+//            .put("甲子","海中金")
+//            .put("乙丑","海中金")
+//            .put("丙寅","炉中火")
+//            .put("丁卯","炉中火")
+//            .put("戊辰","大林木")
+//            .put("己巳","大林木")
+//            .put("庚午","路旁土")
+//            .put("辛未","路旁土")
+//            .put("壬申","剑锋金")
+//            .put("癸酉","剑锋金")
+//            .put("甲戌","山头火")
+//            .put("乙亥","山头火")
+//            .put("丙子","涧下水")
+//            .put("丁丑","涧下水")
+//            .put("戊寅","城头土")
+//            .put("己卯","城头土")
+//            .put("庚辰","白蜡金")
+//            .put("辛巳","白蜡金")
+//            .put("壬午","杨柳木")
+//            .put("癸未","杨柳木")
+//            .put("甲申","泉中水")
+//            .put("乙酉","泉中水")
+//            .put("丙戌","屋上土")
+//            .put("丁亥","屋上土")
+//            .put("戊子","霹雳火")
+//            .put("己丑","霹雳火")
+//            .put("庚寅","松柏木")
+//            .put("辛卯","松柏木")
+//            .put("壬辰","长流水")
+//            .put("癸巳","长流水")
+//            .put("甲午","沙中金")
+//            .put("乙未","沙中金")
+//            .put("丙申","山下火")
+//            .put("丁酉","山下火")
+//            .put("戊戌","平地木")
+//            .put("己亥","平地木")
+//            .put("庚子","壁上土")
+//            .put("辛丑","壁上土")
+//            .put("壬寅","金箔金")
+//            .put("癸卯","金箔金")
+//            .put("甲辰","复灯火")
+//            .put("乙巳","复灯火")
+//            .put("丙午","天河水")
+//            .put("丁未","天河水")
+//            .put("戊申","大驿土")
+//            .put("己酉","大驿土")
+//            .put("庚戌","钗钏金")
+//            .put("辛亥","钗钏金")
+//            .put("壬子","桑拓木")
+//            .put("癸丑","桑拓木")
+//            .put("甲寅","大溪水")
+//            .put("乙卯","大溪水")
+//            .put("丙辰","沙中土")
+//            .put("丁巳","沙中土")
+//            .put("戊午","天上火")
+//            .put("己未","天上火")
+//            .put("庚申","石榴木")
+//            .put("辛酉","石榴木")
+//            .put("壬戌","大海水")
+//            .put("癸亥","大海水")
+//
+//            .build();
+
+
+
+//
+//    public final static String [][]shishenTable={
+//            {bijian,jiecai,shishen,shangguan,piancai,zhengcai,qisha,zhengguan,pianyin,zhengyin},
+//            {jiecai,bijian,shangguan,shishen,zhengcai,piancai,zhengguan,qisha,zhengyin,pianyin},
+//            {pianyin,zhengyin,bijian,jiecai,shishen,shangguan,piancai,zhengcai,qisha,zhengguan},
+//            {zhengyin,pianyin,jiecai,bijian,shangguan,shishen,zhengcai,piancai,zhengguan,qisha},
+//            {qisha,zhengguan,pianyin,zhengyin,bijian,jiecai,shishen,shangguan,piancai,zhengcai},
+//            {zhengguan,qisha,zhengyin,pianyin,jiecai,bijian,shangguan,shishen,zhengcai,piancai},
+//            {piancai,zhengcai,qisha,zhengguan,pianyin,zhengyin,bijian,jiecai,shishen,shangguan},
+//            {zhengcai,piancai,zhengguan,qisha,zhengyin,pianyin,jiecai,bijian,shangguan,shishen},
+//            {shishen,shangguan,piancai,zhengcai,qisha,zhengguan,pianyin,zhengyin,bijian,jiecai},
+//            {shangguan,shishen,zhengcai,piancai,zhengguan,qisha,zhengyin,pianyin,jiecai,bijian}
+//
+//    };
+
+
+//    public static final String sTianGan = "甲乙丙丁戊己庚辛壬癸";
+//    public static final String sDiZhi = "子丑寅卯辰巳午未申酉戌亥";
+//    public static final String sWuXing = "金木水火土";
+//
+//    public final static String[] yinyang = {"阴", "阳"};
+//    public final static String[] wuxing = {"木", "火", "土", "金", "水"};
+//
+//    public final static String[] tiangan = {"甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"};
+//
+//    public final static String[] dizhi = {"子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"};
+//
+
+
+    //    public final static String[] canggan = {"癸", "辛癸己", "甲丙戊", "乙", "癸戊乙", "丙戊", "丁己", "丁己乙",
+//            "戊庚壬", "辛", "戊丁辛", "甲壬"};
+
+    //    //地支藏干
+//    public final static ImmutableMap<String,ImmutableSet<String>> cangganMap = ImmutableMap.<String, ImmutableSet<String>>builder()
+//            .put("子", ImmutableSet.of( "癸"))
+//            .put("丑", ImmutableSet.of( "辛","癸","己"))
+//            .put("寅", ImmutableSet.of( "甲","丙","戊"))
+//            .put("卯", ImmutableSet.of( "乙"))
+//            .put("辰", ImmutableSet.of( "癸","戊","乙"))
+//            .put("巳", ImmutableSet.of( "丙","戊"))
+//            .put("午", ImmutableSet.of( "丁","己"))
+//            .put("未", ImmutableSet.of( "丁","己","乙"))
+//            .put("申", ImmutableSet.of( "戊","庚","壬"))
+//            .put("酉", ImmutableSet.of( "辛"))
+//            .put("戌", ImmutableSet.of( "戊","丁","辛"))
+//            .put("亥", ImmutableSet.of( "甲","壬"))
+//            .build();
+
     private int year;
     private int month;
     private int day;

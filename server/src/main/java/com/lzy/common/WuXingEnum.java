@@ -10,25 +10,38 @@ package com.lzy.common;
  * @author dzm
  */
 public enum WuXingEnum {
-    JIN("金",4),
-    MU("木",3),
-    SHUI("水",1),
-    HUO("火",2),
-    TU("土",5);
+
+    MU("木",1,3,8),
+    HUO("火",2,2,7),
+    TU("土",3,5,10),
+    JIN("金",4,4,9),
+    SHUI("水",5,1,6);
     
     private final String display;
     private final int value;
-    
-    private WuXingEnum(String display , int value){
-        this.value = value;
+    private final int shengshu; //五行生数
+    private final int chengshu; //五行生数
+
+    WuXingEnum(String display, int value, int shengshu, int chengshu) {
         this.display = display;
+        this.value = value;
+        this.shengshu = shengshu;
+        this.chengshu = chengshu;
     }
-    
-    public String display(){
-        return this.display;
+
+    public String getDisplay() {
+        return display;
     }
-    
-    public int value(){
-        return this.value;
+
+    public int getValue() {
+        return value;
+    }
+
+    public int getShengshu() {
+        return shengshu;
+    }
+
+    public int getChengshu() {
+        return chengshu;
     }
 }

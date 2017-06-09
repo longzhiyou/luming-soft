@@ -69,7 +69,24 @@ public enum DiZhiEnum {
         }
         return null;
     }
-    
+
+    /**
+     * 根据序号查找
+     * @param value
+     * @return
+     */
+    public static DiZhiEnum getByValue(int value){
+        DiZhiEnum current = null;
+        for (DiZhiEnum dizhi:DiZhiEnum.values()){
+            if (dizhi.value() == value){
+                current = dizhi;
+                break;
+            }
+        }
+        return current;
+    }
+
+
     public String display(){
         return this.display;
     }
