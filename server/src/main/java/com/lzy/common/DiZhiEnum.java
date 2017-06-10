@@ -24,7 +24,7 @@ public enum DiZhiEnum {
     /**
      * 显示
      */
-    private final String display;
+    private final String name;
     /**
      * 数
      */
@@ -47,13 +47,13 @@ public enum DiZhiEnum {
      */
     private final ImmutableSet<String> canggan;
 
-    DiZhiEnum(String display,
+    DiZhiEnum(String name,
               int value,
               YinYangEnum yinYang,
               WuXingEnum wuXing,
               int month,
               ImmutableSet<String> canggan){
-        this.display = display;
+        this.name = name;
         this.yinYang = yinYang;
         this.wuXing = wuXing;
         this.value = value;
@@ -61,15 +61,15 @@ public enum DiZhiEnum {
         this.canggan =canggan;
     }
 
-    public String display(){
-        return this.display;
+    public String getName() {
+        return name;
     }
 
-    public int value(){
+    public int getValue() {
         return value;
     }
 
-    public int month(){
+    public int getMonth() {
         return month;
     }
 
@@ -87,7 +87,7 @@ public enum DiZhiEnum {
 
     public static DiZhiEnum getDiZhi(String display){
         for (DiZhiEnum tiangan:DiZhiEnum.values()){
-            if (tiangan.display.equals(display)){
+            if (tiangan.name.equals(display)){
                 return tiangan;
             }
         }
@@ -102,7 +102,7 @@ public enum DiZhiEnum {
     public static DiZhiEnum getByValue(int value){
         DiZhiEnum current = null;
         for (DiZhiEnum dizhi:DiZhiEnum.values()){
-            if (dizhi.value() == value){
+            if (dizhi.getValue() == value){
                 current = dizhi;
                 break;
             }
@@ -116,7 +116,7 @@ public enum DiZhiEnum {
      */
     public  boolean isMu() {
 
-        return this.getWuXing().getDisplay().equals("木");
+        return this.getWuXing().getName().equals("木");
 
     }
 
@@ -125,7 +125,7 @@ public enum DiZhiEnum {
      * @return
      */
     public   boolean isHuo() {
-        return this.getWuXing().getDisplay().equals("火");
+        return this.getWuXing().getName().equals("火");
 
     }
 
@@ -134,7 +134,7 @@ public enum DiZhiEnum {
      * @return
      */
     public   boolean isTu() {
-        return this.getWuXing().getDisplay().equals("土");
+        return this.getWuXing().getName().equals("土");
 
     }
 
@@ -144,7 +144,7 @@ public enum DiZhiEnum {
      */
     public   boolean isJin() {
 
-        return this.getWuXing().getDisplay().equals("金");
+        return this.getWuXing().getName().equals("金");
 
     }
 
@@ -154,7 +154,7 @@ public enum DiZhiEnum {
      */
     public  boolean isShui() {
 
-        return this.getWuXing().getDisplay().equals("水");
+        return this.getWuXing().getName().equals("水");
 
     }
 

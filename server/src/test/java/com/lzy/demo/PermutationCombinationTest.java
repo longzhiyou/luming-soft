@@ -21,13 +21,102 @@ public class PermutationCombinationTest {
     @Test
     public void testPermutation(){
 
-        Permutation<String> stringPermutation = Permutation.of(Arrays.asList("亥", "卯", "未"));
-        BigInteger permutationCount = stringPermutation.getPermutationCount();
-        System.out.println(permutationCount);
-        for(List<String> list : Permutation.of(Arrays.asList("亥", "卯", "未"))){
+//        Permutation<String> stringPermutation = Permutation.of(Arrays.asList("亥", "卯", "未"));
+//        BigInteger permutationCount = stringPermutation.getPermutationCount();
+//        System.out.println(permutationCount);
+
+
+       for(List<String> list : Permutation.of(Arrays.asList("丑", "戌","未"))){
 
             System.out.println(list);
         }
+
+
+//        for(List<String> list : Permutation.of(Arrays.asList("子", "午"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("丑", "未"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("寅", "申"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("卯", "酉"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("辰", "戌"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("巳", "亥"))){
+//
+//            System.out.println(list);
+//        }
+
+
+//        for(List<String> list : Permutation.of(Arrays.asList("子", "丑"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("寅", "亥"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("卯", "戌"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("辰", "酉"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("巳", "申"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("午", "未"))){
+//
+//            System.out.println(list);
+//        }
+
+
+//        for(List<String> list : Permutation.of(Arrays.asList("寅", "卯", "辰"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("巳", "午", "未"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("申", "酉", "戌"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("亥", "子", "丑"))){
+//
+//            System.out.println(list);
+//        }
+
+//        for(List<String> list : Permutation.of(Arrays.asList("亥", "卯", "未"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("寅", "午", "戌"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("巳", "酉", "丑"))){
+//
+//            System.out.println(list);
+//        }
+//        for(List<String> list : Permutation.of(Arrays.asList("申", "子", "辰"))){
+//
+//            System.out.println(list);
+//        }
 
     }
 

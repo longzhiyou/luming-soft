@@ -8,19 +8,19 @@ public enum YinYangEnum {
     YIN("阴",0),
     YANG("阳",1);
     
-    private final String display;
+    private final String name;
     private final int value;
     
-    private YinYangEnum(String display , int value){
+    private YinYangEnum(String name, int value){
         this.value = value;
-        this.display = display;
+        this.name = name;
     }
-    
-    public String display(){
-        return this.display;
+
+    public String getName() {
+        return name;
     }
-    
-    public int value(){
-        return this.value;
+
+    public int getValue() {
+        return value;
     }
 }

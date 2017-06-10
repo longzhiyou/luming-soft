@@ -188,12 +188,12 @@ public class BaZi {
      */
     ImmutableMap<String,String> sanheMap =
             ImmutableMap.<String, String>builder()
-                    .put("亥卯未","木")
-                    .put("亥未卯","木")
-                    .put("卯亥未","木")
-                    .put("卯未亥","木")
-                    .put("未卯亥","木")
-                    .put("未亥卯","木")
+                    .put("[亥, 卯, 未]","木")
+                    .put("[亥, 未, 卯]","木")
+                    .put("[卯, 亥, 未]","木")
+                    .put("[卯, 未, 亥]","木")
+                    .put("[未, 亥, 卯]","木")
+                    .put("[未, 卯, 亥]","木")
 
                     .put("寅午戌","火")
                     .put("寅戌午","火")
@@ -358,7 +358,7 @@ public class BaZi {
 //        for (int i = 0; i < 10; i++) {
 //
 //            for (int j = 0; j < 10; j++) {
-//                String str = String.format("日干:%s   它干:%s    十神:%s",tiangan[i],tiangan[j],shishenTable[i][j]);
+//                String str = String.format("日干:%s   它干:%s    十神:%s",tiangan[i],tiangan[j],tableShiShen[i][j]);
 //                System.out.println(str);
 //            }
 //

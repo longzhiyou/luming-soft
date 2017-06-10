@@ -20,7 +20,7 @@ public enum TianGanEnum {
     /**
      * 显示
      */
-    private final String display;
+    private final String name;
     /**
      * 数
      */
@@ -34,18 +34,18 @@ public enum TianGanEnum {
      */
     private final WuXingEnum wuXing;
     
-    TianGanEnum(String display, int value, YinYangEnum yinYang, WuXingEnum wuXing){
-        this.display = display;
+    TianGanEnum(String name, int value, YinYangEnum yinYang, WuXingEnum wuXing){
+        this.name = name;
         this.yinYang = yinYang;
         this.wuXing = wuXing;
         this.value = value;
     }
 
-    public String display(){
-        return this.display;
+    public String getName() {
+        return name;
     }
 
-    public int value(){
+    public int getValue() {
         return value;
     }
 
@@ -61,7 +61,7 @@ public enum TianGanEnum {
 
     public  static TianGanEnum getTianGan(String display){
         for (TianGanEnum tiangan:TianGanEnum.values()){
-            if (tiangan.display.equals(display)){
+            if (tiangan.name.equals(display)){
                 return tiangan;
             }
         }
@@ -70,7 +70,7 @@ public enum TianGanEnum {
 
     public  static TianGanEnum getByValue(int value){
         for (TianGanEnum tiangan:TianGanEnum.values()){
-            if (tiangan.value() == value){
+            if (tiangan.getValue() == value){
                 return tiangan;
             }
         }
@@ -83,15 +83,15 @@ public enum TianGanEnum {
      * @param gan2
      * @return
      */
-    public  static boolean isHe(String gan1,String gan2){
-        TianGanEnum tianGan1 = getTianGan(gan1);
-        TianGanEnum tianGan2 = getTianGan(gan2);
-
-        //合是相减绝对值等于5
-        int ret = Math.abs(tianGan1.value()-tianGan2.value());
-        return 5 == ret;
-
-    }
+//    public  static boolean isHe(String gan1,String gan2){
+//        TianGanEnum tianGan1 = getTianGan(gan1);
+//        TianGanEnum tianGan2 = getTianGan(gan2);
+//
+//        //合是相减绝对值等于5
+//        int ret = Math.abs(tianGan1.getValue()-tianGan2.getValue());
+//        return 5 == ret;
+//
+//    }
 
     /**
      * 天干gan2是否克gan1
@@ -99,35 +99,35 @@ public enum TianGanEnum {
      * @param gan2 庚 辛
      * @return
      */
-    public  static boolean isKe(String gan1,String gan2){
-        TianGanEnum tianGan1 = getTianGan(gan1);
-        TianGanEnum tianGan2 = getTianGan(gan2);
+//    public  static boolean isKe(String gan1,String gan2){
+//        TianGanEnum tianGan1 = getTianGan(gan1);
+//        TianGanEnum tianGan2 = getTianGan(gan2);
+//
+//        int ret = tianGan2.getValue()-tianGan1.getValue();
+//        ret=(ret+10)%10;
+//
+//        /**
+//         * 如果gan1是阳干则是6或者7
+//         * 阴干则是5或者6
+//         * [2017-06-09 add by longzhiyou]
+//         */
+//        if (isYang(tianGan1)) {
+//            return 6 == ret || 7 == ret;
+//        }else {
+//            return 5 == ret || 6 == ret;
+//        }
+//
+//    }
 
-        int ret = tianGan2.value()-tianGan1.value();
-        ret=(ret+10)%10;
+    public  boolean isYin(){
 
-        /**
-         * 如果gan1是阳干则是6或者7
-         * 阴干则是5或者6
-         * [2017-06-09 add by longzhiyou]
-         */
-        if (isYang(tianGan1)) {
-            return 6 == ret || 7 == ret;
-        }else {
-            return 5 == ret || 6 == ret;
-        }
+        return this.getYinYang().getValue()==0;
 
     }
 
-    public static boolean isYin(TianGanEnum gan){
+    public  boolean isYang(){
 
-        return gan.getYinYang().value()==0;
-
-    }
-
-    public  static boolean isYang(TianGanEnum gan){
-
-        return gan.getYinYang().value()==1;
+        return this.getYinYang().getValue()==1;
 
     }
 
@@ -137,7 +137,7 @@ public enum TianGanEnum {
      */
     public  boolean isMu() {
 
-        return this.getWuXing().getDisplay().equals("木");
+        return this.getWuXing().getName().equals("木");
 
     }
 
@@ -146,7 +146,7 @@ public enum TianGanEnum {
      * @return
      */
     public   boolean isHuo() {
-        return this.getWuXing().getDisplay().equals("火");
+        return this.getWuXing().getName().equals("火");
 
     }
 
@@ -156,7 +156,7 @@ public enum TianGanEnum {
      */
     public   boolean isTu() {
 
-        return this.getWuXing().getDisplay().equals("土");
+        return this.getWuXing().getName().equals("土");
 
     }
 
@@ -166,8 +166,7 @@ public enum TianGanEnum {
      */
     public   boolean isJin() {
 
-//        TianGanEnum tianGan = getTianGan(gan);
-        return this.getWuXing().getDisplay().equals("金");
+        return this.getWuXing().getName().equals("金");
 
     }
 
@@ -177,8 +176,7 @@ public enum TianGanEnum {
      */
     public  boolean isShui() {
 
-//        TianGanEnum tianGan = getTianGan(gan);
-        return this.getWuXing().getDisplay().equals("水");
+        return this.getWuXing().getName().equals("水");
 
     }
 

@@ -17,20 +17,20 @@ public enum WuXingEnum {
     JIN("金",4,4,9),
     SHUI("水",5,1,6);
     
-    private final String display;
+    private final String name;
     private final int value;
     private final int shengshu; //五行生数
     private final int chengshu; //五行生数
 
-    WuXingEnum(String display, int value, int shengshu, int chengshu) {
-        this.display = display;
+    WuXingEnum(String name, int value, int shengshu, int chengshu) {
+        this.name = name;
         this.value = value;
         this.shengshu = shengshu;
         this.chengshu = chengshu;
     }
 
-    public String getDisplay() {
-        return display;
+    public String getName() {
+        return name;
     }
 
     public int getValue() {

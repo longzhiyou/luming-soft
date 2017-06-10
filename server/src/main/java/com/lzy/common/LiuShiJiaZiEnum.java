@@ -67,14 +67,14 @@ public enum LiuShiJiaZiEnum {
     RENXU("壬戌",59,TianGanEnum.REN,DiZhiEnum.XU),
     GUIHAI("癸亥",60,TianGanEnum.GUI,DiZhiEnum.HAI);
     
-    private final String display;
+    private final String name;
     private final int value;
     private final TianGanEnum tiangan;
     private final DiZhiEnum dizhi;
     
-    LiuShiJiaZiEnum(String display, int value, TianGanEnum tianGanEnum, DiZhiEnum diZhiEnum){
+    LiuShiJiaZiEnum(String name, int value, TianGanEnum tianGanEnum, DiZhiEnum diZhiEnum){
         this.value = value;
-        this.display = display;
+        this.name = name;
         this.tiangan = tianGanEnum;
         this.dizhi = diZhiEnum;
     }
@@ -87,7 +87,7 @@ public enum LiuShiJiaZiEnum {
     public static LiuShiJiaZiEnum getByValue(int value){
         LiuShiJiaZiEnum current = null;
         for (LiuShiJiaZiEnum liuShiJiaZiEnum:LiuShiJiaZiEnum.values()){
-            if (liuShiJiaZiEnum.value() == value){
+            if (liuShiJiaZiEnum.getValue() == value){
                 current = liuShiJiaZiEnum;
                 break;
             }
@@ -98,22 +98,30 @@ public enum LiuShiJiaZiEnum {
     public static LiuShiJiaZiEnum getByDisplay(String display){
         LiuShiJiaZiEnum current = null;
         for (LiuShiJiaZiEnum liuShiJiaZiEnum:LiuShiJiaZiEnum.values()){
-            if (liuShiJiaZiEnum.display().equals(display)){
+            if (liuShiJiaZiEnum.getName().equals(display)){
                 current = liuShiJiaZiEnum;
                 break;
             }
         }
         return current;
     }
-    
-    public String display(){
-        return this.display;
+
+    public String getName() {
+        return name;
     }
-    
-    public int value(){
-        return this.value;
+
+    public int getValue() {
+        return value;
     }
-    
+
+    public TianGanEnum getTiangan() {
+        return tiangan;
+    }
+
+    public DiZhiEnum getDizhi() {
+        return dizhi;
+    }
+
     public TianGanEnum tiangan(){
         return this.tiangan;
     }

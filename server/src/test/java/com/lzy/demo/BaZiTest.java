@@ -1,9 +1,9 @@
 package com.lzy.demo;
 
+import com.google.common.collect.ImmutableList;
 import org.junit.Assert;
 import org.junit.Test;
 
-import javax.print.DocFlavor;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
@@ -16,13 +16,61 @@ import javax.script.ScriptException;
 public class BaZiTest {
 
 
+    CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
+    ImmutableList<String> gan = ImmutableList.of("甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸");
+
+    @Test
+    public void testCommonAlgorithm(){
+
+//        for (int i = 0; i < 10; i++) {
+//
+//            for (int j = 0; j < 10; j++) {
+//                String str = String.format("日干:%s   它干:%s    十神:%s",
+//                        commonAlgorithm.listTianGan.get(i)
+//                        ,commonAlgorithm.listTianGan.get(j)
+//                        ,commonAlgorithm.tableShiShen[i][j]);
+//                System.out.println(str);
+//            }
+//
+//        }
+
+//        for (int i = 11; i >= 0; i--) {
+//
+//            System.out.print(String.format("\"%s\",\t",commonAlgorithm.listDiZhi.get(i)));
+//        }
+
+//        for (int i = 0; i < 10; i++) {
+//
+//            for (int j = 0; j < 12; j++) {
+//                String str = String.format("%s\t%s\t%s",
+//                        commonAlgorithm.listTianGan.get(i)
+//                        ,commonAlgorithm.listChangShengJue.get(j)
+//                        ,commonAlgorithm.tableTianGanChangShengJue[i][j]);
+//                System.out.println(str);
+//            }
+//
+//        }
+
+//        String liuqin = commonAlgorithm.getShiShen("甲", "丙");
+//        liuqin = commonAlgorithm.getShiShen("癸", "丙");
+//        Assert.assertEquals("食",liuqin);
+
+
+
+    }
+
     @Test
     public void testBaZi() throws Exception {
-        BaZi baZi = new BaZi("甲","子","丙","子","丙","戌","辛","卯");
 
-        GroovyRule groovyRule = new GroovyRule();
-        Object result = groovyRule.matchRule(baZi);
-        System.out.println("GroovyRule:"+result.toString());
+        int indexOf = gan.indexOf("癸");
+
+        Assert.assertEquals(0,indexOf);
+
+//        BaZi baZi = new BaZi("甲","子","丙","子","丙","戌","辛","卯");
+//
+//        GroovyRule groovyRule = new GroovyRule();
+//        Object result = groovyRule.matchRule(baZi);
+//        System.out.println("GroovyRule:"+result.toString());
 
 
 //        baZi.matchSanHe("巳","酉","丑1");
