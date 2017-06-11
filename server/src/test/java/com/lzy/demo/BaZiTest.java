@@ -16,8 +16,8 @@ import javax.script.ScriptException;
 public class BaZiTest {
 
 
-    CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
-    ImmutableList<String> gan = ImmutableList.of("甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸");
+//    CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
+//    ImmutableList<String> gan = ImmutableList.of("甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸");
 
     @Test
     public void testCommonAlgorithm(){
@@ -62,15 +62,16 @@ public class BaZiTest {
     @Test
     public void testBaZi() throws Exception {
 
-        int indexOf = gan.indexOf("癸");
-
-        Assert.assertEquals(0,indexOf);
-
-//        BaZi baZi = new BaZi("甲","子","丙","子","丙","戌","辛","卯");
+//        int indexOf = gan.indexOf("癸");
 //
-//        GroovyRule groovyRule = new GroovyRule();
-//        Object result = groovyRule.matchRule(baZi);
-//        System.out.println("GroovyRule:"+result.toString());
+//        Assert.assertEquals(0,indexOf);
+
+//        BaZi baZi = new BaZi("甲","子","丙","子","甲","子","辛","卯");
+        BaZi baZi = new BaZi("甲子","乙卯","甲子","辛卯");
+//
+        GroovyRule groovyRule = new GroovyRule();
+        Object result = groovyRule.matchRule(baZi);
+        System.out.println("GroovyRule:"+result.toString());
 
 
 //        baZi.matchSanHe("巳","酉","丑1");

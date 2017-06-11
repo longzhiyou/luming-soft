@@ -86,6 +86,20 @@ public class CommonAlgorithmTest {
     }
 
 
+    @Test
+    public void testIsShuangChong(){
+
+        boolean containsKey = commonAlgorithm.isShuangChong("甲子", "戊午");
+        Assert.assertTrue(containsKey);
+    }
+
+    @Test
+    public void testIsShuangHe(){
+
+        boolean containsKey = commonAlgorithm.isShuangHe("甲子", "己丑");
+        Assert.assertTrue(containsKey);
+    }
+
 
 
 

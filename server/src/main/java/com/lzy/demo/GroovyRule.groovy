@@ -7,7 +7,20 @@ package com.lzy.demo
 class GroovyRule {
 
     def matchRule(BaZi bazi) {
-        def count = bazi.getHuoCount();
-        return "火个数 $count"
+
+        String result="";
+        String nianzhu = bazi.getNianZhu();
+        String yuezhu = bazi.getYueZhu();
+        String rizhu = bazi.getRiZhu();
+        String shizhu = bazi.getShiZhu();
+        if(rizhu=="甲子" || shizhu=="甲子"){
+            if(yuezhu.equals("乙卯")){
+                result+="主刑";
+            }else if(yuezhu.equals("乙巳")){
+                result+="主法死";
+            }
+
+        }
+        return result
     }
 }

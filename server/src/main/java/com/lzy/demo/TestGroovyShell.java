@@ -46,7 +46,7 @@ public class TestGroovyShell {
         Object[] params = {new String("Groovy"),new String("Groovy1")};
         Object result = null;
         try {
-            result = inv.invokeFunction("hello", params);
+            result = inv.invokeFunction("hello", "java");
         } catch (ScriptException e) {
             e.printStackTrace();
         } catch (NoSuchMethodException e) {

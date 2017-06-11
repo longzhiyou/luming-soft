@@ -45,7 +45,11 @@ public class CommonAlgorithm {
             {"巳",	"午",	"未",   "申",	"酉",	"戌",	"亥",	"子",	"丑",	"寅",	"卯",	"辰"},
             {"申",	"酉",	"戌",	"亥",	"子",	"丑",	"寅",	"卯",	"辰",	"巳",	"午",	"未"}
     };
-    //十干十二长生表
+
+
+    /**
+     * 十天干生旺死绝表
+     */
     public final static String [][] tableTianGanChangShengJue ={
             {"亥",	"子",	"丑",	"寅",	"卯",	"辰",	"巳",	"午",	"未",   "申",	"酉",	"戌"},
             {"午",	"巳",	"辰",	"卯",	"寅",	"丑",	"子",   "亥",	"戌",	"酉",	"申",	"未"},
@@ -415,15 +419,6 @@ public class CommonAlgorithm {
 
         return listTianGanHe.contains( Arrays.asList(gan1, gan2).toString());
 
-//        TianGanEnum tianGan1 = getTianGan(gan1);
-//        TianGanEnum tianGan2 = getTianGan(gan2);
-//
-//        //合是相减绝对值等于5
-//        int ret = Math.abs(tianGan1.getValue()-tianGan2.getValue());
-//        return 5 == ret;
-
-
-
     }
 
     /**
@@ -436,27 +431,16 @@ public class CommonAlgorithm {
 
         return listTianGanKe.contains( Arrays.asList(gan1, gan2).toString());
 
-//        TianGanEnum tianGan1 = getTianGan(wo);
-//        TianGanEnum tianGan2 = getTianGan(other);
-//
-//        int ret = tianGan2.getValue()-tianGan1.getValue();
-//        ret=(ret+10)%10;
-//
-//        /**
-//         * 如果wo是阳干则是6或者7
-//         * 阴干则是5或者6
-//         * [2017-06-09 add by longzhiyou]
-//         */
-//        if (tianGan1.isYang()) {
-//            return 6 == ret || 7 == ret;
-//        }else {
-//            return 5 == ret || 6 == ret;
-//        }
 
     }
 
-    public  static boolean isDiZhiLiuHe(String di1,String di2){
+    public  static boolean isDiZhiHe(String di1, String di2){
         return mapDiZhiHe.containsKey( Arrays.asList(di1, di2).toString());
+
+    }
+
+    public  static boolean isDiZhiChong(String di1, String di2){
+        return listDiZhiChong.contains( Arrays.asList(di1, di2).toString());
 
     }
 
@@ -477,6 +461,35 @@ public class CommonAlgorithm {
 
     public  static boolean isDiZhiZiXing(String di1,String di2){
         return di1.equals(di2);
+
+    }
+
+
+    /**
+     * 两柱是否双合
+     * @param zhu1
+     * @param zhu2
+     * @return
+     */
+    public  static boolean isShuangHe(String zhu1,String zhu2){
+
+        boolean tianGanHe = isTianGanHe(zhu1.substring(0, 1), zhu2.substring(0, 1));
+        if(!tianGanHe)
+            return false;
+
+        boolean diZhiHe = isDiZhiHe(zhu1.substring(1, 2), zhu2.substring(1, 2));
+        return diZhiHe;
+
+    }
+
+    public  static boolean isShuangChong(String zhu1,String zhu2){
+
+        boolean tianGanKe = isTianGanKe(zhu1.substring(0, 1), zhu2.substring(0, 1));
+        if(!tianGanKe)
+            return false;
+
+        boolean diZhiChong = isDiZhiChong(zhu1.substring(1, 2), zhu2.substring(1, 2));
+        return diZhiChong;
 
     }
 

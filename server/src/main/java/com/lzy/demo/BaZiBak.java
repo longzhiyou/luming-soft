@@ -240,6 +240,210 @@ public class BaZiBak {
 //
 //            .build();
 
+    /**
+     * 年柱函数
+     * [2017-06-08 add by longzhiyou]
+     */
+    public Integer nianGanMatch(String gan){
+
+//        String temp = canggan[1];
+
+//        for (int i = 0; i < jiazi.length; i++) {
+//
+//            System.out.println(jiazi[i]);
+//        }
+
+//        for (int i = 0; i < 10; i++) {
+//
+//            for (int j = 0; j < 10; j++) {
+//                String str = String.format("日干:%s   它干:%s    十神:%s",tiangan[i],tiangan[j],tableShiShen[i][j]);
+//                System.out.println(str);
+//            }
+//
+//        }
+//        if (gan.equals(nianGan)) {
+//            return 1;
+//        }
+        return 0;
+    }
+
+
+    //        TianGanEnum tianGan1 = getTianGan(wo);
+//        TianGanEnum tianGan2 = getTianGan(other);
+//
+//        int ret = tianGan2.getValue()-tianGan1.getValue();
+//        ret=(ret+10)%10;
+//
+//        /**
+//         * 如果wo是阳干则是6或者7
+//         * 阴干则是5或者6
+//         * [2017-06-09 add by longzhiyou]
+//         */
+//        if (tianGan1.isYang()) {
+//            return 6 == ret || 7 == ret;
+//        }else {
+//            return 5 == ret || 6 == ret;
+//        }
+
+
+//        TianGanEnum tianGan1 = getTianGan(gan1);
+//        TianGanEnum tianGan2 = getTianGan(gan2);
+//
+//        //合是相减绝对值等于5
+//        int ret = Math.abs(tianGan1.getValue()-tianGan2.getValue());
+//        return 5 == ret;
+
+
+
+    public Integer nianZhiMatch(String zhi){
+
+//        if (zhi.equals(nianZhi)) {
+//            return 1;
+//        }
+        return 0;
+    }
+
+    /**
+     * 月柱函数
+     * [2017-06-08 add by longzhiyou]
+     */
+    public Integer yueGanMatch(String gan){
+
+//        if (gan.equals(yueGan)) {
+//            return 1;
+//        }
+        return 0;
+    }
+    public Integer yueZhiMatch(String zhi){
+
+//        if (zhi.equals(yueZhi)) {
+//            return 1;
+//        }
+        return 0;
+    }
+
+    /**
+     * 日柱函数
+     * [2017-06-08 add by longzhiyou]
+     */
+    public Integer riGanMatch(String gan){
+
+//        if (gan.equals(riGan)) {
+//            return 1;
+//        }
+        return 0;
+    }
+    public Integer riZhiMatch(String zhi){
+
+//        if (zhi.equals(riZhi)) {
+//            return 1;
+//        }
+        return 0;
+    }
+
+    /**
+     * 时柱函数
+     * [2017-06-08 add by longzhiyou]
+     */
+    public Integer shiGanMatch(String gan){
+
+//        if (gan.equals(shiGan)) {
+//            return 1;
+//        }
+        return 0;
+    }
+    public Integer shiZhiMatch(String zhi){
+
+//        if (zhi.equals(shiZhi)) {
+//            return 1;
+//        }
+        return 0;
+    }
+
+    /**
+     * 获取天干序数
+     * @param gan 天干字符串
+     * @return 天干索引
+     */
+    public Integer getGanShu(String gan){
+
+//        for (int i = 0; i < tiangan.length; i++) {
+//            if (tiangan[i].equals(gan)) {
+//                return i;
+//            }
+//        }
+        return 0;
+    }
+
+
+
+
+    /**
+     * 十神
+     * [2017-06-08 add by longzhiyou]
+     */
+//    public final static String bijian="比肩";
+//    public final static String jiecai="劫财";
+//    public final static String shishen="食神";
+//    public final static String shangguan="伤官";
+//    public final static String piancai="偏财";
+//    public final static String zhengcai="正财";
+//    public final static String qisha="七杀";
+//    public final static String zhengguan="正官";
+//    public final static String pianyin="偏印";
+//    public final static String zhengyin="正印";
+
+
+
+    /**
+     * 十神表
+     * 第一个是日干
+     * [2017-06-08 add by longzhiyou]
+     */
+//    public final static ImmutableMap<String,String> shishenMap = ImmutableMap.<String, String>builder()
+//            .put("甲甲", bijian).put("乙乙", bijian).put("丙丙", bijian).put("丁丁", bijian)
+//            .put("戊戊", bijian).put("己己", bijian)
+//            .put("庚庚", bijian).put("辛辛", bijian).put("壬壬", bijian).put("癸癸", bijian)
+//
+//            .put("甲乙", jiecai).put("乙甲", jiecai).put("丙丁", jiecai).put("丁丙", jiecai)
+//            .put("戊己", jiecai).put("己戊", jiecai)
+//            .put("庚辛", jiecai).put("辛庚", jiecai).put("壬癸", jiecai).put("癸壬", jiecai)
+//
+//            .put("甲丙", shishen).put("乙丁", shishen).put("丙戊", shishen).put("丁己", shishen)
+//            .put("戊庚", shishen).put("己辛", shishen)
+//            .put("庚壬", shishen).put("辛癸", shishen).put("壬甲", shishen).put("癸乙", shishen)
+//
+//            .put("甲丁", shangguan).put("乙丙", shangguan).put("丙己", shangguan).put("丁戊", shangguan)
+//            .put("戊辛", shangguan).put("己庚", shangguan)
+//            .put("庚癸", shangguan).put("辛壬", shangguan).put("壬乙", shangguan).put("癸甲", shangguan)
+//
+//            .put("甲戊", piancai).put("乙己", piancai).put("丙庚", piancai).put("丁辛", piancai)
+//            .put("戊壬", piancai).put("己癸", piancai)
+//            .put("庚甲", piancai).put("辛乙", piancai).put("壬丙", piancai).put("癸丁", piancai)
+//
+//            .put("甲己", zhengcai).put("乙戊", zhengcai).put("丙辛", zhengcai).put("丁庚", zhengcai)
+//            .put("戊癸", zhengcai).put("己壬", zhengcai)
+//            .put("庚乙", zhengcai).put("辛甲", zhengcai).put("壬丁", zhengcai).put("癸丙", zhengcai)
+//
+//            .put("甲庚", qisha).put("乙辛", qisha).put("丙壬", qisha).put("丁癸", qisha)
+//            .put("戊甲", qisha).put("己乙", qisha)
+//            .put("庚丙", qisha).put("辛丁", qisha).put("壬戊", qisha).put("癸己", qisha)
+//
+//            .put("甲辛", zhengguan).put("乙庚", zhengguan).put("丙癸", zhengguan).put("丁壬", zhengguan)
+//            .put("戊乙", zhengguan).put("己甲", zhengguan)
+//            .put("庚丁", zhengguan).put("辛丙", zhengguan).put("壬己", zhengguan).put("癸戊", zhengguan)
+//
+//            .put("甲壬", pianyin).put("乙癸", pianyin).put("丙甲", pianyin).put("丁乙", pianyin)
+//            .put("戊丙", pianyin).put("己丁", pianyin)
+//            .put("庚戊", pianyin).put("辛己", pianyin).put("壬庚", pianyin).put("癸辛", pianyin)
+//
+//            .put("甲癸", zhengyin).put("乙壬", zhengyin).put("丙乙", zhengyin).put("丁甲", zhengyin)
+//            .put("戊丁", zhengyin).put("己丙", zhengyin)
+//            .put("庚己", zhengyin).put("辛戊", zhengyin).put("壬辛", zhengyin).put("癸庚", zhengyin)
+//
+//            .build();
+//
+
 
 
 //
