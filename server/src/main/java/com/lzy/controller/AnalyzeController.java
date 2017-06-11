@@ -2,10 +2,12 @@ package com.lzy.controller;
 
 import com.lzy.demo.BaZi;
 import com.lzy.demo.CommonAlgorithm;
+import com.lzy.domain.AnalyzeResult;
 import com.lzy.entity.MatchRule;
 import com.lzy.repository.MatchRuleRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.script.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -38,30 +41,38 @@ public class AnalyzeController {
     MatchRuleRepository matchRuleRepository;
 
     @RequestMapping(method= RequestMethod.GET)
-    public String index(@RequestParam String niangan,@RequestParam String nianzhi
+    public List<AnalyzeResult> index(@RequestParam String niangan,@RequestParam String nianzhi
                         ,@RequestParam String yuegan,@RequestParam String yuezhi
                         ,@RequestParam String rigan,@RequestParam String rizhi
                         ,@RequestParam String shigan,@RequestParam String shizhi
     ) {
 
 
-//        BaZi baZi = new BaZi(niangan,nianzhi,
-//                yuegan,yuezhi,
-//                rigan,rizhi,
-//                shigan,shizhi);
+        BaZi baZi = new BaZi(niangan,nianzhi,
+                yuegan,yuezhi,
+                rigan,rizhi,
+                shigan,shizhi);
 
-        BaZi baZi = new BaZi("甲子","乙卯","甲子","辛卯");
+//        BaZi baZi = new BaZi("甲子","乙卯","甲子","辛卯");
         CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
 
 //        ScriptEngineManager factory = new ScriptEngineManager();
 //        ScriptEngine engine = scriptEngineManager.getEngineByName("groovy");
 
+        List<AnalyzeResult> analyzeResults=new ArrayList<AnalyzeResult>();
         List<MatchRule> all = matchRuleRepository.findAll();
         for (MatchRule matchRule :all){
-            parseRule(baZi,commonAlgorithm,scriptEngine,matchRule.getRule());
+            Object o = parseRule(baZi, commonAlgorithm, scriptEngine, matchRule.getRule());
+            if(o!=null){
+                AnalyzeResult analyzeResult = new AnalyzeResult();
+                analyzeResult.setSubject(matchRule.getSubject());
+                analyzeResult.setAnalyzeResult(o.toString());
+
+                analyzeResults.add(analyzeResult);
+            }
         }
 
-        return "analyze:index";
+        return analyzeResults;
 
     }
 

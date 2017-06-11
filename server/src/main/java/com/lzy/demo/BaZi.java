@@ -388,6 +388,25 @@ public class BaZi {
     }
 
 
+    public int getDiZhiFrequency(String dizhi){
+
+        int frequency = Collections.frequency(listMingZhi, dizhi);
+
+        return frequency;
+    }
+
+
+    /**
+     * 获取十神长生诀
+     * @param shishenName "正印"
+     * @param changshengJue "禄"
+     * @return
+     */
+    public String getShiShenChangShengJue(String shishenName,String changshengJue){
+        String shiShenTianGan = CommonAlgorithm.getShiShenTianGan(riGan, shishenName);
+        String dizhi = CommonAlgorithm.getTianGanChangShengJue(shiShenTianGan, changshengJue);
+        return dizhi;
+    }
 
 
 }

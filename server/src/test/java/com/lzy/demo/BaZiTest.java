@@ -68,9 +68,10 @@ public class BaZiTest {
 
 //        BaZi baZi = new BaZi("甲","子","丙","子","甲","子","辛","卯");
         BaZi baZi = new BaZi("甲子","乙卯","甲子","辛卯");
+        CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
 //
         GroovyRule groovyRule = new GroovyRule();
-        Object result = groovyRule.matchRule(baZi);
+        Object result = groovyRule.matchRule(baZi,commonAlgorithm);
         System.out.println("GroovyRule:"+result.toString());
 
 

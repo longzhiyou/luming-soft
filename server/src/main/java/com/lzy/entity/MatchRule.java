@@ -15,6 +15,8 @@ public class MatchRule {
     private String subject;
     private String description;
     private String rule;
+    private boolean enable;
+
 
 
 }

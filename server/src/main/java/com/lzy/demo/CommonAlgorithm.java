@@ -31,7 +31,7 @@ public class CommonAlgorithm {
 
     //长生诀
     public final static ImmutableList<String> listChangShengJue = ImmutableList.of(
-            "长生","沐浴","冠带","临官","帝旺","衰","病","死","墓","绝","胎","养");
+            "生","败","冠带","禄","旺","衰","病","死","墓","绝","胎","养");
 
     /**
      * 五行十二长生表
@@ -366,11 +366,11 @@ public class CommonAlgorithm {
     public final static String pianyin="偏印";
     public final static String zhengyin="正印";
     //十神
-//    public final static ImmutableList<String> shishenList = ImmutableList.of("比肩", "劫财", "食神", "伤官", "偏财", "正财", "七杀", "正官", "偏印", "正印");
+public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩", "劫财", "食神", "伤官", "偏财", "正财", "七杀", "正官", "偏印", "正印");
 
     /**
      * 十神表
-     * 行: 我
+     * 行: 我干索引
      * 列: 它干
      * [2017-06-08 add by longzhiyou]
      */
@@ -391,15 +391,28 @@ public class CommonAlgorithm {
     /**
      * 计算天干六亲
      * @param wo
-     * @param other
+     * @param otherGan
      * @return
      */
-    public  static String getShiShen(String wo, String other){
+    public  static String getShiShen(String wo, String otherGan){
 
         int woIndex = listTianGan.indexOf(wo);
-        int otherIndex = listTianGan.indexOf(other);
+        int otherIndex = listTianGan.indexOf(otherGan);
 
         return tableShiShen[woIndex][otherIndex];
+
+
+    }
+
+    public  static String getShiShenTianGan(String gan, String shishenName){
+
+        int ganIndex = listTianGan.indexOf(gan);
+        for(int i=0;i<10;i++){
+            if(shishenName.equals(tableShiShen[ganIndex][i]))
+                return  listTianGan.get(i);
+
+        }
+        return "";
 
 
     }
@@ -490,6 +503,23 @@ public class CommonAlgorithm {
 
         boolean diZhiChong = isDiZhiChong(zhu1.substring(1, 2), zhu2.substring(1, 2));
         return diZhiChong;
+
+    }
+
+    /**
+     * 获取天干长生诀
+     * @param gan
+     * @param changshengName 如长生 禄
+     * @return
+     */
+    public  static String getTianGanChangShengJue(String gan,String changshengName){
+
+        //获取天干索引
+        int ganIndex = listTianGan.indexOf(gan);
+        int changshengIndex = listChangShengJue.indexOf(changshengName);
+
+        return tableTianGanChangShengJue[ganIndex][changshengIndex];
+
 
     }
 
