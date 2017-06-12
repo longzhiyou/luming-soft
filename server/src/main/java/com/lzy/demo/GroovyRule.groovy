@@ -9,7 +9,8 @@ class GroovyRule {
     def matchRule(BaZi bazi,CommonAlgorithm commonAlgorithm) {
 
 
-        def result="";
+        def resultList=[];
+        def resultMap={};
         def gan = bazi.getRiGan();
         def ganZhengYin = commonAlgorithm.getShiShenTianGan(gan, "正印");
 //        def zhi = commonAlgorithm.getTianGanChangShengJue(ganZhengYin, "禄");
@@ -17,6 +18,11 @@ class GroovyRule {
         def zhi = bazi.getShiShenChangShengJue("正印","禄");
 
         def frequency = bazi.getDiZhiFrequency(zhi);
+
+//        resultMap.put("马化龙据","甲子年丙子时")
+//        resultMap.put("蛇化青龙龙据","甲子年丙子时")
+        resultList.add(String.format("%s: %d", "主刑", 1))
+        resultList.add("主法死:"+"规则是甲子日甲子时")
 
 //        String result="";
 //        String nianzhu = bazi.getNianZhu();
@@ -31,6 +37,6 @@ class GroovyRule {
 //            }
 //
 //        }
-        return result
+        return resultList
     }
 }

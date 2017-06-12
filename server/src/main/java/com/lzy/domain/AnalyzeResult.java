@@ -11,5 +11,5 @@ import lombok.Data;
 public class AnalyzeResult {
 
     private String subject;
-    private String analyzeResult;
+    private Object analyzeResult;
 }

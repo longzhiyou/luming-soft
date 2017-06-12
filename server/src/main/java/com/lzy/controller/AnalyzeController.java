@@ -66,7 +66,7 @@ public class AnalyzeController {
             if(o!=null){
                 AnalyzeResult analyzeResult = new AnalyzeResult();
                 analyzeResult.setSubject(matchRule.getSubject());
-                analyzeResult.setAnalyzeResult(o.toString());
+                analyzeResult.setAnalyzeResult(o);
 
                 analyzeResults.add(analyzeResult);
             }
