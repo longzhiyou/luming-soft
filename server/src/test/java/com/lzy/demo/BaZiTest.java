@@ -22,7 +22,8 @@ public class BaZiTest {
     @Test
     public void testCommonAlgorithm(){
 
-        CommonAlgorithm.getTianGanHeWuXing("甲","戊");
+//        CommonAlgorithm.getTianGanHeWuXing("甲","戊");
+        CommonAlgorithm.getJiaZiWuXing("甲子");
 
 //        for (int i = 0; i < 10; i++) {
 //
