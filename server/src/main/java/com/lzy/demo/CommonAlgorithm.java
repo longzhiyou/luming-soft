@@ -196,14 +196,23 @@ public class CommonAlgorithm {
             .build();
 
 
-    public static final ImmutableList<String> listTianGanHe = ImmutableList.of(
-            "[甲, 己]","[己, 甲]",
-            "[乙, 庚]","[庚, 乙]",
-            "[丙, 辛]","[辛, 丙]",
-            "[丁, 壬]","[壬, 丁]",
-            "[戊, 癸]","[癸, 戊]"
+    public final static ImmutableMap<String,String> mapTianGanHe =
+            ImmutableMap.<String, String>builder()
+            .put("[甲, 己]","土")
+            .put("[己, 甲]","土")
 
-    );
+            .put("[丁, 壬]","木")
+            .put("[壬, 丁]","木")
+
+            .put("[戊, 癸]","火")
+            .put("[癸, 戊]","火")
+
+            .put("[乙, 庚]","金")
+            .put("[庚, 乙]","金")
+
+            .put("[丙, 辛]","水")
+            .put("[辛, 丙]","水")
+            .build();
 
     public static final ImmutableList<String> listTianGanKe = ImmutableList.of(
             "[甲, 戊]","[甲, 己]","[甲, 庚]","[甲, 辛]",
@@ -389,14 +398,35 @@ public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩
     };
 
     /**
-     * 计算天干六亲
-     * @param wo
-     * @param otherGan
-     * @return
+     * 五行生克表
+     * 行索引为: 我
+     * 列索引为: 其它五行
+     * 索引问五行数组
+     * 五行	木	 火	 土	 金	 水
+         木	比和	 我生	 我克	 克我	 生我
+         火
+         土
+         金
+         水
+     * [2017-06-12 add by longzhiyou]
      */
-    public  static String getShiShen(String wo, String otherGan){
+    public final static String [][] tableWuXingShengKe ={
+            {"比和","我生","我克","克我","生我"},
+            {"生我","比和","我生","我克","克我"},
+            {"克我","生我","比和","我生","我克"},
+            {"我克","克我","生我","比和","我生"},
+            {"我生","我克","克我","生我","比和"}
+    };
 
-        int woIndex = listTianGan.indexOf(wo);
+    /**
+     * 计算天干六亲
+     * @param me
+     * @param otherGan
+     * @return 六亲十神名称
+     */
+    public  static String getShiShen(String me, String otherGan){
+
+        int woIndex = listTianGan.indexOf(me);
         int otherIndex = listTianGan.indexOf(otherGan);
 
         return tableShiShen[woIndex][otherIndex];
@@ -430,7 +460,20 @@ public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩
      */
     public  static boolean isTianGanHe(String gan1,String gan2){
 
-        return listTianGanHe.contains( Arrays.asList(gan1, gan2).toString());
+        return mapTianGanHe.containsKey( Arrays.asList(gan1, gan2).toString());
+
+    }
+
+    /**
+     *
+     * @param gan1
+     * @param gan2
+     * @return 如果不是相合返回null
+     */
+    public  static String getTianGanHeWuXing(String gan1,String gan2){
+
+        String s = mapTianGanHe.get(Arrays.asList(gan1, gan2).toString());
+        return s;
 
     }
 
@@ -522,5 +565,41 @@ public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩
 
 
     }
+
+    /**
+     * 判断五行是否生
+     * @param me
+     * @param other
+     * @param name: 生克名称,如 生我，我生，克我，我克，比和
+     * @return
+     */
+    public  static Boolean isWuXingShengKe(String me,String other,String name){
+
+        //获取天干索引
+        int meIndex = listWuXing.indexOf(me);
+        int otherIndex = listWuXing.indexOf(other);
+        String nameShengKe = tableWuXingShengKe[meIndex][otherIndex];
+        return nameShengKe.equals(name);
+
+    }
+
+    /**
+     * 获取六十甲子的五行
+     * @param jiazi
+     * @return
+     */
+    public  static String getJiaZiWuXing(String jiazi){
+
+        LiuShiJiaZiEnum liuShiJiaZiEnum = mapLiuShiJiaZi.get(jiazi);
+        if (liuShiJiaZiEnum!=null) {
+            return liuShiJiaZiEnum.getWuXing().getName();
+        }
+        return null;
+
+    }
+
+
+
+
 
 }
