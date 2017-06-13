@@ -3,6 +3,7 @@ package com.lzy.demo;
 import com.google.common.collect.ImmutableSet;
 import com.lzy.common.DiZhiEnum;
 import com.lzy.common.TianGanEnum;
+import org.raistlic.common.permutation.Permutation;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,6 +16,9 @@ import java.util.List;
  */
 public class BaZi {
 
+
+    //性别
+    private String gender;
     /**
      * 四柱天干地支
      * [2017-06-09 add by longzhiyou]
@@ -54,7 +58,12 @@ public class BaZi {
 
     //批流年
     List<String> listMingYunSuiGan;
+    /**
+     * 命运岁相关
+     * [2017-06-13 add by longzhiyou]
+     */
     List<String> listMingYunSuiZhi;
+
     List<String> listMingYunSuiZhu;
 
 
@@ -207,10 +216,18 @@ public class BaZi {
 
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     private void init(String nianGan, String nianZhi,
-                 String yueGan, String yueZhi,
-                 String riGan, String riZhi,
-                 String shiGan, String shiZhi){
+                      String yueGan, String yueZhi,
+                      String riGan, String riZhi,
+                      String shiGan, String shiZhi){
 
         this.nianGan = nianGan;
         this.nianZhi = nianZhi;
@@ -261,6 +278,14 @@ public class BaZi {
         this.listMingYunSuiGan = Arrays.asList(nianGan, yueGan,riGan,shiGan,yunGan,liunianGan);
         this.listMingYunSuiZhi = Arrays.asList(nianZhi, yueZhi,riZhi,shiZhi,yunZhi,liunianZhi);
         this.listMingYunSuiZhu = Arrays.asList(nianZhu, yueZhu,riZhu,shiZhu,yunZhu,liunianZhu);
+
+//        for(List<String> list : Permutation.of(listMingYunSuiZhi)){
+//
+//            listMingYunSuiZhiPermutation.add(list.toString());
+//        }
+//
+//
+
     }
 
     /**

@@ -1,11 +1,49 @@
 package com.lzy.demo
 
 /**
- *
+ * http://www.groovy-lang.org/syntax.html
+ * http://www.groovy-lang.org/operators.html
  * Created by bukeyan on 2017/6/7.
  */
 class GroovyRule {
 
+    def testDemo(){
+
+        def heterogeneous = [1, "a", true] //	Our list here contains a number, a string and a boolean value
+        String[] arrStr = ['Ananas', 'Banana', 'Kiwi']
+
+        assert arrStr instanceof String[]
+        assert !(arrStr instanceof List)
+
+        def key = 'name'
+        def person = [key: 'Guillaume']
+
+        assert !person.containsKey('name')
+        assert person.containsKey('key')
+        person = [(key): 'Guillaume']
+
+        assert person.containsKey('name')
+        assert !person.containsKey('key')
+
+//        def list =[]
+//        def map = [:]
+////        map."中文" = "法司"
+//        map.put('with-dash-signs-and-single-quotes',"ALLOWED")
+//
+//
+////        // a standalone single line comment
+////        println "hello" // a comment till the end of the line
+////        /* a standalone multiline comment
+////   spanning two lines */
+////        println "hello" /* a multiline comment starting
+////                   at the end of a statement */
+////        println 1 /* one */ + 2 /* two */
+//        println map;
+//        list.add(map);
+//        println list;
+//        assert map instanceof Map
+//        return map;
+    }
     def matchRule(BaZi bazi,CommonAlgorithm commonAlgorithm) {
 
 

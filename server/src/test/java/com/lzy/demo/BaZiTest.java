@@ -20,6 +20,12 @@ public class BaZiTest {
 //    ImmutableList<String> gan = ImmutableList.of("甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸");
 
     @Test
+    public void testGroovyRule(){
+        GroovyRule groovyRule = new GroovyRule();
+        groovyRule.testDemo();
+    }
+
+    @Test
     public void testCommonAlgorithm(){
 
 //        CommonAlgorithm.getTianGanHeWuXing("甲","戊");
@@ -71,6 +77,8 @@ public class BaZiTest {
 
 //        BaZi baZi = new BaZi("甲","子","丙","子","甲","子","辛","卯");
         BaZi baZi = new BaZi("甲子","乙卯","甲子","辛卯");
+        baZi.setYun("丁","卯");
+        baZi.setLiuNian("癸","酉");
         CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
 //
         GroovyRule groovyRule = new GroovyRule();
