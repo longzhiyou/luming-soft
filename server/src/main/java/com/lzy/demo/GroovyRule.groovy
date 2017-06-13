@@ -9,6 +9,9 @@ class GroovyRule {
 
     def testDemo(){
 
+        for (i in 0..4) {
+            println "hello$i"
+        }
         def heterogeneous = [1, "a", true] //	Our list here contains a number, a string and a boolean value
         String[] arrStr = ['Ananas', 'Banana', 'Kiwi']
 
@@ -26,8 +29,8 @@ class GroovyRule {
         assert !person.containsKey('key')
 
 //        def list =[]
-//        def map = [:]
-////        map."中文" = "法司"
+        def map = [:]
+        map["中文"] = "法司"
 //        map.put('with-dash-signs-and-single-quotes',"ALLOWED")
 //
 //
@@ -38,7 +41,7 @@ class GroovyRule {
 ////        println "hello" /* a multiline comment starting
 ////                   at the end of a statement */
 ////        println 1 /* one */ + 2 /* two */
-//        println map;
+        println map;
 //        list.add(map);
 //        println list;
 //        assert map instanceof Map

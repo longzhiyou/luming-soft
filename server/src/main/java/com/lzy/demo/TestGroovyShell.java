@@ -3,6 +3,7 @@ package com.lzy.demo;
 import groovy.lang.GroovyShell;
 import groovy.lang.Script;
 import groovy.util.GroovyScriptEngine;
+import org.codehaus.groovy.jsr223.GroovyScriptEngineImpl;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -36,6 +37,8 @@ public class TestGroovyShell {
 
         ScriptEngineManager factory = new ScriptEngineManager();
         ScriptEngine engine = factory.getEngineByName("groovy");
+        GroovyScriptEngineImpl groovyScriptEngine = (GroovyScriptEngineImpl)factory.getEngineByName("groovy");
+
         String HelloLanguage = "def hello(language) {return \"Hello $language\"}";
         try {
             engine.eval(HelloLanguage);
