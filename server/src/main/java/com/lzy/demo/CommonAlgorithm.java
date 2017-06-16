@@ -391,7 +391,33 @@ public class CommonAlgorithm {
     public final static String pianyin="偏印";
     public final static String zhengyin="正印";
     //十神
-public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩", "劫财", "食神", "伤官", "偏财", "正财", "七杀", "正官", "偏印", "正印");
+   public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩", "劫财", "食神", "伤官", "偏财", "正财", "七杀", "正官", "偏印", "正印");
+
+
+    //十神名称转换名称
+    public final static ImmutableMap<String,String> mapShiShenName = ImmutableMap.<String,
+            String>builder()
+            .put("比","比肩")
+            .put("禄","比肩")
+            .put("劫","劫财")
+            .put("刃","劫财")
+            .put("阳刃","劫财")
+            .put("羊刃","劫财")
+            .put("食","食神")
+            .put("伤","伤官")
+            .put("才","偏财")
+            .put("财","正财")
+            .put("官","正官")
+            .put("杀","七杀")
+            .put("煞","七杀")
+            .put("枭","偏印")
+            .put("枭神","偏印")
+            .put("印","正印")
+
+
+
+            .build();
+
 
     /**
      * 天干十神表
@@ -466,12 +492,17 @@ public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩
     public  static String getTianGanShiShen(String gan, String shishenName){
 
         int ganIndex = listTianGan.indexOf(gan);
+
+        if (mapShiShenName.containsKey(shishenName)) {
+            shishenName = mapShiShenName.get(shishenName);
+        }
+        String tianganShiShen="";
         for(int i=0;i<10;i++){
             if(shishenName.equals(tableShiShen[ganIndex][i]))
-                return  listTianGan.get(i);
+                tianganShiShen = listTianGan.get(i);
 
         }
-        return "";
+        return tianganShiShen;
 
 
     }
@@ -485,14 +516,15 @@ public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩
      */
     public  static String getShiShenDiZhi(String gan, String shishenName){
 
-        int ganIndex = listTianGan.indexOf(gan);
-        String tianganShiShen="";
-        for(int i=0;i<10;i++){
-            if(shishenName.equals(tableShiShen[ganIndex][i]))
-                tianganShiShen = listTianGan.get(i);
+//        int ganIndex = listTianGan.indexOf(gan);
+//
+//        for(int i=0;i<10;i++){
+//            if(shishenName.equals(tableShiShen[ganIndex][i]))
+//                tianganShiShen = listTianGan.get(i);
+//
+//        }
 
-        }
-
+        String tianganShiShen=getTianGanShiShen(gan,shishenName);
         //获取本天干对应的禄位置
         String luZhi = getTianGanChangShengJue(tianganShiShen, "禄");
         return luZhi;

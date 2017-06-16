@@ -58,7 +58,7 @@ class GroovyRule {
 
         def zhi = bazi.getShiShenChangShengJue("正印","禄");
 
-        def frequency = bazi.getDiZhiFrequency(zhi);
+        def frequency = bazi.getDiZhiCount(zhi);
 
 //        resultMap.put("马化龙据","甲子年丙子时")
 //        resultMap.put("蛇化青龙龙据","甲子年丙子时")

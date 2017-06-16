@@ -403,7 +403,7 @@ public class BaZi {
      * @param gan
      * @return
      */
-    public int getTianGanFrequency(String gan){
+    public int getTianGanCount(String gan){
 
         int frequency = Collections.frequency(listMingGan, gan);
         if(gan.equals(riGan))
@@ -412,11 +412,29 @@ public class BaZi {
     }
 
 
-    public int getDiZhiFrequency(String dizhi){
+    /**
+     * 获取指定地支个数
+     * @param dizhi
+     * @return
+     */
+    public int getDiZhiCount(String dizhi){
 
         int frequency = Collections.frequency(listMingZhi, dizhi);
 
         return frequency;
+    }
+
+    /**
+     * 获取十神地支个数
+     * @param shishenName
+     * @return
+     */
+    public int getDiZhiShiShenCount(String shishenName){
+
+        String shiShenDiZhi = CommonAlgorithm.getShiShenDiZhi(riGan, shishenName);
+
+        return getDiZhiCount(shiShenDiZhi);
+
     }
 
 

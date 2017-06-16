@@ -80,10 +80,12 @@ public class BaZiTest {
         baZi.setYun("丁","卯");
         baZi.setLiuNian("癸","酉");
         CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
+
+        baZi.getDiZhiShiShenCount("枭");
 //
-        GroovyRule groovyRule = new GroovyRule();
-        Object result = groovyRule.matchRule(baZi,commonAlgorithm);
-        System.out.println("GroovyRule:"+result.toString());
+//        GroovyRule groovyRule = new GroovyRule();
+//        Object result = groovyRule.matchRule(baZi,commonAlgorithm);
+//        System.out.println("GroovyRule:"+result.toString());
 
 
 //        baZi.matchSanHe("巳","酉","丑1");
