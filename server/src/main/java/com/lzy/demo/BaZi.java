@@ -3,10 +3,9 @@ package com.lzy.demo;
 import com.google.common.collect.ImmutableSet;
 import com.lzy.common.DiZhiEnum;
 import com.lzy.common.TianGanEnum;
+import com.lzy.common.WuXingEnum;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * User: longzhiyou
@@ -66,6 +65,10 @@ public class BaZi {
     List<String> listMingYunSuiZhu;
 
 
+    /**
+     * 五行个数map
+     */
+    private Map<String,Integer> mapWuXingCount = new HashMap<String, Integer>();
     private int muCount;
     private int huoCount;
     private int tuCount;
@@ -314,7 +317,7 @@ public class BaZi {
 
         for(String gan:listMingGan){
             TianGanEnum tianGan = TianGanEnum.getTianGan(gan);
-            wuxingTianGanCount(tianGan);
+            addWuXingCount(tianGan.getWuXing().getName());
         }
 
         for(String zhi:listMingZhi){
@@ -358,19 +361,42 @@ public class BaZi {
 
     }
 
-    public void wuxingTianGanCount(TianGanEnum tianGan){
-        if (tianGan.isMu()) {
-            muCount+=1;
-        }else if (tianGan.isHuo()) {
-            huoCount+=1;
-        }else if (tianGan.isTu()) {
-            tuCount+=1;
-        }else if (tianGan.isJin()) {
-            jinCount+=1;
+    private void addWuXingCount(String wuXingName){
+        if (mapWuXingCount.containsKey(wuXingName)) {
+            Integer wuXingCount = mapWuXingCount.get(wuXingName);
+            mapWuXingCount.put(wuXingName,wuXingCount+1);
         }else {
-            shuiCount+=1;
+            mapWuXingCount.put(wuXingName,1);
         }
+
+
+
     }
+//    public void wuxingTianGanCount(TianGanEnum tianGan){
+//
+//        addWuXingCount(tianGan.getWuXing().getName());
+//        String wuXing = tianGan.getWuXing().getName();
+//        Integer wuXingCount = mapWuXingCount.get(wuXing);
+//        if (wuXingCount!=null) {
+//            mapWuXingCount.put(wuXing,wuXingCount+1);
+//        }else {
+//            mapWuXingCount.put(wuXing,1);
+//        }
+////        if (mapWuXingCount.containsKey(tianGan.getWuXing())) {
+////
+////        }
+////        if (tianGan.isMu()) {
+////            muCount+=1;
+////        }else if (tianGan.isHuo()) {
+////            huoCount+=1;
+////        }else if (tianGan.isTu()) {
+////            tuCount+=1;
+////        }else if (tianGan.isJin()) {
+////            jinCount+=1;
+////        }else {
+////            shuiCount+=1;
+////        }
+//    }
 
     public void wuxingDiZhiCount(DiZhiEnum diZhi,boolean cangan){
 
@@ -379,20 +405,33 @@ public class BaZi {
             ImmutableSet<String> cangganSet = diZhi.getCanggan();
             for (String gan : cangganSet) {
                 TianGanEnum tianGan = TianGanEnum.getTianGan(gan);
-                wuxingTianGanCount(tianGan);
+                addWuXingCount(tianGan.getWuXing().getName());
+//                wuxingTianGanCount(tianGan);
             }
         }else {
-            if (diZhi.isMu()) {
-                muCount+=1;
-            }else if (diZhi.isHuo()) {
-                huoCount+=1;
-            }else if (diZhi.isTu()) {
-                tuCount+=1;
-            }else if (diZhi.isJin()) {
-                jinCount+=1;
-            }else {
-                shuiCount+=1;
-            }
+
+            addWuXingCount(diZhi.getWuXing().getName());
+
+//            wuxingTianGanCount(tianGan);
+//
+//
+//            if (wuXingCount!=null) {
+//                mapWuXingCount.put(wuXing,wuXingCount+1);
+//            }else {
+//                mapWuXingCount.put(wuXing,1);
+//            }
+//
+//            if (diZhi.isMu()) {
+//                muCount+=1;
+//            }else if (diZhi.isHuo()) {
+//                huoCount+=1;
+//            }else if (diZhi.isTu()) {
+//                tuCount+=1;
+//            }else if (diZhi.isJin()) {
+//                jinCount+=1;
+//            }else {
+//                shuiCount+=1;
+//            }
         }
 
     }
@@ -448,6 +487,33 @@ public class BaZi {
         String shiShenTianGan = CommonAlgorithm.getTianGanShiShen(riGan, shishenName);
         String dizhi = CommonAlgorithm.getTianGanChangShengJue(shiShenTianGan, changshengJue);
         return dizhi;
+    }
+
+    /**
+     * 五行是否缺一
+     * @return
+     */
+    public boolean isWuXingQueYi(){
+        return mapWuXingCount.size()==4;
+    }
+
+    /**
+     * 获取缺一五行
+     * @return
+     */
+    public String getQueYiWuXing(){
+
+        String wuxing ="";
+        if (isWuXingQueYi()) {
+            for (int i = 0; i < CommonAlgorithm.listWuXing.size(); i++) {
+                if (!mapWuXingCount.containsKey(CommonAlgorithm.listWuXing.get(i))) {
+                    return CommonAlgorithm.listWuXing.get(i);
+                }
+            }
+        }
+
+        return wuxing;
+
     }
 
 

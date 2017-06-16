@@ -1,7 +1,5 @@
 package com.lzy.demo;
 
-import com.google.common.collect.ImmutableList;
-import org.junit.Assert;
 import org.junit.Test;
 
 import javax.script.ScriptEngine;
@@ -76,12 +74,14 @@ public class BaZiTest {
 //        Assert.assertEquals(0,indexOf);
 
 //        BaZi baZi = new BaZi("甲","子","丙","子","甲","子","辛","卯");
-        BaZi baZi = new BaZi("甲子","乙卯","甲子","辛卯");
+        BaZi baZi = new BaZi("甲子","乙卯","丙子","辛卯");
         baZi.setYun("丁","卯");
         baZi.setLiuNian("癸","酉");
+//        boolean wuXingQueYi = baZi.isWuXingQueYi();
+        String queYiWuXing = baZi.getQueYiWuXing();
         CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
 
-        baZi.getDiZhiShiShenCount("枭");
+//        baZi.getDiZhiShiShenCount("枭");
 //
 //        GroovyRule groovyRule = new GroovyRule();
 //        Object result = groovyRule.matchRule(baZi,commonAlgorithm);
