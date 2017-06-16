@@ -3,7 +3,6 @@ package com.lzy.demo;
 import com.google.common.collect.ImmutableSet;
 import com.lzy.common.DiZhiEnum;
 import com.lzy.common.TianGanEnum;
-import org.raistlic.common.permutation.Permutation;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -428,7 +427,7 @@ public class BaZi {
      * @return
      */
     public String getShiShenChangShengJue(String shishenName,String changshengJue){
-        String shiShenTianGan = CommonAlgorithm.getShiShenTianGan(riGan, shishenName);
+        String shiShenTianGan = CommonAlgorithm.getTianGanShiShen(riGan, shishenName);
         String dizhi = CommonAlgorithm.getTianGanChangShengJue(shiShenTianGan, changshengJue);
         return dizhi;
     }

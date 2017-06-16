@@ -10,7 +10,6 @@ import com.lzy.common.WuXingEnum;
 import java.util.Arrays;
 
 /**
- *
  * Created by bukeyan on 2017/6/7.
  */
 
@@ -31,7 +30,22 @@ public class CommonAlgorithm {
 
     //长生诀
     public final static ImmutableList<String> listChangShengJue = ImmutableList.of(
-            "生","败","冠带","禄","旺","衰","病","死","墓","绝","胎","养");
+            "长生","沐浴","冠带","临官","帝旺","衰","病","死","墓","绝","胎","养");
+
+    //长生诀不同的名称
+    public final static ImmutableMap<String,String> mapChangShengJueName = ImmutableMap.<String,
+            String>builder()
+            .put("生","长生")
+            .put("败","沐浴")
+            .put("禄","临官")
+            .put("旺","帝旺")
+            .put("刃","帝旺")
+            .put("阳刃","帝旺")
+            .put("羊刃","帝旺")
+            .put("库","墓")
+
+            .build();
+
 
     /**
      * 五行十二长生表
@@ -49,6 +63,7 @@ public class CommonAlgorithm {
 
     /**
      * 十天干生旺死绝表
+     * 行: 天干索引
      */
     public final static String [][] tableTianGanChangShengJue ={
             {"亥",	"子",	"丑",	"寅",	"卯",	"辰",	"巳",	"午",	"未",   "申",	"酉",	"戌"},
@@ -357,7 +372,8 @@ public class CommonAlgorithm {
 
 
     //农历月
-    public final static ImmutableList<String> lunarMonth =ImmutableList.of("正", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "腊");
+    public final static ImmutableList<String> lunarMonth =ImmutableList.of(
+            "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥", "子", "丑");
 
 
     /**
@@ -378,7 +394,7 @@ public class CommonAlgorithm {
 public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩", "劫财", "食神", "伤官", "偏财", "正财", "七杀", "正官", "偏印", "正印");
 
     /**
-     * 十神表
+     * 天干十神表
      * 行: 我干索引
      * 列: 它干
      * [2017-06-08 add by longzhiyou]
@@ -419,12 +435,19 @@ public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩
     };
 
     /**
-     * 计算天干六亲
+     * 十干 比劫禄刃印,十神财官印 地支代天干表
+     * [2017-06-16 add by longzhiyou]
+     */
+
+
+
+    /**
+     * 计算天干六亲十神关系
      * @param me
      * @param otherGan
      * @return 六亲十神名称
      */
-    public  static String getShiShen(String me, String otherGan){
+    public  static String getShiShenRelation(String me, String otherGan){
 
         int woIndex = listTianGan.indexOf(me);
         int otherIndex = listTianGan.indexOf(otherGan);
@@ -434,7 +457,13 @@ public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩
 
     }
 
-    public  static String getShiShenTianGan(String gan, String shishenName){
+    /**
+     * 获取十神对应的天干
+     * @param gan
+     * @param shishenName
+     * @return
+     */
+    public  static String getTianGanShiShen(String gan, String shishenName){
 
         int ganIndex = listTianGan.indexOf(gan);
         for(int i=0;i<10;i++){
@@ -443,6 +472,30 @@ public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩
 
         }
         return "";
+
+
+    }
+
+    /**
+     * 获取十神对应的地支禄位
+     * 地支禄位代表,火土同宫
+     * @param gan
+     * @param shishenName
+     * @return 地支禄位对应的食神
+     */
+    public  static String getShiShenDiZhi(String gan, String shishenName){
+
+        int ganIndex = listTianGan.indexOf(gan);
+        String tianganShiShen="";
+        for(int i=0;i<10;i++){
+            if(shishenName.equals(tableShiShen[ganIndex][i]))
+                tianganShiShen = listTianGan.get(i);
+
+        }
+
+        //获取本天干对应的禄位置
+        String luZhi = getTianGanChangShengJue(tianganShiShen, "禄");
+        return luZhi;
 
 
     }
@@ -475,6 +528,17 @@ public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩
         String s = mapTianGanHe.get(Arrays.asList(gan1, gan2).toString());
         return s;
 
+    }
+
+    /**
+     * 判断是否是阳干
+     * @param gan1
+     * @return
+     */
+    public  static boolean isYangGan(String gan1){
+
+        TianGanEnum tianGanEnum = mapTianGan.get(gan1);
+        return tianGanEnum.isYang();
     }
 
     /**
@@ -559,6 +623,10 @@ public final static ImmutableList<String> listShiShen = ImmutableList.of("比肩
 
         //获取天干索引
         int ganIndex = listTianGan.indexOf(gan);
+
+        if (mapChangShengJueName.containsKey(changshengName)) {
+                    changshengName = mapChangShengJueName.get(changshengName);
+        }
         int changshengIndex = listChangShengJue.indexOf(changshengName);
 
         return tableTianGanChangShengJue[ganIndex][changshengIndex];

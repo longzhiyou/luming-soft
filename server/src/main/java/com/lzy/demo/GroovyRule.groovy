@@ -53,7 +53,7 @@ class GroovyRule {
         def resultList=[];
         def resultMap={};
         def gan = bazi.getRiGan();
-        def ganZhengYin = commonAlgorithm.getShiShenTianGan(gan, "正印");
+        def ganZhengYin = commonAlgorithm.getTianGanShiShen(gan, "正印");
 //        def zhi = commonAlgorithm.getTianGanChangShengJue(ganZhengYin, "禄");
 
         def zhi = bazi.getShiShenChangShengJue("正印","禄");

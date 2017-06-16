@@ -1,14 +1,7 @@
 package com.lzy.demo;
 
-import com.google.common.collect.ImmutableList;
 import org.junit.Assert;
 import org.junit.Test;
-
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * User: longzhiyou
@@ -57,6 +50,14 @@ public class CommonAlgorithmTest {
 //        Assert.assertEquals("食",liuqin);
 
 
+
+    }
+
+
+    @Test
+    public void changshengjue(){
+//        commonAlgorithm.getTianGanChangShengJue("乙","刃");
+        commonAlgorithm.getShiShenDiZhi("甲","正财");
 
     }
 
