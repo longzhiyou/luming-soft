@@ -95,7 +95,7 @@ public class BaZiTest {
 //        baZi.getDiZhiShiShenCount("枭");
 //
         GroovyRule groovyRule = new GroovyRule();
-        Object result = groovyRule.matchRule(baZi);
+        Object result = groovyRule.matchRule(baZi,commonAlgorithm);
         System.out.println("GroovyRule:"+result.toString());
 
 

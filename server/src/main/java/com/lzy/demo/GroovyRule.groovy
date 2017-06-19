@@ -82,10 +82,12 @@ class GroovyRule {
 //        assert map instanceof Map
 //        return map;
     }
-    def matchRule(BaZi bazi) {
+
+    //def bazi, def commonAlgorithm
+    def matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
 
 
-        def isYangGan = CommonAlgorithm.isYangGan("甲");
+        def isYangGan = commonAlgorithm.isYangGan("甲");
         def mapResult = [:]
         def  nianGan = bazi.getNianGan()
         def nianZhi = bazi.getNianZhi()
