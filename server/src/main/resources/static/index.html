@@ -3,144 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <title>禄命</title>
+
+
+    <link href="vendor/json-viewer/jquery.json-viewer.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
 </head>
-<body>
+<body ng-app="app" >
+
+<div ng-controller="myCtrl">
+
+    <form ng-submit="analyze()">
+
+        <div>
+            男:
+            <input type="radio" checked="checked" name="gender" value="男" />
+            女:<input type="radio" name="gender" value="女" />
+        </div>
+        <div>
+            <label >年干</label>
+
+            <select  ng-model="bazi.niangan">
+                <option value="甲" >甲</option>
+                <option value="乙">乙</option>
+                <option value="丙">丙</option>
+                <option value="丁">丁</option>
+                <option value="戊">戊</option>
+                <option value="己">己</option>
+                <option value="庚">庚</option>
+                <option value="辛">辛</option>
+                <option value="壬">壬</option>
+                <option value="癸">癸</option>
+
+            </select>
+            <label >月干</label>
+            <select ng-model="bazi.yuegan">
+                <option value="甲">甲</option>
+                <option value="乙">乙</option>
+                <option value="丙">丙</option>
+                <option value="丁">丁</option>
+                <option value="戊">戊</option>
+                <option value="己">己</option>
+                <option value="庚">庚</option>
+                <option value="辛">辛</option>
+                <option value="壬">壬</option>
+                <option value="癸">癸</option>
+
+            </select>
+            <label >日干</label>
+            <select ng-model="bazi.rigan">
+                <option value="甲">甲</option>
+                <option value="乙">乙</option>
+                <option value="丙">丙</option>
+                <option value="丁">丁</option>
+                <option value="戊">戊</option>
+                <option value="己">己</option>
+                <option value="庚">庚</option>
+                <option value="辛">辛</option>
+                <option value="壬">壬</option>
+                <option value="癸">癸</option>
+
+            </select>
+            <label >时干</label>
+            <select ng-model="bazi.shigan">
+                <option value="甲">甲</option>
+                <option value="乙">乙</option>
+                <option value="丙">丙</option>
+                <option value="丁">丁</option>
+                <option value="戊">戊</option>
+                <option value="己">己</option>
+                <option value="庚">庚</option>
+                <option value="辛">辛</option>
+                <option value="壬">壬</option>
+                <option value="癸">癸</option>
+
+            </select>
+
+        </div>
+        <div>
+            <label >年支</label>
+            <select ng-model="bazi.nianzhi">
+                <option value="子">子</option>
+                <option value="丑">丑</option>
+                <option value="寅">寅</option>
+                <option value="卯">卯</option>
+                <option value="辰">辰</option>
+                <option value="巳">巳</option>
+                <option value="午">午</option>
+                <option value="未">未</option>
+                <option value="申">申</option>
+                <option value="酉">酉</option>
+                <option value="戌">戌</option>
+                <option value="亥">亥</option>
+            </select>
+            <label >月支</label>
+            <select ng-model="bazi.yuezhi">
+                <option value="子">子</option>
+                <option value="丑">丑</option>
+                <option value="寅">寅</option>
+                <option value="卯">卯</option>
+                <option value="辰">辰</option>
+                <option value="巳">巳</option>
+                <option value="午">午</option>
+                <option value="未">未</option>
+                <option value="申">申</option>
+                <option value="酉">酉</option>
+                <option value="戌">戌</option>
+                <option value="亥">亥</option>
+            </select>
+            <label >日支</label>
+            <select ng-model="bazi.rizhi">
+                <option value="子">子</option>
+                <option value="丑">丑</option>
+                <option value="寅">寅</option>
+                <option value="卯">卯</option>
+                <option value="辰">辰</option>
+                <option value="巳">巳</option>
+                <option value="午">午</option>
+                <option value="未">未</option>
+                <option value="申">申</option>
+                <option value="酉">酉</option>
+                <option value="戌">戌</option>
+                <option value="亥">亥</option>
+            </select>
+            <label >时支</label>
+            <select ng-model="bazi.shizhi">
+                <option value="子">子</option>
+                <option value="丑">丑</option>
+                <option value="寅">寅</option>
+                <option value="卯">卯</option>
+                <option value="辰">辰</option>
+                <option value="巳">巳</option>
+                <option value="午">午</option>
+                <option value="未">未</option>
+                <option value="申">申</option>
+                <option value="酉">酉</option>
+                <option value="戌">戌</option>
+                <option value="亥">亥</option>
+            </select>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">分析</button>
+
+    </form>
+
+    <div id="json-renderer"></div>
+
+</div>
 
 
-<h1>禄命工程</h1>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/lodash/dist/lodash.min.js"></script>
+<script src="bower_components/restangular/dist/restangular.min.js"></script>
+<script src="vendor/json-viewer/jquery.json-viewer.js"></script>
 
-<form action="/analyze">
+<script>
+    var app = angular.module('app', ['restangular']);
+    app.controller('myCtrl', function($scope,Restangular) {
 
-    <div>
-        男:
-        <input type="radio" checked="checked" name="gender" value="男" />
-        女:<input type="radio" name="gender" value="女" />
-    </div>
-    <div>
-        <label >年干</label>
-        <select name="niangan">
-            <option value="甲">甲</option>
-            <option value="乙">乙</option>
-            <option value="丙">丙</option>
-            <option value="丁">丁</option>
-            <option value="戊">戊</option>
-            <option value="己">己</option>
-            <option value="庚">庚</option>
-            <option value="辛">辛</option>
-            <option value="壬">壬</option>
-            <option value="癸">癸</option>
 
-        </select>
-        <label >月干</label>
-        <select name="yuegan">
-            <option value="甲">甲</option>
-            <option value="乙">乙</option>
-            <option value="丙">丙</option>
-            <option value="丁">丁</option>
-            <option value="戊">戊</option>
-            <option value="己">己</option>
-            <option value="庚">庚</option>
-            <option value="辛">辛</option>
-            <option value="壬">壬</option>
-            <option value="癸">癸</option>
+        $scope.bazi = {
+            "niangan":"丙",
+            "yuegan":"丙",
+            "rigan":"甲",
+            "shigan":"乙",
+            "nianzhi":"子",
+            "yuezhi":"寅",
+            "rizhi":"寅",
+            "shizhi":"卯"
+        };
+        $scope.analyze=analyze;
 
-        </select>
-        <label >日干</label>
-        <select name="rigan">
-            <option value="甲">甲</option>
-            <option value="乙">乙</option>
-            <option value="丙">丙</option>
-            <option value="丁">丁</option>
-            <option value="戊">戊</option>
-            <option value="己">己</option>
-            <option value="庚">庚</option>
-            <option value="辛">辛</option>
-            <option value="壬">壬</option>
-            <option value="癸">癸</option>
+        function analyze(){
 
-        </select>
-        <label >时干</label>
-        <select name="shigan">
-            <option value="甲">甲</option>
-            <option value="乙">乙</option>
-            <option value="丙">丙</option>
-            <option value="丁">丁</option>
-            <option value="戊">戊</option>
-            <option value="己">己</option>
-            <option value="庚">庚</option>
-            <option value="辛">辛</option>
-            <option value="壬">壬</option>
-            <option value="癸">癸</option>
+            var rest = Restangular.all('analyze');
+            rest.getList($scope.bazi).then(function(info) {
 
-        </select>
+                var data =[];
+                for (var i = 0; i < info.length; i++) {
+                    data.push({"主题":info[i].subject,"匹配结果":info[i].analyzeResult});
+                }
+                $('#json-renderer').jsonViewer(data);
 
-    </div>
-    <div>
-        <label >年支</label>
-        <select name="nianzhi">
-            <option value="子">子</option>
-            <option value="丑">丑</option>
-            <option value="寅">寅</option>
-            <option value="卯">卯</option>
-            <option value="辰">辰</option>
-            <option value="巳">巳</option>
-            <option value="午">午</option>
-            <option value="未">未</option>
-            <option value="申">申</option>
-            <option value="酉">酉</option>
-            <option value="戌">戌</option>
-            <option value="亥">亥</option>
-        </select>
-        <label >月支</label>
-        <select name="yuezhi">
-            <option value="子">子</option>
-            <option value="丑">丑</option>
-            <option value="寅">寅</option>
-            <option value="卯">卯</option>
-            <option value="辰">辰</option>
-            <option value="巳">巳</option>
-            <option value="午">午</option>
-            <option value="未">未</option>
-            <option value="申">申</option>
-            <option value="酉">酉</option>
-            <option value="戌">戌</option>
-            <option value="亥">亥</option>
-        </select>
-        <label >日支</label>
-        <select name="rizhi">
-            <option value="子">子</option>
-            <option value="丑">丑</option>
-            <option value="寅">寅</option>
-            <option value="卯">卯</option>
-            <option value="辰">辰</option>
-            <option value="巳">巳</option>
-            <option value="午">午</option>
-            <option value="未">未</option>
-            <option value="申">申</option>
-            <option value="酉">酉</option>
-            <option value="戌">戌</option>
-            <option value="亥">亥</option>
-        </select>
-        <label >时支</label>
-        <select name="shizhi">
-            <option value="子">子</option>
-            <option value="丑">丑</option>
-            <option value="寅">寅</option>
-            <option value="卯">卯</option>
-            <option value="辰">辰</option>
-            <option value="巳">巳</option>
-            <option value="午">午</option>
-            <option value="未">未</option>
-            <option value="申">申</option>
-            <option value="酉">酉</option>
-            <option value="戌">戌</option>
-            <option value="亥">亥</option>
-        </select>
 
-    </div>
+            });
 
-    <input type="submit" value="Submit" />
-</form>
+//            var temp = $scope.bazi;
+//
+//// Get json-data by javascript-object
+//            var data = {
+//                "firstName": "Jonh",
+//                "lastName": "Smith",
+//                "phones": [
+//                    "123-45-67",
+//                    "987-65-43"
+//                ]
+//            };
+
+
+//            alert("analyze");
+        }
+
+    });
+</script>
 
 </body>
 </html>

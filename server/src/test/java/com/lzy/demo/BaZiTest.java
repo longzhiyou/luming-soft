@@ -14,7 +14,7 @@ import javax.script.ScriptException;
 public class BaZiTest {
 
 
-//    CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
+    CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
 //    ImmutableList<String> gan = ImmutableList.of("甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸");
 
     @Test
@@ -67,6 +67,17 @@ public class BaZiTest {
     }
 
     @Test
+    public void wuxingjingji(){
+        BaZi baZi = new BaZi("甲子","乙子","癸子","壬卯");
+
+        GroovyRule groovyRule = new GroovyRule();
+        Object result = groovyRule.matchWuXingJingJiRule(baZi,commonAlgorithm);
+        System.out.println("GroovyRule:"+result.toString());
+    }
+
+
+
+    @Test
     public void testBaZi() throws Exception {
 
 //        int indexOf = gan.indexOf("癸");
@@ -74,18 +85,18 @@ public class BaZiTest {
 //        Assert.assertEquals(0,indexOf);
 
 //        BaZi baZi = new BaZi("甲","子","丙","子","甲","子","辛","卯");
-        BaZi baZi = new BaZi("甲子","乙卯","丙子","辛卯");
+        BaZi baZi = new BaZi("甲子","乙卯","甲子","乙卯");
         baZi.setYun("丁","卯");
         baZi.setLiuNian("癸","酉");
 //        boolean wuXingQueYi = baZi.isWuXingQueYi();
         String queYiWuXing = baZi.getQueYiWuXing();
-        CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
+//        CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
 
 //        baZi.getDiZhiShiShenCount("枭");
 //
-//        GroovyRule groovyRule = new GroovyRule();
-//        Object result = groovyRule.matchRule(baZi,commonAlgorithm);
-//        System.out.println("GroovyRule:"+result.toString());
+        GroovyRule groovyRule = new GroovyRule();
+        Object result = groovyRule.matchRule(baZi);
+        System.out.println("GroovyRule:"+result.toString());
 
 
 //        baZi.matchSanHe("巳","酉","丑1");

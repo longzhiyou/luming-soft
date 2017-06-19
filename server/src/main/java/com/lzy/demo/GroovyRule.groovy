@@ -7,6 +7,41 @@ package com.lzy.demo
  */
 class GroovyRule {
 
+    def matchWuXingJingJiRule(BaZi bazi,CommonAlgorithm commonAlgorithm){
+        def mapResult = [:]
+        def  nianGan = bazi.getNianGan()
+        def nianZhi = bazi.getNianZhi()
+        def nianZhu = bazi.getNianZhu()
+
+        def yueGan = bazi.getYueGan()
+        def yueZhi =bazi.getYueZhi()
+        def yueZhu = bazi.getYueZhu()
+
+        def riGan = bazi.getRiGan()
+        def riZhi = bazi.getRiZhi()
+        def riZhu = bazi.getRiZhu()
+
+        def shiGan = bazi.getShiGan()
+        def shiZhi = bazi.getShiZhi()
+        def shiZhu = bazi.getShiZhu()
+        //荣神格
+        def matchStr = yueZhi+riGan+shiGan
+        def rongshenge = [
+                "寅甲乙","寅乙甲","卯甲乙","卯乙甲",
+                "巳丙丁","巳丁丙","午丙丁","午丁丙",
+                "申庚辛","申辛庚","酉庚辛","酉辛庚",
+                "亥壬癸","亥癸壬","子壬癸","子癸壬",
+                "辰戊己","辰己戊","戌戊己","戌己戊",
+                "丑戊己","丑己戊","未戊己","未己戊"
+        ]
+
+        if (rongshenge.contains(matchStr)) {
+            mapResult["荣神格"]="春甲乙日时、夏丙丁日时、秋庚辛日时、冬壬癸日时、四季戊己日时 主人心明，日时全见者足寿，富贵多权。（神白经）"
+        }
+        mapResult;
+
+
+    }
     def testDemo(){
 
         for (i in 0..4) {
@@ -47,37 +82,42 @@ class GroovyRule {
 //        assert map instanceof Map
 //        return map;
     }
-    def matchRule(BaZi bazi,CommonAlgorithm commonAlgorithm) {
+    def matchRule(BaZi bazi) {
 
 
-        def resultList=[];
-        def resultMap={};
-        def gan = bazi.getRiGan();
-        def ganZhengYin = commonAlgorithm.getTianGanShiShen(gan, "正印");
-//        def zhi = commonAlgorithm.getTianGanChangShengJue(ganZhengYin, "禄");
+        def isYangGan = CommonAlgorithm.isYangGan("甲");
+        def mapResult = [:]
+        def  nianGan = bazi.getNianGan()
+        def nianZhi = bazi.getNianZhi()
+        def nianZhu = bazi.getNianZhu()
 
-        def zhi = bazi.getShiShenChangShengJue("正印","禄");
+        def yueGan = bazi.getYueGan()
+        def yueZhi =bazi.getYueZhi()
+        def yueZhu = bazi.getYueZhu()
 
-        def frequency = bazi.getDiZhiCount(zhi);
+        def riGan = bazi.getRiGan()
+        def riZhi = bazi.getRiZhi()
+        def riZhu = bazi.getRiZhu()
 
-//        resultMap.put("马化龙据","甲子年丙子时")
-//        resultMap.put("蛇化青龙龙据","甲子年丙子时")
-//        resultList.add(String.format("%s: %d", "主刑", 1))
-//        resultList.add("主法死:"+"规则是甲子日甲子时")
+        def shiGan = bazi.getShiGan()
+        def shiZhi = bazi.getShiZhi()
+        def shiZhu = bazi.getShiZhu()
+        //荣神格
+        def matchStr = yueZhi+riGan+shiGan
+        def rongshenge = [
+                "寅甲乙","寅乙甲","卯甲乙","卯乙甲",
+                "巳丙丁","巳丁丙","午丙丁","午丁丙",
+                "申庚辛","申辛庚","酉庚辛","酉辛庚",
+                "亥壬癸","亥癸壬","子壬癸","子癸壬",
+                "辰戊己","辰己戊","戌戊己","戌己戊",
+                "丑戊己","丑己戊","未戊己","未己戊"
+        ]
 
-//        String result="";
-//        String nianzhu = bazi.getNianZhu();
-//        String yuezhu = bazi.getYueZhu();
-//        String rizhu = bazi.getRiZhu();
-//        String shizhu = bazi.getShiZhu();
-//        if(rizhu=="甲子" || shizhu=="甲子"){
-//            if(yuezhu.equals("乙卯")){
-//                result+="主刑";
-//            }else if(yuezhu.equals("乙巳")){
-//                result+="主法死";
-//            }
-//
-//        }
-        return resultList
+        if (rongshenge.contains(matchStr)) {
+            mapResult["荣神格"]="春甲乙日时、夏丙丁日时、秋庚辛日时、冬壬癸日时、四季戊己日时 主人心明，日时全见者足寿，富贵多权。（神白经）"
+        }
+        mapResult;
+
+
     }
 }
