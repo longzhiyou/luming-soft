@@ -9,6 +9,7 @@ class GroovyRule {
 
     def matchWuXingJingJiRule(BaZi bazi,CommonAlgorithm commonAlgorithm){
         def mapResult = [:]
+
         def  nianGan = bazi.getNianGan()
         def nianZhi = bazi.getNianZhi()
         def nianZhu = bazi.getNianZhu()
@@ -24,6 +25,7 @@ class GroovyRule {
         def shiGan = bazi.getShiGan()
         def shiZhi = bazi.getShiZhi()
         def shiZhu = bazi.getShiZhu()
+
         //荣神格
         def matchStr = yueZhi+riGan+shiGan
         def rongshenge = [
@@ -38,7 +40,11 @@ class GroovyRule {
         if (rongshenge.contains(matchStr)) {
             mapResult["荣神格"]="春甲乙日时、夏丙丁日时、秋庚辛日时、冬壬癸日时、四季戊己日时 主人心明，日时全见者足寿，富贵多权。（神白经）"
         }
-        mapResult;
+
+
+        if(mapResult.size()>0)
+            return mapResult
+        return null;
 
 
     }
