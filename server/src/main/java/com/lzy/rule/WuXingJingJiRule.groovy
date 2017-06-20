@@ -68,6 +68,30 @@ public class WuXingJingJiRule extends AnalyzeResult implements BaseRule{
         }
 
 
+        //【相合禄】
+        mapRule=["甲":"己亥","乙":"庚戌","丙":"辛巳","丁":"壬午"
+                 ,"戊":"癸巳","己":"甲午",
+                 "庚":"乙巳","辛":"丙辰","壬":"丁亥","癸":"戊子"]
+        ruleValue= mapRule.get(nianGan);
+        if (shiZhu==ruleValue) {
+            mapResult["【相合禄】时柱"]="禄若会见则富贵，相合则奋迅"
+        }
+        if (riZhu==ruleValue) {
+            mapResult["【禄头财】日柱"]="禄若会见则富贵，相合则奋迅"
+        }
+
+        //【食神带禄】
+        mapRule=["甲":"己亥","乙":"庚戌","丙":"辛巳","丁":"壬午"
+                 ,"戊":"癸巳","己":"甲午",
+                 "庚":"乙巳","辛":"丙辰","壬":"甲寅","癸":"戊子"]
+        ruleValue= mapRule.get(nianGan);
+        if (shiZhu==ruleValue) {
+            mapResult["【相合禄】时柱"]="禄若会见则富贵，相合则奋迅"
+        }
+        if (riZhu==ruleValue) {
+            mapResult["【禄头财】日柱"]="禄若会见则富贵，相合则奋迅"
+        }
+
         //【名位禄】
         def mingweilu = ["甲丙寅","乙丁卯","庚壬申","辛癸酉"]
         matchStr = nianGan+shiZhu
@@ -187,6 +211,19 @@ public class WuXingJingJiRule extends AnalyzeResult implements BaseRule{
             }
 
 
+        }
+
+        //【禄堂】
+        def lutang = ["甲甲戌","乙乙酉","丙丙申","丁丁未","戊戊午","己己巳","庚庚辰",
+                      "辛辛卯","辛辛丑","壬壬寅","壬壬子","癸癸亥"]
+
+        matchStr = nianGan+shiZhu
+        if (lutang.contains(matchStr)) {
+            mapResult["【禄堂】时柱"]="若更得诸位福神助发，必须大贵（李虚中书）"+ nianGan+"人"+shiZhu
+        }
+        matchStr = nianGan+riZhu
+        if (lutang.contains(matchStr)) {
+            mapResult["【禄堂】日柱"]="若更得诸位福神助发，必须大贵（李虚中书）"+ nianGan+"人"+riZhu
         }
 
         mapResult;
