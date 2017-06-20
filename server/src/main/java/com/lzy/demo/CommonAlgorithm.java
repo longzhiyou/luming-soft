@@ -10,6 +10,7 @@ import com.lzy.common.WuXingEnum;
 import java.util.Arrays;
 
 /**
+ * 通用算法
  * Created by bukeyan on 2017/6/7.
  */
 
@@ -43,6 +44,22 @@ public class CommonAlgorithm {
             .put("阳刃","帝旺")
             .put("羊刃","帝旺")
             .put("库","墓")
+
+            .build();
+
+    //天干禄地支
+    public final static ImmutableMap<String,String> mapTianGanLu = ImmutableMap.<String,
+            String>builder()
+            .put("甲","寅")
+            .put("乙","卯")
+            .put("丙","巳")
+            .put("丁","午")
+            .put("戊","巳")
+            .put("己","午")
+            .put("庚","申")
+            .put("辛","酉")
+            .put("壬","亥")
+            .put("癸","子")
 
             .build();
 
@@ -180,34 +197,34 @@ public class CommonAlgorithm {
             .put(LiuShiJiaZiEnum.GUISI.getName(), LiuShiJiaZiEnum.RENCHEN)
             .put(LiuShiJiaZiEnum.JIAWU.getName(), LiuShiJiaZiEnum.JIAWU)
             .put(LiuShiJiaZiEnum.YIWEI.getName(), LiuShiJiaZiEnum.YIWEI)
-            .put(LiuShiJiaZiEnum.BINGSHEN.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.DINGYOU.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.WUXU.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.JIHAI.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.GENGZI.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.XINCHOU.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.RENYIN.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.GUIMAO.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.JIACHEN.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.YISI.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.BINGWU.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.DINGWEI.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.WUSHEN.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.JIYOU.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.GENGXU.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.XINHAI.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.RENZI.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.GUICHOU.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.JIAYIN.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.YIMAO.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.BINGCHEN.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.DINGSI.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.WUWU.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.JIWEI.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.GENGSHEN.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.XINYOU.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.RENXU.getName(), LiuShiJiaZiEnum.JIAZI)
-            .put(LiuShiJiaZiEnum.GUIHAI.getName(), LiuShiJiaZiEnum.JIAZI)
+            .put(LiuShiJiaZiEnum.BINGSHEN.getName(), LiuShiJiaZiEnum.BINGSHEN)
+            .put(LiuShiJiaZiEnum.DINGYOU.getName(), LiuShiJiaZiEnum.DINGYOU)
+            .put(LiuShiJiaZiEnum.WUXU.getName(), LiuShiJiaZiEnum.WUXU)
+            .put(LiuShiJiaZiEnum.JIHAI.getName(), LiuShiJiaZiEnum.JIHAI)
+            .put(LiuShiJiaZiEnum.GENGZI.getName(), LiuShiJiaZiEnum.GENGZI)
+            .put(LiuShiJiaZiEnum.XINCHOU.getName(), LiuShiJiaZiEnum.XINCHOU)
+            .put(LiuShiJiaZiEnum.RENYIN.getName(), LiuShiJiaZiEnum.RENYIN)
+            .put(LiuShiJiaZiEnum.GUIMAO.getName(), LiuShiJiaZiEnum.GUIMAO)
+            .put(LiuShiJiaZiEnum.JIACHEN.getName(), LiuShiJiaZiEnum.JIACHEN)
+            .put(LiuShiJiaZiEnum.YISI.getName(), LiuShiJiaZiEnum.YISI)
+            .put(LiuShiJiaZiEnum.BINGWU.getName(), LiuShiJiaZiEnum.BINGWU)
+            .put(LiuShiJiaZiEnum.DINGWEI.getName(), LiuShiJiaZiEnum.DINGWEI)
+            .put(LiuShiJiaZiEnum.WUSHEN.getName(), LiuShiJiaZiEnum.WUSHEN)
+            .put(LiuShiJiaZiEnum.JIYOU.getName(), LiuShiJiaZiEnum.JIYOU)
+            .put(LiuShiJiaZiEnum.GENGXU.getName(), LiuShiJiaZiEnum.GENGXU)
+            .put(LiuShiJiaZiEnum.XINHAI.getName(), LiuShiJiaZiEnum.XINHAI)
+            .put(LiuShiJiaZiEnum.RENZI.getName(), LiuShiJiaZiEnum.RENZI)
+            .put(LiuShiJiaZiEnum.GUICHOU.getName(), LiuShiJiaZiEnum.GUICHOU)
+            .put(LiuShiJiaZiEnum.JIAYIN.getName(), LiuShiJiaZiEnum.JIAYIN)
+            .put(LiuShiJiaZiEnum.YIMAO.getName(), LiuShiJiaZiEnum.YIMAO)
+            .put(LiuShiJiaZiEnum.BINGCHEN.getName(), LiuShiJiaZiEnum.BINGCHEN)
+            .put(LiuShiJiaZiEnum.DINGSI.getName(), LiuShiJiaZiEnum.DINGSI)
+            .put(LiuShiJiaZiEnum.WUWU.getName(), LiuShiJiaZiEnum.WUWU)
+            .put(LiuShiJiaZiEnum.JIWEI.getName(), LiuShiJiaZiEnum.JIWEI)
+            .put(LiuShiJiaZiEnum.GENGSHEN.getName(), LiuShiJiaZiEnum.GENGSHEN)
+            .put(LiuShiJiaZiEnum.XINYOU.getName(), LiuShiJiaZiEnum.XINYOU)
+            .put(LiuShiJiaZiEnum.RENXU.getName(), LiuShiJiaZiEnum.RENXU)
+            .put(LiuShiJiaZiEnum.GUIHAI.getName(), LiuShiJiaZiEnum.GUIHAI)
             .build();
 
 
@@ -473,7 +490,7 @@ public class CommonAlgorithm {
      * @param otherGan
      * @return 六亲十神名称
      */
-    public  static String getShiShenRelation(String me, String otherGan){
+    public   String getShiShenRelation(String me, String otherGan){
 
         int woIndex = listTianGan.indexOf(me);
         int otherIndex = listTianGan.indexOf(otherGan);
@@ -489,7 +506,7 @@ public class CommonAlgorithm {
      * @param shishenName
      * @return
      */
-    public  static String getTianGanShiShen(String gan, String shishenName){
+    public   String getTianGanShiShen(String gan, String shishenName){
 
         int ganIndex = listTianGan.indexOf(gan);
 
@@ -514,15 +531,8 @@ public class CommonAlgorithm {
      * @param shishenName
      * @return 地支禄位对应的食神
      */
-    public  static String getShiShenDiZhi(String gan, String shishenName){
+    public   String getShiShenDiZhi(String gan, String shishenName){
 
-//        int ganIndex = listTianGan.indexOf(gan);
-//
-//        for(int i=0;i<10;i++){
-//            if(shishenName.equals(tableShiShen[ganIndex][i]))
-//                tianganShiShen = listTianGan.get(i);
-//
-//        }
 
         String tianganShiShen=getTianGanShiShen(gan,shishenName);
         //获取本天干对应的禄位置
@@ -532,7 +542,7 @@ public class CommonAlgorithm {
 
     }
 
-    public  static TianGanEnum getTianGan(String sTianGan){
+    public   TianGanEnum getTianGan(String sTianGan){
 
         return mapTianGan.get(sTianGan);
     }
@@ -543,7 +553,7 @@ public class CommonAlgorithm {
      * @param gan2
      * @return
      */
-    public  static boolean isTianGanHe(String gan1,String gan2){
+    public   boolean isTianGanHe(String gan1,String gan2){
 
         return mapTianGanHe.containsKey( Arrays.asList(gan1, gan2).toString());
 
@@ -555,7 +565,7 @@ public class CommonAlgorithm {
      * @param gan2
      * @return 如果不是相合返回null
      */
-    public  static String getTianGanHeWuXing(String gan1,String gan2){
+    public   String getTianGanHeWuXing(String gan1,String gan2){
 
         String s = mapTianGanHe.get(Arrays.asList(gan1, gan2).toString());
         return s;
@@ -567,7 +577,7 @@ public class CommonAlgorithm {
      * @param gan1
      * @return
      */
-    public  static boolean isYangGan(String gan1){
+    public   boolean isYangGan(String gan1){
 
         TianGanEnum tianGanEnum = mapTianGan.get(gan1);
         return tianGanEnum.isYang();
@@ -579,39 +589,39 @@ public class CommonAlgorithm {
      * @param gan2
      * @return
      */
-    public  static boolean isTianGanKe(String gan1,String gan2){
+    public   boolean isTianGanKe(String gan1,String gan2){
 
         return listTianGanKe.contains( Arrays.asList(gan1, gan2).toString());
 
 
     }
 
-    public  static boolean isDiZhiHe(String di1, String di2){
+    public   boolean isDiZhiHe(String di1, String di2){
         return mapDiZhiHe.containsKey( Arrays.asList(di1, di2).toString());
 
     }
 
-    public  static boolean isDiZhiChong(String di1, String di2){
+    public   boolean isDiZhiChong(String di1, String di2){
         return listDiZhiChong.contains( Arrays.asList(di1, di2).toString());
 
     }
 
-    public  static boolean isDiZhiSanHe(String di1,String di2,String di3){
+    public   boolean isDiZhiSanHe(String di1,String di2,String di3){
         return mapDiZhiSanHe.containsKey( Arrays.asList(di1, di2, di3).toString());
 
     }
 
-    public  static boolean isDiZhiSanHui(String di1,String di2,String di3){
+    public   boolean isDiZhiSanHui(String di1,String di2,String di3){
         return mapDiZhiSanHui.containsKey( Arrays.asList(di1, di2, di3).toString());
 
     }
 
-    public  static boolean isDiZhiSanXing(String di1,String di2,String di3){
+    public   boolean isDiZhiSanXing(String di1,String di2,String di3){
         return listDiZhiSanXing.contains( Arrays.asList(di1, di2, di3).toString());
 
     }
 
-    public  static boolean isDiZhiZiXing(String di1,String di2){
+    public   boolean isDiZhiZiXing(String di1,String di2){
         return di1.equals(di2);
 
     }
@@ -623,7 +633,7 @@ public class CommonAlgorithm {
      * @param zhu2
      * @return
      */
-    public  static boolean isShuangHe(String zhu1,String zhu2){
+    public   boolean isShuangHe(String zhu1,String zhu2){
 
         boolean tianGanHe = isTianGanHe(zhu1.substring(0, 1), zhu2.substring(0, 1));
         if(!tianGanHe)
@@ -634,7 +644,7 @@ public class CommonAlgorithm {
 
     }
 
-    public  static boolean isShuangChong(String zhu1,String zhu2){
+    public   boolean isShuangChong(String zhu1,String zhu2){
 
         boolean tianGanKe = isTianGanKe(zhu1.substring(0, 1), zhu2.substring(0, 1));
         if(!tianGanKe)
@@ -651,7 +661,7 @@ public class CommonAlgorithm {
      * @param changshengName 如长生 禄
      * @return
      */
-    public  static String getTianGanChangShengJue(String gan,String changshengName){
+    public   String getTianGanChangShengJue(String gan,String changshengName){
 
         //获取天干索引
         int ganIndex = listTianGan.indexOf(gan);
@@ -673,7 +683,7 @@ public class CommonAlgorithm {
      * @param name: 生克名称,如 生我，我生，克我，我克，比和
      * @return
      */
-    public  static Boolean isWuXingShengKe(String me,String other,String name){
+    public   Boolean isWuXingShengKe(String me,String other,String name){
 
         //获取天干索引
         int meIndex = listWuXing.indexOf(me);
@@ -688,7 +698,7 @@ public class CommonAlgorithm {
      * @param jiazi
      * @return
      */
-    public  static String getJiaZiWuXing(String jiazi){
+    public   String getJiaZiWuXing(String jiazi){
 
         LiuShiJiaZiEnum liuShiJiaZiEnum = mapLiuShiJiaZi.get(jiazi);
         if (liuShiJiaZiEnum!=null) {
@@ -697,6 +707,31 @@ public class CommonAlgorithm {
         return null;
 
     }
+
+    /**
+     * 判断是否在一旬
+     * @param jiazi1
+     * @param jiazi2
+     * @return
+     */
+    public   Boolean isYiXun(String jiazi1,String jiazi2){
+
+        LiuShiJiaZiEnum jiaZiEnum1 = mapLiuShiJiaZi.get(jiazi1);
+        LiuShiJiaZiEnum jiaZiEnum2 = mapLiuShiJiaZi.get(jiazi2);
+        return jiaZiEnum1.getKongwang().toString().equals(jiaZiEnum2.getKongwang().toString());
+
+    }
+
+    /**
+     * 获取天干禄位
+     * @param gan
+     * @return
+     */
+    public   String getLuZhi(String gan){
+
+       return mapTianGanLu.get(gan);
+    }
+
 
 
 

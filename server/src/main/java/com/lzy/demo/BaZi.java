@@ -52,6 +52,7 @@ public class BaZi {
     List<String> listMingZhi;
     List<String> listMingZhu;
 
+
     //批大运
 
     //批流年
@@ -63,6 +64,8 @@ public class BaZi {
     List<String> listMingYunSuiZhi;
 
     List<String> listMingYunSuiZhu;
+
+    CommonAlgorithm commonAlgorithm;
 
 
     /**
@@ -231,6 +234,7 @@ public class BaZi {
                       String riGan, String riZhi,
                       String shiGan, String shiZhi){
 
+        this.commonAlgorithm = new CommonAlgorithm();
         this.nianGan = nianGan;
         this.nianZhi = nianZhi;
         this.yueGan = yueGan;
@@ -470,7 +474,7 @@ public class BaZi {
      */
     public int getDiZhiShiShenCount(String shishenName){
 
-        String shiShenDiZhi = CommonAlgorithm.getShiShenDiZhi(riGan, shishenName);
+        String shiShenDiZhi = commonAlgorithm.getShiShenDiZhi(riGan, shishenName);
 
         return getDiZhiCount(shiShenDiZhi);
 
@@ -484,8 +488,8 @@ public class BaZi {
      * @return
      */
     public String getShiShenChangShengJue(String shishenName,String changshengJue){
-        String shiShenTianGan = CommonAlgorithm.getTianGanShiShen(riGan, shishenName);
-        String dizhi = CommonAlgorithm.getTianGanChangShengJue(shiShenTianGan, changshengJue);
+        String shiShenTianGan = commonAlgorithm.getTianGanShiShen(riGan, shishenName);
+        String dizhi = commonAlgorithm.getTianGanChangShengJue(shiShenTianGan, changshengJue);
         return dizhi;
     }
 

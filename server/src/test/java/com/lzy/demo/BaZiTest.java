@@ -1,5 +1,6 @@
 package com.lzy.demo;
 
+import com.lzy.rule.WuXingJingJiRule;
 import org.junit.Test;
 
 import javax.script.ScriptEngine;
@@ -26,8 +27,10 @@ public class BaZiTest {
     @Test
     public void testCommonAlgorithm(){
 
+
+
 //        CommonAlgorithm.getTianGanHeWuXing("甲","戊");
-        CommonAlgorithm.getJiaZiWuXing("甲子");
+//        CommonAlgorithm.getJiaZiWuXing("甲子");
 
 //        for (int i = 0; i < 10; i++) {
 //
@@ -68,10 +71,10 @@ public class BaZiTest {
 
     @Test
     public void wuxingjingji(){
-        BaZi baZi = new BaZi("甲子","乙子","癸子","壬卯");
+        BaZi baZi = new BaZi("甲申","乙亥","丙辰","庚寅");
 
-        GroovyRule groovyRule = new GroovyRule();
-        Object result = groovyRule.matchWuXingJingJiRule(baZi,commonAlgorithm);
+        WuXingJingJiRule wuXingJingJiRule = new WuXingJingJiRule();
+        Object result = wuXingJingJiRule.matchRule(baZi,commonAlgorithm);
         System.out.println("GroovyRule:"+result.toString());
     }
 
@@ -95,6 +98,7 @@ public class BaZiTest {
 //        baZi.getDiZhiShiShenCount("枭");
 //
         GroovyRule groovyRule = new GroovyRule();
+
         Object result = groovyRule.matchRule(baZi,commonAlgorithm);
         System.out.println("GroovyRule:"+result.toString());
 

@@ -52,6 +52,12 @@ public class CommonAlgorithmTest {
 
 
     }
+    @Test
+    public void testYiXun(){
+        Boolean yiXun = commonAlgorithm.isYiXun("甲申", "庚寅");
+        Assert.assertTrue(yiXun);
+
+    }
 
 
     @Test
