@@ -678,20 +678,38 @@ public class CommonAlgorithm {
 
     /**
      * 判断五行是否生
-     * @param me
-     * @param other
+     * @param meWuXing
+     * @param otherWuXing
      * @param name: 生克名称,如 生我，我生，克我，我克，比和
      * @return
      */
-    public   Boolean isWuXingShengKe(String me,String other,String name){
+    public   Boolean isWuXingShengKe(String meWuXing,String otherWuXing,String name){
 
         //获取天干索引
-        int meIndex = listWuXing.indexOf(me);
-        int otherIndex = listWuXing.indexOf(other);
+        int meIndex = listWuXing.indexOf(meWuXing);
+        int otherIndex = listWuXing.indexOf(otherWuXing);
         String nameShengKe = tableWuXingShengKe[meIndex][otherIndex];
         return nameShengKe.equals(name);
 
     }
+
+    /**
+     * 纳音克我五行
+     * @param meJiaZi
+     * @param otherJiaZi
+     * @return
+     */
+    public  Boolean isNaYinWuXingKe(String meJiaZi,String otherJiaZi){
+
+        String name = "克我";
+        String me = getJiaZiWuXing(meJiaZi);
+        String other = getJiaZiWuXing(otherJiaZi);
+
+        return isWuXingShengKe(me, other, name);
+
+
+    }
+
 
     /**
      * 获取六十甲子的五行

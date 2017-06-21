@@ -8,7 +8,7 @@ import com.lzy.domain.AnalyzeResult;
  *  五行精纪规则
  * Created by bukeyan on 2017/6/18.
  */
-public class WuXingJingJiRule extends AnalyzeResult implements BaseRule{
+public class WuXingJingJiRule  implements BaseRule{
 
     @Override
     public Object matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
@@ -50,6 +50,20 @@ public class WuXingJingJiRule extends AnalyzeResult implements BaseRule{
                        "丙":"亥酉" ,"丁":"亥酉" ,
                        "壬":"巳卯" ,"癸":"巳卯" ,
                        "辛":"午寅"]
+        //马
+        def mapMa=[
+                "寅":"申" ,"午":"申" ,"戌":"申",
+                "申":"寅" ,"子":"寅" ,"辰":"寅",
+                "巳":"亥" ,"酉":"亥" ,"丑":"亥",
+                "亥":"巳" ,"卯":"巳" ,"未":"巳"]
+
+        //截杀
+        def mapJieSha=[
+                "寅":"亥" ,"午":"亥" ,"戌":"亥",
+                "申":"巳" ,"子":"巳" ,"辰":"巳",
+                "巳":"寅" ,"酉":"寅" ,"丑":"寅",
+                "亥":"申" ,"卯":"申" ,"未":"申"]
+
 
 
         //荣神格
@@ -174,7 +188,7 @@ public class WuXingJingJiRule extends AnalyzeResult implements BaseRule{
                  ,"戊":"壬申","己":"乙未",
                  "庚":"己巳","辛":"壬辰","壬":"丙寅","癸":"己丑"]
         ruleValue= mapRule.get(nianGan)
-        tempShow ="此是上清暗合禄，不因师指若何知。"+ nianGan+"人"+ruleValue
+        tempShow ="此是上清暗合禄，不因师指若何知。${nianGan}人${ruleValue}"
         if (shiZhu==ruleValue) {
             mapResult["【暗禄格】时柱"]=tempShow
         }

@@ -1,6 +1,5 @@
 package com.lzy.controller;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.lzy.demo.BaZi;
 import com.lzy.demo.CommonAlgorithm;
@@ -9,7 +8,6 @@ import com.lzy.entity.MatchRule;
 import com.lzy.repository.MatchRuleRepository;
 import com.lzy.rule.BaseRule;
 import com.lzy.rule.WuXingJingJiRule;
-import com.lzy.rule.WuXingQueYiRule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
