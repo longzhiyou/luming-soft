@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController
  * Time: 11:05 
  */
 @RestController
-@RequestMapping(value ="/groovy")
+@RequestMapping(value ="/analyze")
 class GroovyController {
     @Autowired
     MatchRuleRepository matchRuleRepository;
@@ -29,22 +29,31 @@ class GroovyController {
     final static def mapRule = ["五行精纪":new WuXingJingJiRule()]
 
     @RequestMapping(method= RequestMethod.GET)
-    def index() {
+    def index(@RequestParam String niangan,@RequestParam String nianzhi
+              ,@RequestParam String yuegan,@RequestParam String yuezhi
+              ,@RequestParam String rigan,@RequestParam String rizhi
+              ,@RequestParam String shigan,@RequestParam String shizhi) {
 //        matchRuleRepository.count()
-        BaZi baZi = new BaZi("甲申","乙亥","丙辰","庚寅");
-        CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
-        for( rule in listRule){
-//            rule.matchRule(baZi,commonAlgorithm)
-        }
+//        BaZi baZi = new BaZi("甲申","乙亥","丙辰","庚寅");
+        BaZi baZi = new BaZi(niangan,nianzhi,
+                yuegan,yuezhi,
+                rigan,rizhi,
+                shigan,shizhi);
 
-        def analyzeResult=[:]
+//        CommonAlgorithm commonAlgorithm = new CommonAlgorithm();
+
+        def listResult=[]
         mapRule.each{key,value ->
-            def result = value.matchRule(baZi, commonAlgorithm)
-            analyzeResult.put(key,result)
+            def result = value.matchRule(baZi, baZi.getCommonAlgorithm())
+
+            AnalyzeResult analyzeResult = new AnalyzeResult()
+            analyzeResult.setSubject(key)
+            analyzeResult.setAnalyzeResult(result)
+            listResult.add(analyzeResult)
 
         }
 
-        return analyzeResult;
+        return listResult;
 //        mapRule.keySet()
 //        ["long","zhi",1,2]
     }

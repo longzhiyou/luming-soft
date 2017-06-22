@@ -67,6 +67,9 @@ public class BaZi {
 
     CommonAlgorithm commonAlgorithm;
 
+    public CommonAlgorithm getCommonAlgorithm() {
+        return commonAlgorithm;
+    }
 
     /**
      * 五行个数map

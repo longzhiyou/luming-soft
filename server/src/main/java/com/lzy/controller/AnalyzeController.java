@@ -32,7 +32,7 @@ import java.util.Map;
  */
 
 @RestController
-@RequestMapping(value ="/analyze")
+@RequestMapping(value ="/analyze-bak")
 public class AnalyzeController {
 
     private static final Logger logger = LoggerFactory.getLogger(AnalyzeController.class);
