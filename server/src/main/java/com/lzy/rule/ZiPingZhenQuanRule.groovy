@@ -11,6 +11,8 @@ public class ZiPingZhenQuanRule implements BaseRule{
 
     @Override
     public String matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
-        return null;
+        def mapResult = [:]
+
+        return mapResult;
     }
 }
