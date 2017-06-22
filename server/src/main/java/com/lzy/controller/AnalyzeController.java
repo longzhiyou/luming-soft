@@ -78,21 +78,21 @@ public class AnalyzeController {
 
 
 
-        Iterator<Map.Entry<String,BaseRule>> entries = mapRule.entrySet().iterator();
-
-        while (entries.hasNext()) {
-
-            Map.Entry<String,BaseRule> entry = entries.next();
-            BaseRule baseRule = entry.getValue();
-            Object o = baseRule.matchRule(baZi, commonAlgorithm);
-            if(o!=null){
-                AnalyzeResult analyzeResult = new AnalyzeResult();
-                analyzeResult.setSubject(entry.getKey());
-                analyzeResult.setAnalyzeResult(o);
-                analyzeResults.add(analyzeResult);
-            }
-
-        }
+//        Iterator<Map.Entry<String,BaseRule>> entries = mapRule.entrySet().iterator();
+//
+//        while (entries.hasNext()) {
+//
+//            Map.Entry<String,BaseRule> entry = entries.next();
+//            BaseRule baseRule = entry.getValue();
+//            Object o = baseRule.matchRule(baZi, commonAlgorithm);
+//            if(o!=null){
+//                AnalyzeResult analyzeResult = new AnalyzeResult();
+//                analyzeResult.setSubject(entry.getKey());
+//                analyzeResult.setAnalyzeResult(o);
+//                analyzeResults.add(analyzeResult);
+//            }
+//
+//        }
 
 
 
