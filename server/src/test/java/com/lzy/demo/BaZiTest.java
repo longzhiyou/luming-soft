@@ -71,7 +71,7 @@ public class BaZiTest {
 
     @Test
     public void wuxingjingji(){
-        BaZi baZi = new BaZi("甲申","乙亥","丙辰","庚寅");
+        BaZi baZi = new BaZi("甲子","乙亥","癸巳","戊申");
 
         WuXingJingJiRule wuXingJingJiRule = new WuXingJingJiRule();
         Object result = wuXingJingJiRule.matchRule(baZi,commonAlgorithm);
@@ -88,7 +88,7 @@ public class BaZiTest {
 //        Assert.assertEquals(0,indexOf);
 
 //        BaZi baZi = new BaZi("甲","子","丙","子","甲","子","辛","卯");
-        BaZi baZi = new BaZi("甲子","乙卯","甲子","乙卯");
+        BaZi baZi = new BaZi("甲子","乙卯","甲子","戊申");
         baZi.setYun("丁","卯");
         baZi.setLiuNian("癸","酉");
 //        boolean wuXingQueYi = baZi.isWuXingQueYi();
