@@ -123,33 +123,33 @@ public class PermutationCombinationTest {
     //问题三： 从五个数 1, 2, 3, 4, 5 中任取 3 个数进行排列，列出共有多少种排列方式
     @Test
     public void testPermutation1(){
-        for(List<String> list : Permutation.of(Arrays.asList("子", "子", "戌", "卯"), 3))
-            System.out.println(list);
+//        for(List<String> list : Permutation.of(Arrays.asList("子", "子", "戌", "卯"), 3))
+//            System.out.println(list);
     }
 
 
     @Test
     public void testPermutationTianGan(){
-        for(List<String> list : Permutation.of(Arrays.asList("甲", "乙", "丙", "丁",
-                "戊", "己",
-                "庚", "辛", "壬", "癸"), 2))
-            System.out.println(list);
+//        for(List<String> list : Permutation.of(Arrays.asList("甲", "乙", "丙", "丁",
+//                "戊", "己",
+//                "庚", "辛", "壬", "癸"), 2))
+//            System.out.println(list);
     }
 
     @Test
     public void testCombinationTianGan(){
-        for(List<String> list : Combination.of(Arrays.asList("甲", "乙", "丙", "丁",
-                "戊", "己",
-                "庚", "辛", "壬", "癸"), 2))
-            System.out.println(list);
+//        for(List<String> list : Combination.of(Arrays.asList("甲", "乙", "丙", "丁",
+//                "戊", "己",
+//                "庚", "辛", "壬", "癸"), 2))
+//            System.out.println(list);
     }
 
 
     //从五个数 1, 2, 3, 4, 5 中任取 3 个数，列出共有多少种取法
     @Test
     public void testCombination(){
-        for(List<String> list : Combination.of(Arrays.asList("子", "子", "戌", "卯"), 3))
-            System.out.println(list.toString());
+//        for(List<String> list : Combination.of(Arrays.asList("子", "子", "戌", "卯"), 3))
+//            System.out.println(list.toString());
     }
 
 

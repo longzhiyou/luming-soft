@@ -25,13 +25,13 @@ public class PythonTest {
                 "\n" +
                 "print \"list1[0]: \", list1[0]\n" +
                 "print \"list2[1:5]: \", list2[1:5]";
-        ScriptEngineManager manager = new ScriptEngineManager();
-        ScriptEngine engine = manager.getEngineByName("python");
-        try {
-            engine.eval(str);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+//        ScriptEngineManager manager = new ScriptEngineManager();
+//        ScriptEngine engine = manager.getEngineByName("python");
+//        try {
+//            engine.eval(str);
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
 
     }
 

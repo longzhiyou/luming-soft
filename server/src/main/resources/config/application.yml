@@ -17,9 +17,9 @@ spring:
 #      password: Aa1234567890#?
 #      driverClassName:   org.h2.Driver
 
-      url: jdbc:mysql://localhost:3306/luming?useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull
-      username: admin
-      password: 123456
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: epension
+      password: epension_pass
       driverClassName:  com.mysql.jdbc.Driver
       tomcat:
             test-while-idle: true

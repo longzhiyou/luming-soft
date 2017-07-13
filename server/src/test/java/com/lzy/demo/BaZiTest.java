@@ -71,7 +71,8 @@ public class BaZiTest {
 
     @Test
     public void wuxingjingji(){
-        BaZi baZi = new BaZi("甲子","乙亥","癸巳","戊申");
+//        BaZi baZi = new BaZi("辛酉","乙亥","癸巳","癸卯");
+        BaZi baZi = new BaZi("乙亥","戊戌","丁申","己寅");
 
         WuXingJingJiRule wuXingJingJiRule = new WuXingJingJiRule();
         Object result = wuXingJingJiRule.matchRule(baZi,commonAlgorithm);
@@ -141,9 +142,9 @@ public class BaZiTest {
      */
     @Test
     public void testHelloScript() throws ScriptException {
-        ScriptEngineManager factory = new ScriptEngineManager();//step 1
-        ScriptEngine engine = factory.getEngineByName("JavaScript");//Step 2
-        engine.eval("print('Hello, Scripting')");//Step 3
+//        ScriptEngineManager factory = new ScriptEngineManager();//step 1
+//        ScriptEngine engine = factory.getEngineByName("JavaScript");//Step 2
+//        engine.eval("print('Hello, Scripting')");//Step 3
 
     }
 }

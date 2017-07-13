@@ -32,24 +32,24 @@ public class GroovyTest {
                "\t\t\t}\n" +
                "\t}" ;
         Object result = null;
-        try {
-            engine.eval(rule);
-            Invocable inv = (Invocable) engine;
-
-//            GroovyRuleTest groovyRuleTest = inv.getInterface(GroovyRuleTest.class);
-
-//            groovyRuleTest.printDemo();
-            try {
-                result = inv.invokeFunction("printDemo");
-            } catch (NoSuchMethodException e) {
-                e.printStackTrace();
-
-            }
-        } catch (ScriptException e) {
-            e.printStackTrace();
-
-        }
-
+//        try {
+//            engine.eval(rule);
+//            Invocable inv = (Invocable) engine;
+//
+////            GroovyRuleTest groovyRuleTest = inv.getInterface(GroovyRuleTest.class);
+//
+////            groovyRuleTest.printDemo();
+//            try {
+//                result = inv.invokeFunction("printDemo");
+//            } catch (NoSuchMethodException e) {
+//                e.printStackTrace();
+//
+//            }
+//        } catch (ScriptException e) {
+//            e.printStackTrace();
+//
+//        }
+//
     }
 
 
