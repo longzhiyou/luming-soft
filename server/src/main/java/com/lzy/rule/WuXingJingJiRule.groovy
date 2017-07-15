@@ -464,6 +464,20 @@ public class WuXingJingJiRule  implements BaseRule{
         //日时遇之，主衣食丰足，官爵崇高，大小运行年至此，亦有迁官进财之喜。（三命指掌）
 
 
+        //禄库
+        mapRule=["甲":"未","乙":"未","丙":"戌","丁":"戌"
+                 ,"戊":"辰","己":"辰",
+                 "庚":"丑","辛":"丑","壬":"辰","癸":"辰"]
+
+        ruleValue= mapRule.get(nianGan)
+        if (shiZhi==ruleValue && commonAlgorithm.isNaYinWuXingKe(shiZhu,nianZhu)) {
+            mapResult["禄库中有财-年时"]="岁干之墓谓之禄库，禄库中又带纳音为财者，乃禄库中有财，不惟贵，而又主富"
+        }
+
+        if (riZhi==ruleValue&& commonAlgorithm.isNaYinWuXingKe(riZhu,nianZhu)) {
+            mapResult["禄库中有财-年日"]="岁干之墓谓之禄库，禄库中又带纳音为财者，乃禄库中有财，不惟贵，而又主富"
+        }
+
         //【相合禄】
         mapRule=["甲":"己亥","乙":"庚戌","丙":"辛巳","丁":"壬午"
                  ,"戊":"癸巳","己":"甲午",

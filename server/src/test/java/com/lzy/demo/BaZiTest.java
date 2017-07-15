@@ -72,7 +72,7 @@ public class BaZiTest {
     @Test
     public void wuxingjingji(){
 //        BaZi baZi = new BaZi("辛酉","乙亥","癸巳","癸卯");
-        BaZi baZi = new BaZi("乙亥","戊戌","丁申","己寅");
+        BaZi baZi = new BaZi("甲子","戊戌","丁申","癸未");
 
         WuXingJingJiRule wuXingJingJiRule = new WuXingJingJiRule();
         Object result = wuXingJingJiRule.matchRule(baZi,commonAlgorithm);

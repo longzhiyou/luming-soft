@@ -47,6 +47,16 @@ public class BaZi {
     private String liunianZhi;
     private String liunianZhu;
 
+    //行年干支
+    private String xingnianan;
+    private String xingnianZhi;
+    private String xingnianZhu;
+
+    //胎命干支
+    private String taiGan;
+    private String taiZhi;
+    private String taiZhu;
+
     //年月日时天干
     List<String> listMingGan;
     List<String> listMingZhi;
@@ -173,6 +183,78 @@ public class BaZi {
 
     public String getLiunianZhu() {
         return liunianZhu;
+    }
+
+    public void setYunGan(String yunGan) {
+        this.yunGan = yunGan;
+    }
+
+    public void setYunZhi(String yunZhi) {
+        this.yunZhi = yunZhi;
+    }
+
+    public void setYunZhu(String yunZhu) {
+        this.yunZhu = yunZhu;
+    }
+
+    public void setLiunianGan(String liunianGan) {
+        this.liunianGan = liunianGan;
+    }
+
+    public void setLiunianZhi(String liunianZhi) {
+        this.liunianZhi = liunianZhi;
+    }
+
+    public void setLiunianZhu(String liunianZhu) {
+        this.liunianZhu = liunianZhu;
+    }
+
+    public String getXingnianan() {
+        return xingnianan;
+    }
+
+    public void setXingnianan(String xingnianan) {
+        this.xingnianan = xingnianan;
+    }
+
+    public String getXingnianZhi() {
+        return xingnianZhi;
+    }
+
+    public void setXingnianZhi(String xingnianZhi) {
+        this.xingnianZhi = xingnianZhi;
+    }
+
+    public String getXingnianZhu() {
+        return xingnianZhu;
+    }
+
+    public void setXingnianZhu(String xingnianZhu) {
+        this.xingnianZhu = xingnianZhu;
+    }
+
+    public String getTaiGan() {
+        return taiGan;
+    }
+
+    public void setTaiGan(String taiGan) {
+        this.taiGan = taiGan;
+    }
+
+    public String getTaiZhi() {
+        return taiZhi;
+    }
+
+    public void setTaiZhi(String taiZhi) {
+        this.taiZhi = taiZhi;
+    }
+
+    public String getTaiZhu() {
+        return taiZhu;
+    }
+
+    public void setTaiZhu(String taiZhu) {
+        this.taiZhu = taiZhu;
     }
 
     public List<String> getListMingGan() {
