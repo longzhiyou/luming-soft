@@ -6,6 +6,7 @@ import com.lzy.demo.CommonAlgorithm
 import com.lzy.domain.AnalyzeResult
 import com.lzy.repository.MatchRuleRepository
 import com.lzy.rule.BaseRule
+import com.lzy.rule.LiangXiangRunRule
 import com.lzy.rule.WuXingJingJiRule
 import com.lzy.rule.ZiPingZhenQuanRule
 import org.springframework.beans.factory.annotation.Autowired
@@ -29,7 +30,7 @@ class GroovyController {
     final static def listRule = [new WuXingJingJiRule()]
     final static def mapRule = [
             "五行精纪":new WuXingJingJiRule(),
-            "子平真诠":new ZiPingZhenQuanRule()
+            "梁湘润":new LiangXiangRunRule()
     ]
 
     @RequestMapping(method= RequestMethod.GET)
