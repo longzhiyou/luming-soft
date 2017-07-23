@@ -1,7 +1,12 @@
 package com.lzy.demo;
 
+import com.lzy.core.CommonAlgorithm;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 
 /**
  * User: longzhiyou
@@ -15,6 +20,21 @@ public class CommonAlgorithmTest {
 
     @Test
     public void testCommonAlgorithm(){
+
+
+        String nian="亥";
+        String yue="寅";
+        String ri="辰";
+        String shi="子";
+
+        String yun="丑";
+        String liunian="申";
+        String jia="卯";
+
+        Set<String> result=commonAlgorithm.getDiZhiSanHui(Arrays.asList(nian,yue,ri,shi,yun,liunian
+        ,jia));
+
+        System.out.println("三会:"+result.toString());
 
 //        for (int i = 0; i < 10; i++) {
 //

@@ -77,47 +77,6 @@ public enum TianGanEnum {
         return null;
     }
 
-    /**
-     * 判断天干是否相合
-     * @param gan1
-     * @param gan2
-     * @return
-     */
-//    public  static boolean isHe(String gan1,String gan2){
-//        TianGanEnum tianGan1 = getTianGan(gan1);
-//        TianGanEnum tianGan2 = getTianGan(gan2);
-//
-//        //合是相减绝对值等于5
-//        int ret = Math.abs(tianGan1.getValue()-tianGan2.getValue());
-//        return 5 == ret;
-//
-//    }
-
-    /**
-     * 天干gan2是否克gan1
-     * @param gan1 甲
-     * @param gan2 庚 辛
-     * @return
-     */
-//    public  static boolean isKe(String gan1,String gan2){
-//        TianGanEnum tianGan1 = getTianGan(gan1);
-//        TianGanEnum tianGan2 = getTianGan(gan2);
-//
-//        int ret = tianGan2.getValue()-tianGan1.getValue();
-//        ret=(ret+10)%10;
-//
-//        /**
-//         * 如果gan1是阳干则是6或者7
-//         * 阴干则是5或者6
-//         * [2017-06-09 add by longzhiyou]
-//         */
-//        if (isYang(tianGan1)) {
-//            return 6 == ret || 7 == ret;
-//        }else {
-//            return 5 == ret || 6 == ret;
-//        }
-//
-//    }
 
     public  boolean isYin(){
 

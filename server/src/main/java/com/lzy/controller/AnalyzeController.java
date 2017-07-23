@@ -1,8 +1,8 @@
 package com.lzy.controller;
 
 import com.google.common.collect.ImmutableMap;
-import com.lzy.demo.BaZi;
-import com.lzy.demo.CommonAlgorithm;
+import com.lzy.core.BaZi;
+import com.lzy.core.CommonAlgorithm;
 import com.lzy.domain.AnalyzeResult;
 import com.lzy.entity.MatchRule;
 import com.lzy.repository.MatchRuleRepository;
@@ -21,9 +21,7 @@ import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 /**
  * User: longzhiyou

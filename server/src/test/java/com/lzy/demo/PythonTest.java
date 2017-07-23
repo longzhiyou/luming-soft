@@ -1,9 +1,7 @@
 package com.lzy.demo;
 
+import com.lzy.core.CommonAlgorithm;
 import org.junit.Test;
-
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 
 /**
  * User: longzhiyou

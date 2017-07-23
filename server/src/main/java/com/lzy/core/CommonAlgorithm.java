@@ -1,4 +1,4 @@
-package com.lzy.demo;
+package com.lzy.core;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -6,8 +6,9 @@ import com.lzy.common.DiZhiEnum;
 import com.lzy.common.LiuShiJiaZiEnum;
 import com.lzy.common.TianGanEnum;
 import com.lzy.common.WuXingEnum;
+import org.raistlic.common.permutation.Permutation;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * 通用算法
@@ -376,7 +377,7 @@ public class CommonAlgorithm {
                     .build();
 
 
-    public static final ImmutableList<String> listDiZhiSanXing = ImmutableList.of(
+    public final static  ImmutableList<String> listDiZhiSanXing = ImmutableList.of(
             "[寅, 巳, 申]", "[寅, 申, 巳]",
             "[巳, 寅, 申]", "[巳, 申, 寅]",
             "[申, 寅, 巳]", "[申, 巳, 寅]",
@@ -385,7 +386,6 @@ public class CommonAlgorithm {
             "[戌, 丑, 未]", "[戌, 未, 丑]",
             "[未, 丑, 戌]", "[未, 戌, 丑]"
     );
-
 
 
     //农历月
@@ -611,8 +611,53 @@ public class CommonAlgorithm {
 
     }
 
+    public Set<String> getDiZhiSanHe(List<String> listDiZhi){
+
+        Set<String> result = new HashSet<String>();
+        //先排列组合
+        for(List<String> list : Permutation.of(listDiZhi, 3)){
+
+            String key =list.toString();
+            if(mapDiZhiSanHe.containsKey(key)){
+
+                result.add(mapDiZhiSanHe.get(key));
+
+            }
+
+        }
+
+        return result;
+
+    }
+
+
+
     public   boolean isDiZhiSanHui(String di1,String di2,String di3){
         return mapDiZhiSanHui.containsKey( Arrays.asList(di1, di2, di3).toString());
+
+    }
+
+    /**
+     * 获取地支三会
+     * @param listDiZhi：要匹配的地支列表
+     * @return 对应的五行
+     */
+    public Set<String> getDiZhiSanHui(List<String> listDiZhi){
+
+        Set<String> result = new HashSet<String>();
+        //先排列组合
+        for(List<String> list : Permutation.of(listDiZhi, 3)){
+
+            String key =list.toString();
+            if(mapDiZhiSanHui.containsKey(key)){
+
+                result.add(mapDiZhiSanHui.get(key));
+
+            }
+
+        }
+
+        return result;
 
     }
 
@@ -620,6 +665,7 @@ public class CommonAlgorithm {
         return listDiZhiSanXing.contains( Arrays.asList(di1, di2, di3).toString());
 
     }
+
 
     public   boolean isDiZhiZiXing(String di1,String di2){
         return di1.equals(di2);

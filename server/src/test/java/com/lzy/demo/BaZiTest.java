@@ -1,10 +1,11 @@
 package com.lzy.demo;
 
+import com.lzy.core.BaZi;
+import com.lzy.core.CommonAlgorithm;
+import com.lzy.rule.LiangXiangRunRule;
 import com.lzy.rule.WuXingJingJiRule;
 import org.junit.Test;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 /**
@@ -76,6 +77,16 @@ public class BaZiTest {
 
         WuXingJingJiRule wuXingJingJiRule = new WuXingJingJiRule();
         Object result = wuXingJingJiRule.matchRule(baZi,commonAlgorithm);
+        System.out.println("GroovyRule:"+result.toString());
+    }
+
+    @Test
+    public void liangxiangrun(){
+//        BaZi baZi = new BaZi("辛酉","乙亥","癸巳","癸卯");
+        BaZi baZi = new BaZi("甲子","戊戌","丁申","癸未");
+
+        LiangXiangRunRule rule = new LiangXiangRunRule();
+        Object result = rule.matchRule(baZi,commonAlgorithm);
         System.out.println("GroovyRule:"+result.toString());
     }
 

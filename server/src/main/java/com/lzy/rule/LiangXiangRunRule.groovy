@@ -1,7 +1,7 @@
 package com.lzy.rule
 
-import com.lzy.demo.BaZi
-import com.lzy.demo.CommonAlgorithm
+import com.lzy.core.BaZi
+import com.lzy.core.CommonAlgorithm
 
 /**
  * 梁湘润规则
@@ -99,6 +99,11 @@ public class LiangXiangRunRule implements BaseRule{
                 mapResult["双禄带比印，孤克之命"]="日主坐禄，又重见禄支，天干透比，更有[印]专旺之支"
             }
 
+        }
+
+        //4，日主坐禄透比，更有印专旺之支，过旺.官非，残疾
+        if(luZhi==riZhi && countBiJian>0 && (countYin+countPianYin)>0){
+            mapResult["日主坐禄透比，更有印专旺之支"]="过旺.官非，残疾。如果三会印，则大凶"
 
         }
 

@@ -1,5 +1,8 @@
 package com.lzy.demo
 
+import com.lzy.core.BaZi
+import com.lzy.core.CommonAlgorithm
+
 /**
  * http://www.groovy-lang.org/syntax.html
  * http://www.groovy-lang.org/operators.html
@@ -7,7 +10,7 @@ package com.lzy.demo
  */
 class GroovyRule {
 
-    def matchWuXingJingJiRule(BaZi bazi,CommonAlgorithm commonAlgorithm){
+    def matchWuXingJingJiRule(BaZi bazi, CommonAlgorithm commonAlgorithm){
         def mapResult = [:]
 
         def  nianGan = bazi.getNianGan()

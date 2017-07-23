@@ -1,8 +1,7 @@
 package com.lzy.rule;
 
-import com.lzy.demo.BaZi;
-import com.lzy.demo.CommonAlgorithm;
-import com.lzy.domain.AnalyzeResult;
+import com.lzy.core.BaZi;
+import com.lzy.core.CommonAlgorithm
 
 /**
  *  五行精纪规则

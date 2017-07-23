@@ -1,9 +1,9 @@
-package com.lzy.demo;
+package com.lzy.core;
 
 import com.google.common.collect.ImmutableSet;
 import com.lzy.common.DiZhiEnum;
 import com.lzy.common.TianGanEnum;
-import com.lzy.common.WuXingEnum;
+import com.lzy.core.CommonAlgorithm;
 
 import java.util.*;
 
@@ -74,6 +74,9 @@ public class BaZi {
     List<String> listMingYunSuiZhi;
 
     List<String> listMingYunSuiZhu;
+
+
+
 
     CommonAlgorithm commonAlgorithm;
 

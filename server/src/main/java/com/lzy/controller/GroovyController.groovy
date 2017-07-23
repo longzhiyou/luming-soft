@@ -1,14 +1,11 @@
 package com.lzy.controller
 
-import com.google.common.collect.ImmutableMap
-import com.lzy.demo.BaZi
-import com.lzy.demo.CommonAlgorithm
+import com.lzy.core.BaZi
+import com.lzy.core.CommonAlgorithm
 import com.lzy.domain.AnalyzeResult
 import com.lzy.repository.MatchRuleRepository
-import com.lzy.rule.BaseRule
 import com.lzy.rule.LiangXiangRunRule
 import com.lzy.rule.WuXingJingJiRule
-import com.lzy.rule.ZiPingZhenQuanRule
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
