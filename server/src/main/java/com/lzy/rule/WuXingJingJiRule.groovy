@@ -585,10 +585,10 @@ public class WuXingJingJiRule  implements BaseRule{
         ruleValue= mapRule.get(nianGan)
         tempShow ="此是上清暗合禄，不因师指若何知。${nianGan}人${ruleValue}"
         if (shiZhu==ruleValue) {
-            mapResult["【暗禄格】时柱"]=tempShow
+            mapResult["【暗禄格】时柱"]=tempShow.toString()
         }
         if (riZhu==ruleValue) {
-            mapResult["【暗禄格】日柱"]=tempShow
+            mapResult["【暗禄格】日柱"]=tempShow.toString()
         }
 
         //【天雄禄】甲人数至戊是五数，不必求戊，戊禄在巳，见巳即名天雄禄，更正禄加之为入格。（马子才命格）
