@@ -7,6 +7,7 @@ import com.lzy.common.LiuShiJiaZiEnum;
 import com.lzy.common.TianGanEnum;
 import com.lzy.common.WuXingEnum;
 import org.raistlic.common.permutation.Permutation;
+import sun.tools.tree.IfStatement;
 
 import java.util.*;
 
@@ -388,6 +389,84 @@ public class CommonAlgorithm {
     );
 
 
+    //天干隔一
+    final static ImmutableMap<String,String> mapTianGanGe =
+            ImmutableMap.<String, String>builder()
+                    .put("[甲, 丙]","乙")
+                    .put("[丙, 甲]","乙")
+
+                    .put("[乙, 丁]","丙")
+                    .put("[丁, 乙]","丙")
+
+                    .put("[丙, 戊]","丁")
+                    .put("[戊, 丙]","丁")
+
+                    .put("[丁, 己]","戊")
+                    .put("[己, 丁]","戊")
+
+                    .put("[戊, 庚]","己")
+                    .put("[庚, 戊]","己")
+
+                    .put("[己, 辛]","庚")
+                    .put("[辛, 己]","庚")
+
+                    .put("[庚, 壬]","辛")
+                    .put("[壬, 庚]","辛")
+
+                    .put("[辛, 癸]","壬")
+                    .put("[癸, 辛]","壬")
+
+
+                    .put("[壬, 甲]","癸")
+                    .put("[甲, 壬]","癸")
+
+                    .put("[癸, 乙]","甲")
+                    .put("[乙, 癸]","甲")
+
+                    .build();
+
+    //地支隔一
+    final static ImmutableMap<String,String> mapDiZhiGe =
+            ImmutableMap.<String, String>builder()
+                    .put("[子, 寅]","丑")
+                    .put("[寅, 子]","丑")
+
+                    .put("[丑, 卯]","寅")
+                    .put("[卯, 丑]","寅")
+
+                    .put("[寅, 辰]","卯")
+                    .put("[辰, 寅]","卯")
+
+                    .put("[卯, 巳]","辰")
+                    .put("[巳, 卯]","辰")
+
+                    .put("[辰, 午]","巳")
+                    .put("[午, 辰]","巳")
+
+                    .put("[巳, 未]","午")
+                    .put("[未, 巳]","午")
+
+                    .put("[午, 申]","未")
+                    .put("[申, 午]","未")
+
+                    .put("[未, 酉]","申")
+                    .put("[酉, 未]","申")
+
+
+                    .put("[申, 戌]","酉")
+                    .put("[戌, 申]","酉")
+
+                    .put("[酉, 亥]","戌")
+                    .put("[亥, 酉]","戌")
+
+                    .put("[戌, 子]","亥")
+                    .put("[子, 戌]","亥")
+
+                    .put("[亥, 丑]","子")
+                    .put("[丑, 亥]","子")
+
+                    .build();
+
     //农历月
     public final static ImmutableList<String> lunarMonth =ImmutableList.of(
             "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥", "子", "丑");
@@ -755,6 +834,29 @@ public class CommonAlgorithm {
 
 
     }
+
+    /**
+     * 暗带
+     * @param gan1
+     * @param gan2
+     *
+     * @return
+     */
+    public  String getAnDai(String gan1,String gan2,String zhi1,String zhi2){
+
+        String result="";
+        String gange = mapTianGanGe.get(Arrays.asList(gan1, gan2).toString());
+        if (gange==null)
+            return result;
+        String zhige = mapDiZhiGe.get(Arrays.asList(zhi1, zhi2).toString());
+        if (zhige==null)
+            return result;
+
+        return gange+zhige;
+
+    }
+
+
 
 
     /**

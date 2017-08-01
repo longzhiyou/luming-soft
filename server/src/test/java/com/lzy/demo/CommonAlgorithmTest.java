@@ -134,6 +134,13 @@ public class CommonAlgorithmTest {
 //        Assert.assertTrue(ke);
     }
 
+    @Test
+    public void getAnDai(){
+
+        String anDai = commonAlgorithm.getAnDai("戊", "甲", "子", "寅");
+//        Assert.assertTrue(ke);
+    }
+
 
 
 
