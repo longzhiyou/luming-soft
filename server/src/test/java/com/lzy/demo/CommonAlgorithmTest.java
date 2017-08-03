@@ -83,9 +83,16 @@ public class CommonAlgorithmTest {
     @Test
     public void changshengjue(){
 //        commonAlgorithm.getTianGanChangShengJue("乙","刃");
-        commonAlgorithm.getShiShenDiZhi("甲","正财");
+
+//        commonAlgorithm.getShiShenDiZhi("甲","正财");
+        String wuXing = commonAlgorithm.getJiaZiWuXing("甲子");
+        String wuXingChangShengJueName = commonAlgorithm.getWuXingChangShengJueName(wuXing, "亥");
+        System.out.println(wuXingChangShengJueName);
+//        Assert.assertEquals("长生",wuXingChangShengJueName);
 
     }
+
+
 
     @Test
     public void testIsTianGanKe() {

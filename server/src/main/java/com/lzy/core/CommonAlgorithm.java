@@ -7,9 +7,11 @@ import com.lzy.common.LiuShiJiaZiEnum;
 import com.lzy.common.TianGanEnum;
 import com.lzy.common.WuXingEnum;
 import org.raistlic.common.permutation.Permutation;
-import sun.tools.tree.IfStatement;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * 通用算法
@@ -784,7 +786,7 @@ public class CommonAlgorithm {
      * 获取天干长生诀
      * @param gan
      * @param changshengName 如长生 禄
-     * @return
+     * @return 对应的地支
      */
     public   String getTianGanChangShengJue(String gan,String changshengName){
 
@@ -800,6 +802,30 @@ public class CommonAlgorithm {
 
 
     }
+
+    /**
+     * 获取五行在地支的长生诀
+     * @param wuxing
+     * @param dizhi
+     * @return 对应的名称
+     */
+    public   String getWuXingChangShengJueName(String wuxing,String dizhi){
+
+        //获取五行索引
+        int wuxingIndex = listWuXing.indexOf(wuxing);
+        int dizhiIndex = listDiZhi.indexOf(dizhi);
+
+        for(int i=0;i<12;i++){
+            String zhi = tableWuXingChangShengJue[wuxingIndex][i];
+            if (dizhi.equals(zhi)) {
+                //根据索引获取长生诀名称
+                return listChangShengJue.get(i);
+            }
+        }
+        return "";
+    }
+
+
 
     /**
      * 判断五行是否生
@@ -870,7 +896,7 @@ public class CommonAlgorithm {
         if (liuShiJiaZiEnum!=null) {
             return liuShiJiaZiEnum.getWuXing().getName();
         }
-        return null;
+        return "";
 
     }
 
