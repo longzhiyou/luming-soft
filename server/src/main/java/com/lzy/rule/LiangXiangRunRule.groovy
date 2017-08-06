@@ -14,7 +14,7 @@ public class LiangXiangRunRule implements BaseRule{
     Object matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
 
         def mapResult = [:]
-        mapResult["实务"] = shiwu(bazi, commonAlgorithm)
+//        mapResult["实务"] = shiwu(bazi, commonAlgorithm)
         mapResult["子平母法"] = mufa(bazi, commonAlgorithm)
 
         return mapResult

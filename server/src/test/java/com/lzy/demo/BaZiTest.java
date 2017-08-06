@@ -3,6 +3,7 @@ package com.lzy.demo;
 import com.lzy.core.BaZi;
 import com.lzy.core.CommonAlgorithm;
 import com.lzy.rule.LiangXiangRunRule;
+import com.lzy.rule.ShiZhanRule;
 import com.lzy.rule.WuXingJingJiRule;
 import org.junit.Test;
 
@@ -86,6 +87,17 @@ public class BaZiTest {
         BaZi baZi = new BaZi("甲子","戊戌","丁申","癸未");
 
         LiangXiangRunRule rule = new LiangXiangRunRule();
+        Object result = rule.matchRule(baZi,commonAlgorithm);
+        System.out.println("GroovyRule:"+result.toString());
+    }
+
+    @Test
+    public void shizhan(){
+//        BaZi baZi = new BaZi("辛酉","乙亥","癸巳","癸卯");
+        BaZi baZi = new BaZi("甲子","戊戌","己亥","癸未");
+        baZi.setLiunianZhu("甲子");
+
+        ShiZhanRule rule = new ShiZhanRule();
         Object result = rule.matchRule(baZi,commonAlgorithm);
         System.out.println("GroovyRule:"+result.toString());
     }

@@ -38,24 +38,24 @@ public class BaZi {
     private String shiZhu;
 
     //大运干支
-    private String yunGan;
-    private String yunZhi;
-    private String yunZhu;
+    private String yunGan="";
+    private String yunZhi="";
+    private String yunZhu="";
 
     //流年干支
-    private String liunianGan;
-    private String liunianZhi;
-    private String liunianZhu;
+    private String liunianGan="";
+    private String liunianZhi="";
+    private String liunianZhu="";
 
     //行年干支
-    private String xingnianan;
-    private String xingnianZhi;
-    private String xingnianZhu;
+    private String xingnianan="";
+    private String xingnianZhi="";
+    private String xingnianZhu="";
 
     //胎命干支
-    private String taiGan;
-    private String taiZhi;
-    private String taiZhu;
+    private String taiGan="";
+    private String taiZhi="";
+    private String taiZhu="";
 
     //年月日时天干
     List<String> listMingGan;
@@ -209,6 +209,8 @@ public class BaZi {
     }
 
     public void setLiunianZhu(String liunianZhu) {
+        this.liunianGan = liunianZhu.substring(0,1);
+        this.liunianZhi = liunianZhu.substring(1,2);
         this.liunianZhu = liunianZhu;
     }
 

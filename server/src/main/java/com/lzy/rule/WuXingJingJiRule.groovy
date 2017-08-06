@@ -635,6 +635,6 @@ public class WuXingJingJiRule  implements BaseRule{
             mapResult["【禄堂】日柱"]="若更得诸位福神助发，必须大贵（李虚中书）"+ nianGan+"人"+riZhu
         }
 
-        mapResult;
+        mapResult
     }
 }
