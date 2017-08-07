@@ -30,7 +30,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:"戊子"
+                     nayintongweike:[
+                             match:"戊子",
+                             info:[]
+                     ]
              ],
              "乙丑":[
                      nayingeyike:"壬子",
@@ -39,7 +42,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:"己丑"
+                     nayintongweike:[
+                             match:"己丑",
+                             info:[]
+                     ]
              ],
              "丙寅":[
                      nayingeyike:"乙丑",
@@ -48,7 +54,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"",
+                             info:[]
+                     ]
              ],
              "丁卯":[
                      nayingeyike:"壬寅",
@@ -57,7 +66,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:"乙卯"
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "戊辰":[
                      nayingeyike:"己卯",
@@ -66,7 +78,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "己巳":[
                      nayingeyike:"丙辰",
@@ -75,7 +90,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "庚午":[
                      nayingeyike:"癸巳",
@@ -84,7 +102,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "辛未":[
                      nayingeyike:"丙午",
@@ -93,7 +114,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "壬申":[
                      nayingeyike:"癸未",
@@ -102,7 +126,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "癸酉":[
                      nayingeyike:"庚申",
@@ -111,7 +138,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "甲戌":[
                      nayingeyike:"癸酉",
@@ -120,7 +150,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "乙亥":[
                      nayingeyike:"庚戌",
@@ -129,7 +162,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "丙子":[
                      nayingeyike:"乙亥",
@@ -138,7 +174,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
 
              ],
              "丁丑":[
@@ -148,7 +187,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "戊寅":[
                      nayingeyike:"丁丑",
@@ -157,7 +199,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "己卯":[
                      nayingeyike:"甲寅",
@@ -166,7 +211,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "庚辰":[
                      nayingeyike:"辛卯",
@@ -175,7 +223,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "辛巳":[
                      nayingeyike:"戊辰",
@@ -184,7 +235,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "壬午":[
                      nayingeyike:"丁巳",
@@ -193,7 +247,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "癸未":[
                      nayingeyike:"庚午",
@@ -202,7 +259,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "甲申":[
                      nayingeyike:"己未",
@@ -211,7 +271,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "乙酉":[
                      nayingeyike:"丙申",
@@ -220,7 +283,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "丙戌":[
                      nayingeyike:"乙酉",
@@ -229,7 +295,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "丁亥":[
                      nayingeyike:"壬戌",
@@ -238,7 +307,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "戊子":[
                      nayingeyike:"辛亥",
@@ -247,7 +319,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "己丑":[
                      nayingeyike:"甲子",
@@ -256,7 +331,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "庚寅":[
                      nayingeyike:"辛丑",
@@ -265,7 +343,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "辛卯":[
                      nayingeyike:"戊寅",
@@ -274,7 +355,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "壬辰":[
                      nayingeyike:"丁卯",
@@ -283,7 +367,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "癸巳":[
                      nayingeyike:"甲辰",
@@ -292,7 +379,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "甲午":[
                      nayingeyike:"己巳",
@@ -301,7 +391,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "乙未":[
                      nayingeyike:"壬午",
@@ -310,7 +403,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "丙申":[
                      nayingeyike:"乙未",
@@ -319,7 +415,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "丁酉":[
                      nayingeyike:"壬申",
@@ -328,7 +427,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "戊戌":[
                      nayingeyike:"己酉",
@@ -337,7 +439,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "己亥":[
                      nayingeyike:"丙戌",
@@ -346,7 +451,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "庚子":[
                      nayingeyike:"癸亥",
@@ -355,7 +463,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "辛丑":[
                      nayingeyike:"丙子",
@@ -364,7 +475,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "壬寅":[
                      nayingeyike:"癸丑",
@@ -373,7 +487,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "癸卯":[
                      nayingeyike:"庚寅",
@@ -382,7 +499,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "甲辰":[
                      nayingeyike:"癸卯",
@@ -391,7 +511,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "乙巳":[
                      nayingeyike:"庚辰",
@@ -400,7 +523,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "丙午":[
                      nayingeyike:"乙巳",
@@ -409,7 +535,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "丁未":[
                      nayingeyike:"戊午",
@@ -418,7 +547,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "戊申":[
                      nayingeyike:"丁未",
@@ -427,7 +559,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "己酉":[
                      nayingeyike:"甲申",
@@ -436,7 +571,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "庚戌":[
                      nayingeyike:"辛酉",
@@ -445,7 +583,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "辛亥":[
                      nayingeyike:"戊戌",
@@ -454,7 +595,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "壬子":[
                      nayingeyike:"丁亥",
@@ -463,7 +607,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "癸丑":[
                      nayingeyike:"庚子",
@@ -472,7 +619,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "甲寅":[
                      nayingeyike:"己丑",
@@ -481,7 +631,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "乙卯":[
                      nayingeyike:"丙寅",
@@ -490,7 +643,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "丙辰":[
                      nayingeyike:"乙卯",
@@ -499,7 +655,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "丁巳":[
                      nayingeyike:"壬辰",
@@ -508,7 +667,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "戊午":[
                      nayingeyike:"辛巳",
@@ -517,7 +679,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "己未":[
                      nayingeyike:"甲午",
@@ -526,7 +691,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "庚申":[
                      nayingeyike:"辛未",
@@ -535,7 +703,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "辛酉":[
                      nayingeyike:"戊申",
@@ -544,7 +715,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "壬戌":[
                      nayingeyike:"丁酉",
@@ -553,7 +727,10 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ],
              "癸亥":[
                      nayingeyike:"甲戌",
@@ -562,547 +739,12 @@ package com.lzy.core
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
-                     nayintongweike:""
+                     nayintongweike:[
+                             match:"乙卯",
+                             info:[]
+                     ]
              ]
      ]
 
-
-     static def nayintongweikeInfo=[
-             "甲子":[
-                     match:"戊子"
-             ],
-             "乙丑":[
-                     nayingeyike:"壬子",
-                     nayinmuguike:"癸丑",
-                     nayinkongwangke:["庚申","辛酉"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:"己丑"
-             ],
-             "丙寅":[
-                     nayingeyike:"乙丑",
-                     nayinmuguike:"",
-                     nayinkongwangke:["庚戌","辛亥"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "丁卯":[
-                     nayingeyike:"壬寅",
-                     nayinmuguike:"",
-                     nayinkongwangke:["庚戌","辛亥"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:"乙卯"
-             ],
-             "戊辰":[
-                     nayingeyike:"己卯",
-                     nayinmuguike:"",
-                     nayinkongwangke:["庚子","辛丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "己巳":[
-                     nayingeyike:"丙辰",
-                     nayinmuguike:"",
-                     nayinkongwangke:["庚子","辛丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "庚午":[
-                     nayingeyike:"癸巳",
-                     nayinmuguike:"",
-                     nayinkongwangke:["甲申","乙酉"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "辛未":[
-                     nayingeyike:"丙午",
-                     nayinmuguike:"丁未",
-                     nayinkongwangke:["甲申","乙酉"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "壬申":[
-                     nayingeyike:"癸未",
-                     nayinmuguike:"",
-                     nayinkongwangke:["壬午","癸未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "癸酉":[
-                     nayingeyike:"庚申",
-                     nayinmuguike:"",
-                     nayinkongwangke:["壬午","癸未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "甲戌":[
-                     nayingeyike:"癸酉",
-                     nayinmuguike:"庚戌",
-                     nayinkongwangke:["甲子","乙丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "乙亥":[
-                     nayingeyike:"庚戌",
-                     nayinmuguike:"",
-                     nayinkongwangke:["甲子","乙丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "丙子":[
-                     nayingeyike:"乙亥",
-                     nayinmuguike:"",
-                     nayinkongwangke:["戊午","己未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-
-             ],
-             "丁丑":[
-                     nayingeyike:"戊子",
-                     nayinmuguike:"己丑",
-                     nayinkongwangke:["戊午","己未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "戊寅":[
-                     nayingeyike:"丁丑",
-                     nayinmuguike:"",
-                     nayinkongwangke:["丙午","丁未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "己卯":[
-                     nayingeyike:"甲寅",
-                     nayinmuguike:"",
-                     nayinkongwangke:["丙午","丁未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "庚辰":[
-                     nayingeyike:"辛卯",
-                     nayinmuguike:"戊辰",
-                     nayinkongwangke:["戊戌","己亥"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "辛巳":[
-                     nayingeyike:"戊辰",
-                     nayinmuguike:"",
-                     nayinkongwangke:["戊戌","己亥"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "壬午":[
-                     nayingeyike:"丁巳",
-                     nayinmuguike:"",
-                     nayinkongwangke:["丙戌","丁亥"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "癸未":[
-                     nayingeyike:"庚午",
-                     nayinmuguike:"辛未",
-                     nayinkongwangke:["丙戌","丁亥"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "甲申":[
-                     nayingeyike:"己未",
-                     nayinmuguike:"",
-                     nayinkongwangke:["甲戌","乙亥"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "乙酉":[
-                     nayingeyike:"丙申",
-                     nayinmuguike:"",
-                     nayinkongwangke:["甲戌","乙亥"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "丙戌":[
-                     nayingeyike:"乙酉",
-                     nayinmuguike:"壬戌",
-                     nayinkongwangke:["壬申","癸酉"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "丁亥":[
-                     nayingeyike:"壬戌",
-                     nayinmuguike:"",
-                     nayinkongwangke:["壬申","癸酉"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "戊子":[
-                     nayingeyike:"辛亥",
-                     nayinmuguike:"",
-                     nayinkongwangke:["甲午","乙未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "己丑":[
-                     nayingeyike:"甲子",
-                     nayinmuguike:"乙丑",
-                     nayinkongwangke:["甲午","乙未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "庚寅":[
-                     nayingeyike:"辛丑",
-                     nayinmuguike:"",
-                     nayinkongwangke:["戊申","己酉"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "辛卯":[
-                     nayingeyike:"戊寅",
-                     nayinmuguike:"",
-                     nayinkongwangke:["戊申","己酉"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "壬辰":[
-                     nayingeyike:"丁卯",
-                     nayinmuguike:"甲辰",
-                     nayinkongwangke:["丙申","丁酉"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "癸巳":[
-                     nayingeyike:"甲辰",
-                     nayinmuguike:"",
-                     nayinkongwangke:["丙申","丁酉"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "甲午":[
-                     nayingeyike:"己巳",
-                     nayinmuguike:"",
-                     nayinkongwangke:["庚寅","辛卯"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "乙未":[
-                     nayingeyike:"壬午",
-                     nayinmuguike:"癸未",
-                     nayinkongwangke:["庚寅","辛卯"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "丙申":[
-                     nayingeyike:"乙未",
-                     nayinmuguike:"",
-                     nayinkongwangke:["庚辰","辛巳"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "丁酉":[
-                     nayingeyike:"壬申",
-                     nayinmuguike:"",
-                     nayinkongwangke:["庚辰","辛巳"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "戊戌":[
-                     nayingeyike:"己酉",
-                     nayinmuguike:"丙戌",
-                     nayinkongwangke:["庚午","辛未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "己亥":[
-                     nayingeyike:"丙戌",
-                     nayinmuguike:"",
-                     nayinkongwangke:["庚午","辛未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "庚子":[
-                     nayingeyike:"癸亥",
-                     nayinmuguike:"",
-                     nayinkongwangke:["甲寅","乙卯"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "辛丑":[
-                     nayingeyike:"丙子",
-                     nayinmuguike:"丁丑",
-                     nayinkongwangke:["甲寅","乙卯"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "壬寅":[
-                     nayingeyike:"癸丑",
-                     nayinmuguike:"",
-                     nayinkongwangke:["壬子","癸丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "癸卯":[
-                     nayingeyike:"庚寅",
-                     nayinmuguike:"",
-                     nayinkongwangke:["壬子","癸丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "甲辰":[
-                     nayingeyike:"癸卯",
-                     nayinmuguike:"庚辰",
-                     nayinkongwangke:["甲午","乙未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "乙巳":[
-                     nayingeyike:"庚辰",
-                     nayinmuguike:"",
-                     nayinkongwangke:["甲午","乙未"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "丙午":[
-                     nayingeyike:"乙巳",
-                     nayinmuguike:"",
-                     nayinkongwangke:["戊子","己丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "丁未":[
-                     nayingeyike:"戊午",
-                     nayinmuguike:"己未",
-                     nayinkongwangke:["戊子","己丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "戊申":[
-                     nayingeyike:"丁未",
-                     nayinmuguike:"",
-                     nayinkongwangke:["丙子","丁丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "己酉":[
-                     nayingeyike:"甲申",
-                     nayinmuguike:"",
-                     nayinkongwangke:["丙子","丁丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "庚戌":[
-                     nayingeyike:"辛酉",
-                     nayinmuguike:"戊戌",
-                     nayinkongwangke:["戊辰","己巳"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "辛亥":[
-                     nayingeyike:"戊戌",
-                     nayinmuguike:"",
-                     nayinkongwangke:["戊辰","己巳"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "壬子":[
-                     nayingeyike:"丁亥",
-                     nayinmuguike:"",
-                     nayinkongwangke:["丙辰","丁巳"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "癸丑":[
-                     nayingeyike:"庚子",
-                     nayinmuguike:"辛丑",
-                     nayinkongwangke:["丙辰","丁巳"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "甲寅":[
-                     nayingeyike:"己丑",
-                     nayinmuguike:"",
-                     nayinkongwangke:["甲辰","乙巳"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "乙卯":[
-                     nayingeyike:"丙寅",
-                     nayinmuguike:"",
-                     nayinkongwangke:["甲辰","乙巳"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "丙辰":[
-                     nayingeyike:"乙卯",
-                     nayinmuguike:"壬辰",
-                     nayinkongwangke:["丙子","丁丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "丁巳":[
-                     nayingeyike:"壬辰",
-                     nayinmuguike:"",
-                     nayinkongwangke:["丙子","丁丑"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "戊午":[
-                     nayingeyike:"辛巳",
-                     nayinmuguike:"",
-                     nayinkongwangke:["庚辰","辛巳"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "己未":[
-                     nayingeyike:"甲午",
-                     nayinmuguike:"乙未",
-                     nayinkongwangke:["庚辰","辛巳"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "庚申":[
-                     nayingeyike:"辛未",
-                     nayinmuguike:"",
-                     nayinkongwangke:["戊寅","己卯"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "辛酉":[
-                     nayingeyike:"戊申",
-                     nayinmuguike:"",
-                     nayinkongwangke:["戊寅","己卯"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "壬戌":[
-                     nayingeyike:"丁酉",
-                     nayinmuguike:"甲戌",
-                     nayinkongwangke:["丙寅","丁卯"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ],
-             "癸亥":[
-                     nayingeyike:"甲戌",
-                     nayinmuguike:"",
-                     nayinkongwangke:["丙寅","丁卯"],
-                     gongjiake:[],
-                     jinglanhuke:"",
-                     sijiaochongke:[],
-                     nayintongweike:""
-             ]
-     ]
 
  }
