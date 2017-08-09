@@ -94,7 +94,9 @@ public class BaZiTest {
     @Test
     public void shizhan(){
 //        BaZi baZi = new BaZi("辛酉","乙亥","癸巳","癸卯");
-        BaZi baZi = new BaZi("甲子","戊戌","己亥","癸未");
+        BaZi baZi = new BaZi("乙丑","戊戌","己丑","己丑");
+//        baZi.setYun("己","丑");
+        baZi.setYunZhu("己丑");
         baZi.setLiunianZhu("甲子");
 
         ShiZhanRule rule = new ShiZhanRule();

@@ -197,6 +197,9 @@ public class BaZi {
     }
 
     public void setYunZhu(String yunZhu) {
+
+        this.yunGan = yunZhu.substring(0,1);
+        this.yunZhi = yunZhu.substring(1,2);
         this.yunZhu = yunZhu;
     }
 

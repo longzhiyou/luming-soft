@@ -3,6 +3,7 @@ package com.lzy.rule;
 import com.lzy.core.BaZi;
 import com.lzy.core.CommonAlgorithm
 import com.lzy.core.JiaZiAlgorithm
+import sun.tools.tree.IfStatement
 
 /**
  *  实战规则
@@ -75,12 +76,24 @@ public class ShiZhanRule implements BaseRule{
         //吉凶
 
         /**
-         *  岁运
+         *
          *  六法冲克-细批终身详解》P616 论“大凶”
          *  “六法冲克”断生死关口 http://blog.sina.com.cn/s/blog_49d801fd0102dsp3.html
          *  《金不换大运》
          * [2017-08-03 add by longzhiyou]
          */
+
+        //纳音同位克
+        def tongweike = JiaZiAlgorithm.mapJiaZiInfo.get(nianZhu).nayintongweike.match
+        if(tongweike==shiZhu){
+            mapResult["【时柱纳音同位克年柱】"] = "时柱:"+shiZhu+" 年柱:"+nianZhu
+        }
+        if(tongweike==riZhu){
+            mapResult["【日柱纳音同位克年柱】"] = "日柱:"+riZhu+" 年柱:"+nianZhu
+        }
+        if(tongweike==yunZhu){
+            mapResult["【运柱纳音同位克年柱】"] = "运柱:"+yunZhu+" 年柱:"+nianZhu
+        }
 
         if(!liunianZhu.isEmpty()){
             def info = JiaZiAlgorithm.mapJiaZiInfo.get(liunianZhu)

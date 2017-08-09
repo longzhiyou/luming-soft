@@ -73,13 +73,13 @@ package com.lzy.core
              ],
              "戊辰":[
                      nayingeyike:"己卯",
-                     nayinmuguike:"",
+                     nayinmuguike:"丙辰",
                      nayinkongwangke:["庚子","辛丑"],
                      gongjiake:[],
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"丙辰",
                              info:[]
                      ]
              ],
@@ -91,7 +91,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -103,7 +103,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -115,7 +115,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"丁未",
                              info:[]
                      ]
              ],
@@ -127,7 +127,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -139,7 +139,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -151,7 +151,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"庚戌",
                              info:[]
                      ]
              ],
@@ -163,7 +163,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -175,7 +175,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
 
@@ -188,7 +188,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"己丑",
                              info:[]
                      ]
              ],
@@ -200,7 +200,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -212,7 +212,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -224,7 +224,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"戊辰",
                              info:[]
                      ]
              ],
@@ -236,7 +236,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -248,7 +248,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -260,7 +260,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"辛未",
                              info:[]
                      ]
              ],
@@ -272,7 +272,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -284,7 +284,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -296,7 +296,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"壬戌",
                              info:[]
                      ]
              ],
@@ -308,7 +308,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -320,7 +320,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -332,7 +332,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"乙丑",
                              info:[]
                      ]
              ],
@@ -344,7 +344,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -356,7 +356,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -368,7 +368,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"甲辰",
                              info:[]
                      ]
              ],
@@ -380,7 +380,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -392,7 +392,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -404,7 +404,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"癸未",
                              info:[]
                      ]
              ],
@@ -416,7 +416,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -428,7 +428,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -440,7 +440,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"丙戌",
                              info:[]
                      ]
              ],
@@ -452,7 +452,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -464,7 +464,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -476,7 +476,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"丁丑",
                              info:[]
                      ]
              ],
@@ -488,7 +488,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -500,7 +500,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -512,7 +512,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"庚辰",
                              info:[]
                      ]
              ],
@@ -524,7 +524,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -536,7 +536,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -548,7 +548,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"己未",
                              info:[]
                      ]
              ],
@@ -560,7 +560,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -572,7 +572,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -584,7 +584,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"戊戌",
                              info:[]
                      ]
              ],
@@ -596,7 +596,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -608,7 +608,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -620,7 +620,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"辛丑",
                              info:[]
                      ]
              ],
@@ -632,7 +632,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -644,7 +644,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -656,7 +656,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"壬辰",
                              info:[]
                      ]
              ],
@@ -668,7 +668,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -680,7 +680,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -692,7 +692,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"乙未",
                              info:[]
                      ]
              ],
@@ -704,7 +704,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -716,7 +716,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ],
@@ -728,7 +728,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"甲戌",
                              info:[]
                      ]
              ],
@@ -740,7 +740,7 @@ package com.lzy.core
                      jinglanhuke:"",
                      sijiaochongke:[],
                      nayintongweike:[
-                             match:"乙卯",
+                             match:"",
                              info:[]
                      ]
              ]
