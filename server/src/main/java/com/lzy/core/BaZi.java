@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.lzy.common.DiZhiEnum;
 import com.lzy.common.TianGanEnum;
 import com.lzy.core.CommonAlgorithm;
+import sun.tools.tree.IfStatement;
 
 import java.util.*;
 
@@ -128,23 +129,37 @@ public class BaZi {
     }
 
     public int getMuCount() {
-        return muCount;
+        if(mapWuXingCount.containsKey("木"))
+            return mapWuXingCount.get("木");
+        return 0;
     }
 
     public int getHuoCount() {
-        return huoCount;
+
+        if(mapWuXingCount.containsKey("火"))
+            return mapWuXingCount.get("火");
+        return 0;
+//        return huoCount;
     }
 
     public int getTuCount() {
-        return tuCount;
+
+        if(mapWuXingCount.containsKey("土"))
+            return mapWuXingCount.get("土");
+        return 0;
     }
 
     public int getJinCount() {
-        return jinCount;
+        if(mapWuXingCount.containsKey("金"))
+            return mapWuXingCount.get("金");
+        return 0;
+
     }
 
     public int getShuiCount() {
-        return shuiCount;
+        if(mapWuXingCount.containsKey("水"))
+            return mapWuXingCount.get("水");
+        return 0;
     }
 
 
@@ -466,69 +481,22 @@ public class BaZi {
             mapWuXingCount.put(wuXingName,1);
         }
 
-
-
     }
-//    public void wuxingTianGanCount(TianGanEnum tianGan){
-//
-//        addWuXingCount(tianGan.getWuXing().getName());
-//        String wuXing = tianGan.getWuXing().getName();
-//        Integer wuXingCount = mapWuXingCount.get(wuXing);
-//        if (wuXingCount!=null) {
-//            mapWuXingCount.put(wuXing,wuXingCount+1);
-//        }else {
-//            mapWuXingCount.put(wuXing,1);
-//        }
-////        if (mapWuXingCount.containsKey(tianGan.getWuXing())) {
-////
-////        }
-////        if (tianGan.isMu()) {
-////            muCount+=1;
-////        }else if (tianGan.isHuo()) {
-////            huoCount+=1;
-////        }else if (tianGan.isTu()) {
-////            tuCount+=1;
-////        }else if (tianGan.isJin()) {
-////            jinCount+=1;
-////        }else {
-////            shuiCount+=1;
-////        }
-//    }
 
     public void wuxingDiZhiCount(DiZhiEnum diZhi,boolean cangan){
 
         if (cangan) {
-
             ImmutableSet<String> cangganSet = diZhi.getCanggan();
             for (String gan : cangganSet) {
                 TianGanEnum tianGan = TianGanEnum.getTianGan(gan);
                 addWuXingCount(tianGan.getWuXing().getName());
-//                wuxingTianGanCount(tianGan);
+//
             }
         }else {
 
             addWuXingCount(diZhi.getWuXing().getName());
 
-//            wuxingTianGanCount(tianGan);
-//
-//
-//            if (wuXingCount!=null) {
-//                mapWuXingCount.put(wuXing,wuXingCount+1);
-//            }else {
-//                mapWuXingCount.put(wuXing,1);
-//            }
-//
-//            if (diZhi.isMu()) {
-//                muCount+=1;
-//            }else if (diZhi.isHuo()) {
-//                huoCount+=1;
-//            }else if (diZhi.isTu()) {
-//                tuCount+=1;
-//            }else if (diZhi.isJin()) {
-//                jinCount+=1;
-//            }else {
-//                shuiCount+=1;
-//            }
+
         }
 
     }
@@ -612,6 +580,8 @@ public class BaZi {
         return wuxing;
 
     }
+
+
 
 
 }

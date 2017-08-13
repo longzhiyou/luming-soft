@@ -2,6 +2,7 @@ package com.lzy.core;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import com.lzy.common.DiZhiEnum;
 import com.lzy.common.LiuShiJiaZiEnum;
 import com.lzy.common.TianGanEnum;
@@ -665,6 +666,17 @@ public class CommonAlgorithm {
     }
 
     /**
+     * 获取天干五行
+     * @param gan
+     * @return
+     */
+    public   String getTianGanWuXing(String gan){
+
+        TianGanEnum tianGanEnum = mapTianGan.get(gan);
+        return tianGanEnum.getWuXing().getName();
+    }
+
+    /**
      * 判断天干是否克
      * @param gan1
      * @param gan2
@@ -679,6 +691,22 @@ public class CommonAlgorithm {
 
     public   boolean isDiZhiHe(String di1, String di2){
         return mapDiZhiHe.containsKey( Arrays.asList(di1, di2).toString());
+
+    }
+
+    /**
+     * 判断地支中是否包含六合
+     * @param combinationList 需要组合的地支列表 如八字地支列表
+     * @return
+     */
+    public   boolean containsDiZhiHe(List<String> combinationList){
+        for(List<String> list : Permutation.of(combinationList, 2)){
+            if (mapDiZhiHe.containsKey( list.toString())){
+                return true;
+            }
+        }
+
+        return false;
 
     }
 
@@ -922,6 +950,22 @@ public class CommonAlgorithm {
     public   String getLuZhi(String gan){
 
        return mapTianGanLu.get(gan);
+    }
+
+    /**
+     * 地支是否包含藏干
+     * @param gan
+     * @return
+     */
+    public   boolean containsCangGan(String gan,String zhi){
+        DiZhiEnum diZhiEnum = mapDiZhi.get(zhi);
+        ImmutableSet<String> cangganSet = diZhiEnum.getCanggan();
+        for (String canggan : cangganSet) {
+            if(canggan==gan)
+                return true;
+        }
+
+        return false;
     }
 
 

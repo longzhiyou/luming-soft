@@ -10,7 +10,7 @@ import com.lzy.core.CommonAlgorithm
 public class SanMingTongHuiRule implements BaseRule{
 
     @Override
-    public String matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
+   def matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
         return null;
     }
 }

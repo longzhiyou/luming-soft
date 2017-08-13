@@ -571,9 +571,10 @@ public class WuXingJingJiRule  implements BaseRule{
         //【旬中禄格】
         if (listMingZhi.contains(luZhi)) {
 
-            for(i in 0..3){
-                if (luZhi==listMingZhi[i]&& commonAlgorithm.isYiXun(nianZhu,listMingZhu[i])) {
-                    mapResult["【旬中禄格】"]="福禄兼足,稍有福助之，五品之贵，一云重重福禄主富盛"
+            for(i in 1..3){
+                def mingzhu = listMingZhu[i]
+                if (luZhi==listMingZhi[i]&& commonAlgorithm.isYiXun(nianZhu,mingzhu)) {
+                    mapResult["【旬中禄格】"]="${nianZhu}年和${mingzhu}在一旬，福禄兼足,稍有福助之，五品之贵，一云重重福禄主富盛".toString()
                 }
             }
         }

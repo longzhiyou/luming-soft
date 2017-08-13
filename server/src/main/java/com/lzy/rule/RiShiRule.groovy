@@ -7,10 +7,10 @@ import com.lzy.core.CommonAlgorithm
  *  日时系统规则
  * Created by bukeyan on 2017/6/18.
  */
-public class RiShiRule implements BaseRule{
+ class RiShiRule implements BaseRule{
 
     @Override
-    public String matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
+     def matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
         return null;
     }
 }

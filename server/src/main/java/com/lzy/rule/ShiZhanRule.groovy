@@ -11,7 +11,7 @@ import com.lzy.core.JiaZiAlgorithm
 public class ShiZhanRule implements BaseRule{
 
     @Override
-    public Object matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
+    public def matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
 
         def mapResult = [:]
         def mapRule = [:]

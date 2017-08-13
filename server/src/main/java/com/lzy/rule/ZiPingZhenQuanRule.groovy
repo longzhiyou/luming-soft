@@ -10,9 +10,9 @@ import com.lzy.core.CommonAlgorithm
 public class ZiPingZhenQuanRule implements BaseRule{
 
     @Override
-    public String matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
+    def matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
         def mapResult = [:]
 
-        return mapResult;
+        return mapResult
     }
 }
