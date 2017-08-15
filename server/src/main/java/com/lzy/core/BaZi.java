@@ -3,8 +3,6 @@ package com.lzy.core;
 import com.google.common.collect.ImmutableSet;
 import com.lzy.common.DiZhiEnum;
 import com.lzy.common.TianGanEnum;
-import com.lzy.core.CommonAlgorithm;
-import sun.tools.tree.IfStatement;
 
 import java.util.*;
 

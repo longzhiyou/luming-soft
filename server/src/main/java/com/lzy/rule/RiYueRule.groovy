@@ -2,7 +2,6 @@ package com.lzy.rule
 
 import com.lzy.core.BaZi
 import com.lzy.core.CommonAlgorithm
-import sun.tools.tree.IfStatement
 
 /**
  *  日月规则

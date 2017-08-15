@@ -7,12 +7,143 @@ package com.lzy.core
  */
 class CoreAlgorithm {
 
+    /**
+     * 十干属性
+     * 1.阴阳
+     * 2.河图五行
+     * 3.化气五行
+     * [2017-08-15 add by longzhiyou]
+     */
+    static  ganAttribute=[
+            "甲":[yinyang:"阳",wuxing:"木"],
+            "乙":[yinyang:"阴",wuxing:"木"],
+            "丙":[yinyang:"阳",wuxing:"火"],
+            "丁":[yinyang:"阴",wuxing:"火"],
+            "戊":[yinyang:"阳",wuxing:"土"],
+            "己":[yinyang:"阴",wuxing:"土"],
+            "庚":[yinyang:"阳",wuxing:"金"],
+            "辛":[yinyang:"阴",wuxing:"金"],
+            "壬":[yinyang:"阳",wuxing:"水"],
+            "癸":[yinyang:"阴",wuxing:"水"]
+    ]
+    static boolean isYang(gan){
+        def attribute = ganAttribute.get(gan)
+        if (attribute&&attribute.yinyang=="阳") {
+            return true
+        }
+        return false
+
+    }
+    static boolean isYin(gan){
+        def attribute = ganAttribute.get(gan)
+        if (attribute&&attribute.yinyang=="阴") {
+            return true
+        }
+        return false
+
+    }
+
+    static boolean isMu(gan){
+        def attribute = ganAttribute.get(gan)
+        if (attribute&&attribute.wuxing=="木") {
+            return true
+        }
+        return false
+
+    }
+    static boolean isHuo(gan){
+        def attribute = ganAttribute.get(gan)
+        if (attribute&&attribute.wuxing=="火") {
+            return true
+        }
+        return false
+
+    }
+    static boolean isTu(gan){
+        def attribute = ganAttribute.get(gan)
+        if (attribute&&attribute.wuxing=="土") {
+            return true
+        }
+        return false
+
+    }
+    static boolean isJin(gan){
+        def attribute = ganAttribute.get(gan)
+        if (attribute&&attribute.wuxing=="金") {
+            return true
+        }
+        return false
+
+    }
+    static boolean isShui(gan){
+        def attribute = ganAttribute.get(gan)
+        if (attribute&&attribute.wuxing=="水") {
+            return true
+        }
+        return false
+
+    }
+
+
     //天干入墓库
     static def rumu=[
             "乙":"未",
             "丁":"戌",
             "辛":"丑",
             "癸":"辰"
+    ]
+
+    //十干禄
+    static  ganlu=[
+            "甲":"寅",
+            "乙":"卯",
+            "丙":"巳",
+            "丁":"午",
+            "戊":"巳",
+            "己":"午",
+            "庚":"申",
+            "辛":"酉",
+            "壬":"亥",
+            "癸":"子"
+    ]
+
+    //十干绝
+    static  ganjue=[
+            "甲":"申",
+            "乙":"酉",
+            "丙":"亥",
+            "丁":"子",
+            "戊":"亥",
+            "己":"子",
+            "庚":"寅",
+            "辛":"卯",
+            "壬":"巳",
+            "癸":"午"
+    ]
+
+    //五行绝
+    static  wuxingjue=[
+            "木":"申",
+            "火":"亥",
+            "土":"亥",
+            "金":"寅",
+            "水":"巳"
+    ]
+
+    //支藏天干
+    static  zhicangtiangan=[
+            "子":["癸"],
+            "丑":["癸","己","辛"],
+            "寅":["丙","甲","戊"],
+            "卯":["乙"],
+            "辰":["乙","戊","癸"],
+            "巳":["戊","丙","庚"],
+            "午":["丁","己"],
+            "未":["丁","己","乙"],
+            "申":["戊","庚","壬"],
+            "酉":["辛"],
+            "戌":["戊","丁","辛"],
+            "亥":["甲","壬"]
     ]
 
     //四季
