@@ -19,7 +19,7 @@ public class CoreAlgorithmTest {
 
     @Test
     public void yinyang(){
-        boolean yang = CoreAlgorithm.isYang("甲1");
+        boolean yang = CoreAlgorithm.isYang("甲");
         Assert.assertTrue(yang);
         yang = CoreAlgorithm.isYang("丙");
         Assert.assertTrue(yang);
@@ -40,6 +40,17 @@ public class CoreAlgorithmTest {
         Assert.assertTrue(yin);
         yin = CoreAlgorithm.isYin("癸");
         Assert.assertTrue(yin);
+
+    }
+
+    @Test
+    public void canggan(){
+
+       ;
+        System.out.println("寅藏干:"+ CoreAlgorithm.getCangGan("寅"));
+        boolean isCangGan = CoreAlgorithm.isCangGan("丙","寅");
+        Assert.assertTrue(isCangGan);
+
 
     }
 
