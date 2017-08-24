@@ -73,7 +73,7 @@ class ShenShaRule {
                         ,"申庚庚","酉辛辛","戌戊戊"
                         ,"亥壬壬","子癸癸","丑己己"]
        if (jianfengsha.contains(yueZhi+riGan+shiGan)) {
-           mapResult["【戟锋煞】"]="命主后天伤残或被判流刑"
+           mapResult["【戟锋煞】"]="命主后天意外伤害而伤残，大运流年忌讳【忌干】旺支。刑合之期"
        }
 
        mapResult
