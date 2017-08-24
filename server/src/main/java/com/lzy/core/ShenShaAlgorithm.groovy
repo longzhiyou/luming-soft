@@ -13,7 +13,7 @@ class ShenShaAlgorithm {
      *
      */
     //孤辰
-    static def mapGuChen=[
+    static def guchen =[
             "亥":"寅",
             "子":"寅",
             "丑":"寅",
@@ -32,7 +32,7 @@ class ShenShaAlgorithm {
     ]
 
     //寡宿
-    static def mapGuaSu=[
+    static def guasu =[
             "亥":"戌",
             "子":"戌",
             "丑":"戌",
@@ -106,7 +106,7 @@ class ShenShaAlgorithm {
      * [2017-08-15 add by longzhiyou]
      */
     //驿马
-   static def mapYiMa=[
+   static def yima =[
            "申":"寅",
            "子":"寅",
            "辰":"寅",

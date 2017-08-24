@@ -78,13 +78,13 @@ import com.lzy.core.ShenShaAlgorithm
 
         //通法论式-女命详解p110
 
-        def yima = ShenShaAlgorithm.mapYiMa.get(riZhi)
+        def yima = ShenShaAlgorithm.yima.get(riZhi)
         if (listMingZhi.count(yima)>1){
 
             mapResult["【二逢驿马者，母氏荒凉】"]="《渭泾论》交驰逢驿马，母氏荒凉"
         }
 
-        def guchen = ShenShaAlgorithm.mapGuChen.get(nianZhi)
+        def guchen = ShenShaAlgorithm.guchen.get(nianZhi)
         if (listMingZhi.contains(guchen)){
             if(commonAlgorithm.isShuangChong(yueZhu,riZhu) && [yueZhi,riZhi].contains(guchen)){
                 mapResult["【月日孤辰对冲，恐有败于夫家】"]="月日双冲带孤辰"
