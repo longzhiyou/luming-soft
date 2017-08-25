@@ -85,6 +85,30 @@ public class ShenShaRuleTest {
 
     }
 
+    @Test
+    public void guanfusha(){
+
+        BaZi baZi = new BaZi("戊寅","癸亥","癸未","己未");
+
+        ShenShaRule rule = new ShenShaRule();
+        Object result = rule.matchRule(baZi,commonAlgorithm);
+        System.out.println("神煞测试结果:"+result.toString());
+
+    }
+
+    @Test
+    public void guajiansha(){
+
+        BaZi baZi = new BaZi("庚申","乙巳","辛酉","己巳");
+        baZi.setYunZhu("己酉");
+        baZi.setLiunianZhu("辛丑");
+
+        ShenShaRule rule = new ShenShaRule();
+        Object result = rule.matchRule(baZi,commonAlgorithm);
+        System.out.println("神煞测试结果:"+result.toString());
+
+    }
+
 
 
 

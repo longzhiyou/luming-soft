@@ -45,7 +45,7 @@ class ShenShaRule {
        def liunianZhi = bazi.getLiunianZhi()
        def liunianZhu = bazi.getLiunianZhu()
 
-       def luZhi = commonAlgorithm.getLuZhi(nianGan)
+       def rishizhiList = [riZhi,shiZhi]
 
        /**
         * 天火煞
@@ -99,6 +99,34 @@ class ShenShaRule {
        }
 
        /**
+        *   雷霆煞
+        *   月支对时支组合
+        *   正七二八子寅方，三九四十辰午当，五十一申六二戍，必主雷轰虎
+        * [2017-08-25 add by longzhiyou]
+        */
+       def leitingsha = [ "寅":"子",
+                          "申":"子",
+                          "卯":"寅",
+                          "酉":"寅",
+
+                          "辰":"辰",
+                          "戌":"辰",
+
+                          "巳":"午",
+                          "亥":"子",
+
+                          "午":"申",
+                          "子":"申",
+                          "未":"戍",
+                          "丑":"戍"
+                        ]
+
+       matchStr = leitingsha.get(nianZhi)
+       if (matchStr==shiZhi) {
+           mapResult["【雷霆煞】"]="忽然遇难,祸起萧墙。如游泳淹死，登山失足坠山，驾驶昏睡出车祸。"
+       }
+
+       /**
         *   病符起法：岁后一辰。即子年生见亥、丑年生见子，其余类推。命中及行运见之，主灾病。
         * [2017-08-25 add by longzhiyou]
         */
@@ -113,17 +141,49 @@ class ShenShaRule {
        /**
         *   痼疾杀，死病符
         *   痼疾煞的起法：“岁后一辰，带冲者是”。比如子年生人，退后一个地支是亥，若八字里又带巳，即是带有痼疾的标志。
+        *   命后一辰对冲于日时
         * [2017-08-25 add by longzhiyou]
         */
        def gujisha=["子":"亥巳","丑":"子午","寅":"丑未","卯":"寅申",
                     "辰":"卯酉","巳":"辰戌","午":"巳亥","未":"午子",
                     "申":"未丑","酉":"申寅","戌":"酉卯","亥":"戌辰"]
        matchStr = gujisha.get(nianZhi)
+
        if (listMingZhi.contains(matchStr[0])&&listMingZhi.contains(matchStr[1])) {
            mapResult["【痼疾煞】"]="岁后一辰，带冲者是。痼疾是一种令人烦心之疾病，与体弱多病不同。体弱多病，只是时常有病，甚至自己的病症，别人尚且不易发觉。" +
                    "[痼疾]则不同。病象在外，譬如：久年气喘，甚至血漏、痔疮等。"
        }
 
+       /**
+        *  官符煞-诉讼
+        *   太岁前五辰落在日时
+        * [2017-08-25 add by longzhiyou]
+        */
+
+       def guanfusha=["子":"巳","丑":"午","寅":"未","卯":"申",
+                    "辰":"酉","巳":"戌","午":"亥","未":"子",
+                    "申":"丑","酉":"寅","戌":"卯","亥":"辰"]
+       matchStr = guanfusha.get(nianZhi)
+       if (matchStr==riZhi) {
+           mapResult["【官符煞-日支】"]="此人容易有诉讼，无意中招惹是非因而受牵连,日柱则主要是自己，重点在流年.太岁前五辰落在日时。注意:天干是否也是过5,流年是否三合,大运是否是阳刃"
+       }
+       if (matchStr==shiZhi) {
+           mapResult["【官符煞-时支】"]="此人容易有诉讼，重点在流年.太岁前五辰落在日时。注意:天干是否也是过午,流年是否三合,大运是否是阳刃"
+       }
+
+       /**
+        * 挂剑煞
+        * 四柱：巳酉丑申
+        * [2017-08-25 add by longzhiyou]
+        */
+
+       if (listMingZhi.contains("巳")&&listMingZhi.contains("酉")&&listMingZhi.contains("丑")&&listMingZhi.contains("申")) {
+           mapResult["【挂剑煞】"]="开刀，流血。杀人或被杀。在四柱带有【官符、元辰、白虎】严重得多"
+       }
+       def zhuyunsui = listMingZhi+[yunZhi,liunianZhi]
+       if (listMingZhi.contains("申")&&zhuyunsui.contains("巳")&&zhuyunsui.contains("酉")&&zhuyunsui.contains("丑")) {
+           mapResult["【挂剑煞-柱运岁】"]="刀刃血光之灾难"
+       }
        mapResult
    }
 }
