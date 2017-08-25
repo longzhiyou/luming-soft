@@ -83,6 +83,22 @@ public class CoreAlgorithmTest {
 
     }
 
+    @Test
+    public void isYiXun(){
+
+        boolean ret = CoreAlgorithm.isYiXun("壬戌", "癸亥");
+        Assert.assertTrue(ret);
+
+//         gongZhi = CoreAlgorithm.getJiaZhu("壬戌", "庚申");
+//        Assert.assertNotNull(gongZhi);
+//        System.out.println("夹柱:"+ gongZhi);
+
+
+
+
+    }
+
+
 
 
 }
