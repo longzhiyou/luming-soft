@@ -76,6 +76,42 @@ class ShenShaRule {
            mapResult["【戟锋煞】"]="命主后天意外伤害而伤残，大运流年忌讳【忌干】旺支。刑合之期"
        }
 
+       /**
+        * 破煞
+        * 年时结构
+        * [2017-08-25 add by longzhiyou]
+        */
+       def posha=["卯午","丑辰","子酉","未戌"]
+       if (posha.contains(nianZhi+shiZhi)) {
+           mapResult["【破煞】"]="少年多灾难，多指连累家属破财，如连年有病，增加家长无限忧虑。"
+       }
+
+       /**
+        *   天刑煞
+        *   年支时干组合
+        * [2017-08-25 add by longzhiyou]
+        */
+       def tianxingsha=["子乙","丑乙","寅庚","卯辛"
+                        ,"辰辛","巳壬","午癸","未癸"
+                        ,"申丙","酉丁","戌丁","亥戊"]
+       if (tianxingsha.contains(nianZhi+shiGan)) {
+           mapResult["【天刑煞】"]="体弱多病，一生多有疾病。常与医生交往，医药费比较高，但也年年过"
+       }
+
+       /**
+        *   痼疾杀，死病符
+        *   痼疾煞的起法：“岁后一辰，带冲者是”。比如子年生人，退后一个地支是亥，若八字里又带巳，即是带有痼疾的标志。
+        * [2017-08-25 add by longzhiyou]
+        */
+       def gujisha=["子":"亥巳","丑":"子午","寅":"丑未","卯":"寅申",
+                    "辰":"卯酉","巳":"辰戌","午":"巳亥","未":"午子",
+                    "申":"未丑","酉":"申寅","戌":"酉卯","亥":"戌辰"]
+       matchStr = gujisha.get(nianZhi)
+       if (listMingZhi.contains(matchStr[0])&&listMingZhi.contains(matchStr[1])) {
+           mapResult["【痼疾煞】"]="岁后一辰，带冲者是。痼疾是一种令人烦心之疾病，与体弱多病不同。体弱多病，只是时常有病，甚至自己的病症，别人尚且不易发觉。" +
+                   "[痼疾]则不同。病象在外，譬如：久年气喘，甚至血漏、痔疮等。"
+       }
+
        mapResult
    }
 }

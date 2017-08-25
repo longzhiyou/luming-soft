@@ -41,6 +41,40 @@ public class ShenShaRuleTest {
 
     }
 
+    @Test
+    public void posha(){
+
+        BaZi baZi = new BaZi("己卯","戊辰","甲子","庚午");
+
+        ShenShaRule rule = new ShenShaRule();
+        Object result = rule.matchRule(baZi,commonAlgorithm);
+        System.out.println("神煞测试结果:"+result.toString());
+
+    }
+
+    @Test
+    public void tianxingsha(){
+
+        BaZi baZi = new BaZi("甲寅","戊辰","丙子","庚寅");
+
+        ShenShaRule rule = new ShenShaRule();
+        Object result = rule.matchRule(baZi,commonAlgorithm);
+        System.out.println("神煞测试结果:"+result.toString());
+
+    }
+
+    @Test
+    public void gujisha(){
+
+        BaZi baZi = new BaZi("己巳","戊辰","甲戌","乙丑");
+
+        ShenShaRule rule = new ShenShaRule();
+        Object result = rule.matchRule(baZi,commonAlgorithm);
+        System.out.println("神煞测试结果:"+result.toString());
+
+    }
+
+
 
 
 
