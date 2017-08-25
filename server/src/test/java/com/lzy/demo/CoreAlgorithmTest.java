@@ -46,13 +46,43 @@ public class CoreAlgorithmTest {
     @Test
     public void canggan(){
 
-       ;
         System.out.println("寅藏干:"+ CoreAlgorithm.getCangGan("寅"));
         boolean isCangGan = CoreAlgorithm.isCangGan("丙","寅");
         Assert.assertTrue(isCangGan);
 
 
     }
+
+    @Test
+    public void gongzhi(){
+
+        Object gongZhi = CoreAlgorithm.getGongZhi("甲寅", "甲辰");
+        Assert.assertNotNull(gongZhi);
+        System.out.println("拱地支:"+ gongZhi);
+
+        gongZhi = CoreAlgorithm.getGongZhi("甲戌", "甲寅");
+        Assert.assertNotNull(gongZhi);
+        System.out.println("三合拱地支:"+ gongZhi);
+
+
+    }
+
+    @Test
+    public void jiazhu(){
+
+        Object gongZhi = CoreAlgorithm.getJiaZhu("丙辰", "甲寅");
+        Assert.assertNotNull(gongZhi);
+        System.out.println("夹柱:"+ gongZhi);
+
+//         gongZhi = CoreAlgorithm.getJiaZhu("壬戌", "庚申");
+//        Assert.assertNotNull(gongZhi);
+//        System.out.println("夹柱:"+ gongZhi);
+
+
+
+
+    }
+
 
 
 }

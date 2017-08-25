@@ -1,6 +1,4 @@
 package com.lzy.core
-
-
 /**
  *  核心算法
  * Created by bukeyan on 2017/6/18.
@@ -82,6 +80,76 @@ class CoreAlgorithm {
         }
         return false
 
+    }
+
+    //地支拱
+    static  gongdizhi=[  "亥丑":"子",
+                         "子寅":"丑",
+                         "丑卯":"寅",
+                         "寅辰":"卯",
+                         "卯巳":"辰",
+                         "辰午":"巳",
+                         "巳未":"午",
+                         "午申":"未",
+                         "未酉":"申",
+                         "申戌":"酉",
+                         "酉亥":"戌",
+                         "戌子":"亥",
+                        //三合拱
+                         "申辰":"子",
+                         "寅戌":"午",
+                         "亥未":"卯",
+                         "巳丑":"酉",
+                   ]
+
+    /**
+     *  获取拱支
+     * [2017-08-25 add by longzhiyou]
+     */
+    static def getGongZhi(ganzhi1,ganzhi2){
+        def zhi
+        if (ganzhi1[0]==ganzhi2[0]) {
+            def gong1 = gongdizhi.get(ganzhi1[1] + ganzhi2[1])
+            def gong2 = gongdizhi.get(ganzhi2[1]+ganzhi1[1])
+            if (gong1){
+                zhi=gong1
+            }else if (gong2){
+                zhi=gong2
+            }
+
+        }
+        zhi
+    }
+
+    static def jiazi = ["甲子","乙丑","丙寅","丁卯","戊辰","己巳","庚午","辛未","壬申","癸酉",
+                        "甲戌","乙亥","丙子","丁丑","戊寅","己卯","庚辰","辛巳","壬午","癸未",
+                        "甲申","乙酉","丙戌","丁亥","戊子","己丑","庚寅","辛卯","壬辰","癸巳",
+                        "甲午","乙未","丙申","丁酉","戊戌","己亥","庚子","辛丑","壬寅","癸卯",
+                        "甲辰","乙巳","丙午","丁未","戊申","己酉","庚戌","辛亥","壬子","癸丑",
+                        "甲寅","乙卯","丙辰","丁巳","戊午","己未","庚申","辛酉","壬戌","癸亥"
+    ]
+
+    /**
+     *  获取夹柱
+     * [2017-08-25 add by longzhiyou]
+     */
+    static def getJiaZhu(ganzhi1,ganzhi2){
+        def jiazhu
+        def index1 = jiazi.indexOf(ganzhi1)
+        def zhu1 = jiazi.get((index1+2)%60)
+        if (zhu1==ganzhi2) {
+            jiazhu = jiazi.get((index1+1)%60)
+        }
+
+        if (!jiazhu) {
+            def index2 = jiazi.indexOf(ganzhi1)
+            def zhu2 = jiazi[index2-2]
+            if (zhu2==ganzhi2) {
+                jiazhu = jiazi[index2-1]
+            }
+        }
+
+        jiazhu
     }
 
 

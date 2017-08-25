@@ -64,6 +64,17 @@ public class ShenShaRuleTest {
     }
 
     @Test
+    public void bingfu(){
+
+        BaZi baZi = new BaZi("甲子","戊辰","甲戌","乙丑");
+
+        ShenShaRule rule = new ShenShaRule();
+        Object result = rule.matchRule(baZi,commonAlgorithm);
+        System.out.println("神煞测试结果:"+result.toString());
+
+    }
+
+    @Test
     public void gujisha(){
 
         BaZi baZi = new BaZi("己巳","戊辰","甲戌","乙丑");
