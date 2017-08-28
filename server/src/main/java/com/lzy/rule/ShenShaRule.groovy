@@ -178,12 +178,22 @@ class ShenShaRule {
         */
 
        if (listMingZhi.contains("巳")&&listMingZhi.contains("酉")&&listMingZhi.contains("丑")&&listMingZhi.contains("申")) {
-           mapResult["【挂剑煞】"]="开刀，流血。杀人或被杀。在四柱带有【官符、元辰、白虎】严重得多"
+           mapResult["【挂剑煞-四柱：巳酉丑申】"]="开刀，流血。杀人或被杀。在四柱带有【官符、元辰、白虎】严重得多"
        }
        def zhuyunsui = listMingZhi+[yunZhi,liunianZhi]
        if (listMingZhi.contains("申")&&zhuyunsui.contains("巳")&&zhuyunsui.contains("酉")&&zhuyunsui.contains("丑")) {
-           mapResult["【挂剑煞-柱运岁】"]="刀刃血光之灾难"
+           mapResult["【挂剑煞-柱运岁】"]="巳酉丑申-刀刃血光之灾难"
        }
+
+       /**
+        *  十恶大败
+        * [2017-08-28 add by longzhiyou]
+        */
+
+       /**
+        *   天罗地网
+        * [2017-08-28 add by longzhiyou]
+        */
        mapResult
    }
 }
