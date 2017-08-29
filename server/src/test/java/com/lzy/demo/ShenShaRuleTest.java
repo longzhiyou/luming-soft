@@ -110,6 +110,19 @@ public class ShenShaRuleTest {
     }
 
 
+    @Test
+    public void shiedabai(){
+
+        BaZi baZi = new BaZi("己丑","辛巳","壬申","己巳");
+        baZi.setYunZhu("己酉");
+        baZi.setLiunianZhu("辛丑");
+
+        ShenShaRule rule = new ShenShaRule();
+        Object result = rule.matchRule(baZi,commonAlgorithm);
+        System.out.println("神煞测试结果:"+result.toString());
+
+    }
+
 
 
 
