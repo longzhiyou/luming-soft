@@ -217,24 +217,37 @@ class ShenShaRule {
 
        /**
         *  孤鸾煞
+        *  孤鸾寡鹞煞 呻吟煞
+        *  http://blog.sina.com.cn/s/blog_6788746e0100wkeq.html
+        *  孤鸾共有八组，乙巳，丁巳，辛亥，戊申，壬寅，戊午，壬子，丙午
         *  「木火逢蛇大不祥，金豬何必強猖狂；土猴木虎夫何在，時對孤鸞舞一場。」
         *  古歌所云，本屬乙巳（蛇）、丁巳（蛇）、辛亥（豬）、戊申（猴）、甲寅（虎），五日誕生者。
         *  《渊海子平》书中亦有古诗：“木虎孀无婿（甲寅），金猪岂有郎（辛亥），赤黄马独卧（丙午、戊午），黑鼠守空房（壬子）。”孤寡之象
         * [2017-08-30 add by longzhiyou]
         */
 
-       def guluansha=["乙巳","丁巳","辛亥","戊申","甲寅","丙午","戊午","壬子"]
+       def guluansha=["乙巳","丁巳","辛亥","戊申","甲寅","丙午","戊午","壬子","壬寅"]
        if (guluansha.contains(riZhu)) {
-           def data = ["木虎孀无婿（甲寅），金猪岂有郎（辛亥），赤黄马独卧（丙午、戊午），黑鼠守空房（壬子）孤寡之象。" ,
-                       "木火逢蛇大不祥，金豬何必強猖狂；土猴木虎夫何在，時對孤鸞舞一場.",
+           def data = ["木火蛇无婿(乙巳,丁巳)，金猪岂有郎（辛亥），土猴常独卧（戊申），木虎（甲寅）水虎（壬寅）定居孀,赤黄马独卧（丙午、戊午），黑鼠守空房（壬子）",
                        "孤鸾煞主克夫，主再嫁，主守寡，若不离婚，夫必先亡。官星受伤，或日支逢冲，丈夫则会早死。"
            ]
 
            if (riZhu=="甲寅" || riZhu=="辛亥") {
                data.add(0,riZhu+"【此日两个口诀都有，从重论】")
-               mapResult["【孤鸾煞-日柱】"]=data
+               mapResult["【孤鸾煞】"]=data
            }else {
-               mapResult["【孤鸾煞-日柱】"]=data
+               mapResult["【孤鸾煞】"]=data
+           }
+
+           if (guluansha.contains(riZhu)&&guluansha.contains(shiZhu)) {
+               data.add(0,riZhu+"【日柱时住都有，从重论】")
+               mapResult["【孤鸾煞】"]=data
+           }
+
+           if (riZhu=="丁巳") {
+               data.add(0,riZhu+"【丁已孤骛，命遇聪明诗女】")
+               mapResult["【孤鸾煞】"]=data
+
            }
        }
 
@@ -245,7 +258,8 @@ class ShenShaRule {
         */
        def luotitaohua=["甲子","庚午","丁卯","癸酉"]
        if (luotitaohua.contains(riZhu)) {
-           mapResult["【裸体桃花-日柱】"+riZhu]="甲子日、庚午日、丁卯日、癸酉日"
+           mapResult["【裸体桃花-日柱】"+riZhu]=["甲子日、庚午日、丁卯日、癸酉日"
+                                         ,"身坐桃花煞，再遇带合，故主浊滥荒淫"]
        }
 
 
