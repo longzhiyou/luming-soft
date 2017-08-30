@@ -58,6 +58,12 @@ import com.lzy.core.ShenShaAlgorithm
         def shishengan= commonAlgorithm.getTianGanShiShen(riGan,"食神")
 
 
+        def gender = bazi.getGender()
+        if (gender!="女") {
+            return  mapResult
+        }
+
+//        泾渭女命赋（神峰通考）
 
         /**
          *  女命12论-女命详解
@@ -148,7 +154,8 @@ import com.lzy.core.ShenShaAlgorithm
         }
 
         if(commonAlgorithm.getShiShenDiZhi(riGan,"偏印")==yueZhi&& listMingGan.contains(zhengyingan)){
-            mapResult["【用枭神而遇印，玉树春荣。】"]="渭泾论"
+            mapResult["【用枭神而遇印，玉树春荣。】"]=["印本为我之生母，无条件的关爱与我，却得枭神后母浊杂，则失其母性而从后母。与女命而言，印主正婚、正的名份，得枭神引偏，主失婚、失位、失名份，故云兰阶夜冷"
+                                         ,"渭泾论"]
         }
 
 
@@ -163,10 +170,6 @@ import com.lzy.core.ShenShaAlgorithm
         }
 
 
-
-
-
-
         /**
          * 女命阳火性发焦，里里外外把心操。闲言碎语装不住，响炮不放不能消。
          * 心灵手巧又爽快，炕上剪子地下刀。窗外飞来一只鸟，你要一看就会描。
@@ -174,8 +177,14 @@ import com.lzy.core.ShenShaAlgorithm
          * 这是江湖派的口诀，算这命的，你可以看看，大白菜话，大白菜准确度。
          */
 
+        /**
+         *  五行精纪
+         * [2017-08-30 add by longzhiyou]
+         */
+        if (nianZhu==riZhu) {
+            mapResult["【女命生年生日同】"]="凡女命生年生日同一位者，主克夫，嫁同音同年者庶几"
 
-
+        }
 
 
         mapResult
