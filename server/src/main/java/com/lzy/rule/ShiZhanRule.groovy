@@ -48,6 +48,7 @@ public class ShiZhanRule implements BaseRule{
         def liunianZhu = bazi.getLiunianZhu()
 
         def luZhi = commonAlgorithm.getLuZhi(nianGan)
+        def gender = bazi.getGender()
 
         /**
          *  原则
@@ -108,6 +109,13 @@ public class ShiZhanRule implements BaseRule{
                 mapResult["【流年纳音空亡相克日柱】"] = "日柱:"+riZhu.toString()+ "空亡在-流年:"+liunianZhu.toString()
             }
 
+        }
+
+        if (gender=="女"&&(riZhu=="丙午"|| riZhu=="壬子") ) {
+
+            mapResult["【日坐阳刃】"] = ["女命生在这天，那对婚姻是很不利的，日坐阳刃，为人个性刚强，要强，不易相让"
+                                   ,"婚姻生活中轻易固执、容易争吵。尤其丙午日，往往做事情风风火火，像男人的做派。"
+                                   ,"女人太刚强，假如老公也不甘示弱，那婚姻十有八九是不平静的。即便老公能忍，估计他心里也不大愉快"]
         }
 
 
