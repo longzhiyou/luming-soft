@@ -2,6 +2,8 @@ package com.lzy.rule
 
 import com.lzy.core.BaZi
 import com.lzy.core.CommonAlgorithm
+import com.lzy.core.CoreAlgorithm
+import com.lzy.core.ShenShaAlgorithm
 
 /**
  *  神煞规则
@@ -17,6 +19,7 @@ class ShenShaRule {
        def ruleValue ;
        def tempShow=""
 
+       def gender = bazi.getGender()
        def nianGan = bazi.getNianGan()
        def nianZhi = bazi.getNianZhi()
        def nianZhu = bazi.getNianZhu()
@@ -216,6 +219,35 @@ class ShenShaRule {
         *   天罗地网
         * [2017-08-28 add by longzhiyou]
         */
+
+       /**
+        * 孤辰寡宿
+        * 年支查找
+        * 演变惆怅煞
+        * [2017-08-30 add by longzhiyou]
+        */
+       def guchen = ShenShaAlgorithm.guchen.get(nianZhi)
+       def guasu = ShenShaAlgorithm.guasu.get(nianZhi)
+       if (zhuyunsui.contains(guchen)&&zhuyunsui.contains(guasu)) {
+           mapResult["【年支查柱运岁孤辰寡宿全】"]="孤辰:"+guchen +"寡宿:"+guasu
+       }
+
+
+       if (CoreAlgorithm.isYang(nianGan)) {
+           if (bazi.getGender()=="男") {
+            //阳男
+
+           }else {
+
+           }
+
+       }else {
+           if (bazi.getGender()=="女") {
+               //阴女
+           }else {
+
+           }
+       }
 
        mapResult
    }

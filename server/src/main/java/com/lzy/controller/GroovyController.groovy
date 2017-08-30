@@ -5,6 +5,7 @@ import com.lzy.core.CommonAlgorithm
 import com.lzy.domain.AnalyzeResult
 import com.lzy.repository.MatchRuleRepository
 import com.lzy.rule.LiangXiangRunRule
+import com.lzy.rule.ShenShaRule
 import com.lzy.rule.ShiZhanRule
 import com.lzy.rule.WomanRule
 import com.lzy.rule.WuXingJingJiRule
@@ -28,6 +29,7 @@ class GroovyController {
 
     final static def listRule = [new WuXingJingJiRule()]
     final static def mapRule = [
+            "神煞":new ShenShaRule(),
             "实务":new ShiZhanRule(),
             "女命":new WomanRule(),
             "五行精纪":new WuXingJingJiRule(),
