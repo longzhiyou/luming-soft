@@ -76,7 +76,7 @@ class ShenShaRule {
                         ,"申庚庚","酉辛辛","戌戊戊"
                         ,"亥壬壬","子癸癸","丑己己"]
        if (jianfengsha.contains(yueZhi+riGan+shiGan)) {
-           mapResult["【戟锋煞】"]="命主后天意外伤害而伤残，大运流年忌讳【忌干】旺支。刑合之期"
+           mapResult["【戟锋煞-月支日干时干】"]="命主后天意外伤害而伤残，大运流年忌讳【忌干】旺支。刑合之期"
        }
 
        /**
@@ -86,7 +86,7 @@ class ShenShaRule {
         */
        def posha=["卯午","丑辰","子酉","未戌"]
        if (posha.contains(nianZhi+shiZhi)) {
-           mapResult["【破煞】"]="少年多灾难，多指连累家属破财，如连年有病，增加家长无限忧虑。"
+           mapResult["【破煞-年时】"]="少年多灾难，多指连累家属破财，如连年有病，增加家长无限忧虑。"
        }
 
        /**
@@ -126,7 +126,7 @@ class ShenShaRule {
 
        matchStr = leitingsha.get(nianZhi)
        if (matchStr==shiZhi) {
-           mapResult["【雷霆煞】"]="忽然遇难,祸起萧墙。如游泳淹死，登山失足坠山，驾驶昏睡出车祸。"
+           mapResult["【雷霆煞-月支对时支】"]="忽然遇难,祸起萧墙。如游泳淹死，登山失足坠山，驾驶昏睡出车祸。"
        }
 
        /**
@@ -153,7 +153,7 @@ class ShenShaRule {
        matchStr = gujisha.get(nianZhi)
 
        if (listMingZhi.contains(matchStr[0])&&listMingZhi.contains(matchStr[1])) {
-           mapResult["【痼疾煞】"]="岁后一辰，带冲者是。痼疾是一种令人烦心之疾病，与体弱多病不同。体弱多病，只是时常有病，甚至自己的病症，别人尚且不易发觉。" +
+           mapResult["【痼疾煞-岁后一辰，带冲者是】"]="痼疾是一种令人烦心之疾病，与体弱多病不同。体弱多病，只是时常有病，甚至自己的病症，别人尚且不易发觉。" +
                    "[痼疾]则不同。病象在外，譬如：久年气喘，甚至血漏、痔疮等。"
        }
 
@@ -168,10 +168,10 @@ class ShenShaRule {
                     "申":"丑","酉":"寅","戌":"卯","亥":"辰"]
        matchStr = guanfusha.get(nianZhi)
        if (matchStr==riZhi) {
-           mapResult["【官符煞-日支】"]="此人容易有诉讼，无意中招惹是非因而受牵连,日柱则主要是自己，重点在流年.太岁前五辰落在日时。注意:天干是否也是过5,流年是否三合,大运是否是阳刃"
+           mapResult["【官符煞-太岁前五辰落在日支】"]="此人容易有诉讼，无意中招惹是非因而受牵连,日柱则主要是自己，重点在流年.太岁前五辰落在日时。注意:天干是否也是过5,流年是否三合,大运是否是阳刃"
        }
        if (matchStr==shiZhi) {
-           mapResult["【官符煞-时支】"]="此人容易有诉讼，重点在流年.太岁前五辰落在日时。注意:天干是否也是过午,流年是否三合,大运是否是阳刃"
+           mapResult["【官符煞-太岁前五辰落在时支】"]="此人容易有诉讼，重点在流年.太岁前五辰落在日时。注意:天干是否也是过午,流年是否三合,大运是否是阳刃"
        }
 
        /**
