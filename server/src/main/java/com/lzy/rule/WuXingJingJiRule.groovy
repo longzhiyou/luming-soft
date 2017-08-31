@@ -541,9 +541,8 @@ public class WuXingJingJiRule  implements BaseRule{
         }
 
 
-        //【官卿】
         /**
-         *  【福会】
+         *  【福会】【官卿】
          * 福会者，取十干所生及所克是也，谓如甲木生丙火，克之戊土之类，如甲人见丙戊是也（他准此并与官卿同）。若人胎月
          * 日时遇之，主衣食丰足，官爵崇高，大小运行年至此，亦有迁官进财之喜。（三命指掌）
          * [2017-08-31 add by longzhiyou]
@@ -578,6 +577,11 @@ public class WuXingJingJiRule  implements BaseRule{
         mapRule=["甲":"未","乙":"未","丙":"戌","丁":"戌"
                  ,"戊":"辰","己":"辰",
                  "庚":"丑","辛":"丑","壬":"辰","癸":"辰"]
+
+        if (listMingZhi.count(mapRule) >2) {
+            mapResult["【禄库】"]=["甲乙库未丙丁戌，戊己壬癸辰中立，庚辛若向丑中行，一生衣食终须吉。"
+                               ,"凡人生值此库，若年月日时皆有者，主两府台辅之贵，或落空亡亦吉。(八字金书)"]
+        }
 
         ruleValue= mapRule.get(nianGan)
         if (shiZhi==ruleValue && commonAlgorithm.isNaYinWuXingKe(shiZhu,nianZhu)) {
