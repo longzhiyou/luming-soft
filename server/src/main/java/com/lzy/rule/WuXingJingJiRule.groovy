@@ -651,13 +651,14 @@ public class WuXingJingJiRule  implements BaseRule{
         def lutang = ["甲甲戌","乙乙酉","丙丙申","丁丁未","戊戊午","己己巳","庚庚辰",
                       "辛辛卯","辛辛丑","壬壬寅","壬壬子","癸癸亥"]
 
-        matchStr = nianGan+shiZhu
-        if (lutang.contains(matchStr)) {
-            mapResult["【禄堂】时柱"]="自来言禄，但知甲禄在寅之类，殊未知禄堂为最贵，甲人得甲戌是也，以其甲为岁干，则甲之本位遁在戌,若更得诸位福神助发，必须大贵（李虚中书）"+ nianGan+"人"+shiZhu
+        def tempData = ["自来言禄，但知甲禄在寅之类，殊未知禄堂为最贵，甲人得甲戌是也，以其甲为岁干，则甲之本位遁在戌,若更得诸位福神助发，必须大贵（李虚中书）"]
+        if (lutang.contains(nianGan+shiZhu)) {
+            tempData.add(0,nianGan+"人"+shiZhu+"时柱")
+            mapResult["【禄堂】"]=tempData
         }
-        matchStr = nianGan+riZhu
-        if (lutang.contains(matchStr)) {
-            mapResult["【禄堂】日柱"]="若更得诸位福神助发，必须大贵（李虚中书）"+ nianGan+"人"+riZhu
+        if (lutang.contains(nianGan+riZhu)) {
+            tempData.add(0,nianGan+"人"+shiZhu+"日柱")
+            mapResult["【禄堂】"]=tempData
         }
 
         mapResult
