@@ -642,13 +642,18 @@ public class WuXingJingJiRule  implements BaseRule{
 
         }
 
-        //【禄堂】
+        /**
+         * 【禄堂】
+         *  自来言禄，但知甲禄在寅之类，殊未知禄堂为最贵，甲人得甲戌是也，以其甲为岁干，则甲之本位遁在戌，若更得诸位
+            福神助发，必须大贵。独辛壬有二位，辛有辛卯辛丑，壬有壬寅壬子，余皆一位。（李虚中书）
+         * [2017-08-31 add by longzhiyou]
+         */
         def lutang = ["甲甲戌","乙乙酉","丙丙申","丁丁未","戊戊午","己己巳","庚庚辰",
                       "辛辛卯","辛辛丑","壬壬寅","壬壬子","癸癸亥"]
 
         matchStr = nianGan+shiZhu
         if (lutang.contains(matchStr)) {
-            mapResult["【禄堂】时柱"]="若更得诸位福神助发，必须大贵（李虚中书）"+ nianGan+"人"+shiZhu
+            mapResult["【禄堂】时柱"]="自来言禄，但知甲禄在寅之类，殊未知禄堂为最贵，甲人得甲戌是也，以其甲为岁干，则甲之本位遁在戌,若更得诸位福神助发，必须大贵（李虚中书）"+ nianGan+"人"+shiZhu
         }
         matchStr = nianGan+riZhu
         if (lutang.contains(matchStr)) {
