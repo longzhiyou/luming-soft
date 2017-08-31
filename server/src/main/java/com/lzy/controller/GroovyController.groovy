@@ -88,8 +88,7 @@ class GroovyController {
         baZi.setGender(gender)
         baZi.setYun(yungan,yunzhi)
         baZi.setLiuNian(liuniangan,liunianzhi)
-        baZi.setTaiGan(taigan)
-        baZi.setTaiZhi(taizhi)
+        baZi.setTaiZhu(taigan+taizhi)
         baZi.setXingnianan(xingniangan)
         baZi.setXingnianZhi(xingnianzhi)
 

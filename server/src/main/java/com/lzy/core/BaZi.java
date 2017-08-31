@@ -276,6 +276,10 @@ public class BaZi {
 
     public void setTaiZhu(String taiZhu) {
         this.taiZhu = taiZhu;
+
+        this.taiGan = taiZhu.substring(0,1);
+        this.taiZhi = taiZhu.substring(1,2);
+
     }
 
     public List<String> getListMingGan() {

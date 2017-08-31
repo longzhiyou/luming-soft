@@ -37,7 +37,17 @@ public class WuXingJingJiRule  implements BaseRule{
         def listMingZhi = bazi.getListMingZhi()
         def listMingZhu = bazi.getListMingZhu()
 
-        def luZhi = commonAlgorithm.getLuZhi(nianGan);
+        def yunGan = bazi.getYunGan()
+        def liunianGan = bazi.getLiunianGan()
+
+        def taiGan = bazi.getTaiGan()
+        def taiZhi = bazi.getTaiZhi()
+        def taiZhu = bazi.getTaiZhu()
+        def luZhi = commonAlgorithm.getLuZhi(nianGan)
+
+        def listMingTaiZhi = listMingZhi+taiZhi
+        def listMingTaiGan = listMingGan+taiGan
+        def listMingTaiZhu = listMingZhu+taiZhu
 
         //第一卷
         def mapNaYinLun=[
@@ -288,6 +298,7 @@ public class WuXingJingJiRule  implements BaseRule{
 
 
 
+
         //五虎遁禄干
         def mapDunLuGan=["甲":"丙","乙":"己","丙":"癸","丁":"丙"
                          ,"戊":"丁","己":"庚",
@@ -313,6 +324,15 @@ public class WuXingJingJiRule  implements BaseRule{
                 "亥":"申" ,"卯":"申" ,"未":"申"]
 
 
+        /**
+         * 第三卷
+         * [2017-08-31 add by longzhiyou]
+         */
+
+        if (listMingZhi.contains(luZhi)) {
+            mapResult["【十干不杂】"]=["经云：五音不杂无淫乱之性，合居禄位也。"
+                                 ,"甲乙人在寅卯、丙丁人在巳午 庚辛人在申酉、壬癸人在亥子"]
+        }
 
         //荣神格
         matchStr = yueZhi+riGan+shiGan
@@ -375,6 +395,88 @@ public class WuXingJingJiRule  implements BaseRule{
         if (xishen.contains(matchStr)) {
             mapResult["喜神"]="盖取十干遇生己之位也，谓甲遇壬见癸之类，水能生木，余准此，若人遇之，主有大福禄也。（三命铃）"
         }
+
+        /**
+         * 【三五连合格】
+         * [2017-08-31 add by longzhiyou]
+         */
+
+//        顺挑连合
+        def shunlianhe = ["甲乙丙","丙丁戊","戊己庚","庚辛壬","壬癸甲"]
+        def tempData=["干神顺足亦非常，论此非常不可当，生旺相兼临贵格，定知君侧理阴阳。"
+                      ,"三五连合者，自上至下，阴阳相和也。",
+                        "两比干在上，一干在下，谓之顺挑连合.一干在上，两比干在下，谓之倒垂连合",
+                        "倒垂相连，顺数为上，杂数次之，不犯他干，生旺相承，福禄相助，尤胜五行连珠格。（阎东叟书） "]
+        if (shunlianhe.contains(nianGan+yueGan+riGan)) {
+            mapResult["【三五连合格-顺挑连合-年月日三干】"]=tempData
+        }
+
+        if (shunlianhe.contains(nianGan+yueGan+shiGan)) {
+            mapResult["【三五连合格-顺挑连合-年月时三干】"]=tempData
+        }
+
+        if (shunlianhe.contains(nianGan+riGan+shiGan)) {
+            mapResult["【三五连合格-顺挑连合-年日时三干】"]=tempData
+        }
+        if (shunlianhe.contains(yueGan+riGan+shiGan)) {
+            mapResult["【三五连合格-顺挑连合-月日时三干】"]=tempData
+        }
+
+
+        //倒垂者
+        def daolianhe = ["癸甲乙","乙丙丁","丁戊己","己庚辛","辛壬癸"]
+        if (daolianhe.contains(nianGan+yueGan+riGan)) {
+            mapResult["【三五连合格-倒垂连合-年月日三干】"]=tempData
+        }
+
+        if (daolianhe.contains(nianGan+yueGan+shiGan)) {
+            mapResult["【三五连合格-倒垂连合-年月时三干】"]=tempData
+        }
+        if (daolianhe.contains(nianGan+riGan+shiGan)) {
+            mapResult["【三五连合格-倒垂连合-年日时三干】"]=tempData
+        }
+        if (daolianhe.contains(yueGan+riGan+shiGan)) {
+            mapResult["【三五连合格-倒垂连合-月日时三干】"]=tempData
+        }
+
+        /**
+         * 【神藏杀没格】
+         * 甲庚丙壬、乙辛、丁癸，最为贵格，名曰神藏杀没。盖上天清气之盛者，如年月日时胎五位中合成，更有福神相助，
+         无死绝冲破空亡，须贵极一品。
+         * [2017-08-31 add by longzhiyou]
+         */
+
+        if (
+            (listMingTaiGan.contains("甲")
+            &&listMingTaiGan.contains("庚")
+            &&listMingTaiGan.contains("丙")
+            &&listMingTaiGan.contains("壬"))
+                    || (listMingTaiGan.contains("乙")
+                        &&listMingTaiGan.contains("辛")
+                        &&listMingTaiGan.contains("丁")
+                        &&listMingTaiGan.contains("癸"))
+        ) {
+
+            mapResult["【神藏杀没格】"]=["甲庚丙壬、乙辛丁癸，最为贵格，名曰神藏杀没。"
+                                  ,"盖上天清气之盛者，如年月日时胎五位中合成，更有福神相助，无死绝冲破空亡，须贵极一品。"
+                                  ,"若有冲破空亡而有福神相助，亦可为两制两省。"
+                                  ,"如日时上不犯空亡，他处犯之，亦可为两府，然活不久。"
+                                  ,"如不犯空亡，只犯死绝，可作卿监，仍多难而有好差遣，"
+                                  ,"若无福神为助，不过一多难员正郎而已。"
+                                  ,"不犯死绝，而犯冲破空亡，无福神助之者，亦可作馆职之格"
+                                  ,"或死绝空亡，更无福神为之助，即碌碌不出州县耳。"
+                                  ,"更有三刑六害，只作有名举人，或清高僧道，与富足百姓而已。（林开五命） "
+                                  ,"阎东叟云：甲庚丙壬为阳干之吉会，乙辛丁癸为阴干之福源，六凶神至此而藏 "
+                                  ,"玉霄宝鉴云：如甲庚丙壬全，必生居孟月者，方为入格。乙辛丁癸，必生居季月者，方为入格。不然非也。"
+                                  ,"阎东叟云：甲庚丙壬为阳干之吉会，乙辛丁癸为阴干之福源，六凶神至此而藏 "
+
+
+
+            ]
+        }
+
+
+
 
         //【连珠粹美格】
         def lianzhuge = [
@@ -440,27 +542,36 @@ public class WuXingJingJiRule  implements BaseRule{
 
 
         //【官卿】
+        /**
+         *  【福会】
+         * 福会者，取十干所生及所克是也，谓如甲木生丙火，克之戊土之类，如甲人见丙戊是也（他准此并与官卿同）。若人胎月
+         * 日时遇之，主衣食丰足，官爵崇高，大小运行年至此，亦有迁官进财之喜。（三命指掌）
+         * [2017-08-31 add by longzhiyou]
+         */
         def guanqing = [
-                "甲丙戊":"甲随丙戊官卿泰",
-                "乙丁己":"乙见丁己禄还生",
-                "丙戊庚":"丙会戊庚年称遂",
-                "丁己辛":"丁到己辛事皆成",
-                "戊庚壬":"戊入庚壬门有庆",
-                "己辛癸":"己逢辛癸职迁荣",
-                "庚壬甲":"庚迁壬甲财丰足",
-                "辛癸乙":"辛逢癸乙命先升",
-                "壬甲丙":"壬逢甲丙无不喜",
-                "癸乙丁":"癸入乙丁命高亨"
+                "甲":["丙戊","甲随丙戊官卿泰"],
+                "乙":["丁己","乙见丁己禄还生"],
+                "丙":["戊庚","丙会戊庚年称遂"],
+                "丁":["己辛","丁到己辛事皆成"],
+                "戊":["庚壬","戊入庚壬门有庆"],
+                "己":["辛癸","己逢辛癸职迁荣"],
+                "庚":["壬甲","庚迁壬甲财丰足"],
+                "辛":["癸乙","辛逢癸乙命先升"],
+                "壬":["甲丙","壬逢甲丙无不喜"],
+                "癸":["乙丁","癸入乙丁命高亨"]
         ]
-        matchStr = nianGan+riGan+shiGan
-        if (guanqing.containsKey(matchStr)) {
-            mapResult["官卿"]=guanqing.get(matchStr)+"此为有福运相迎。（八字金书）"
+
+        def strings = guanqing.get(nianGan)
+
+        if (listMingTaiGan.contains(strings[0][0])&&listMingTaiGan.contains(strings[0][1])) {
+            mapResult["官卿"]=strings[1]+" 取十干所生及所克是也，谓如甲木生丙火，克之戊土之类，如甲人见丙戊是也.胎月日时遇之，主衣食丰足，官爵崇高"
+        }
+
+        if ([yunGan,liunianGan].contains(strings[0][0])&&[yunGan,liunianGan].contains(strings[0][1])) {
+            mapResult["官卿"]=strings[1]+" 取十干所生及所克是也，谓如甲木生丙火，克之戊土之类，如甲人见丙戊是也.大小运行年至此，亦有迁官进财之喜。（三命指掌） "
         }
 
 
-        //【福会】
-        //福会者，取十干所生及所克是也，谓如甲木生丙火，克之戊土之类，如甲人见丙戊是也（他准此并与官卿同）。若人胎月
-        //日时遇之，主衣食丰足，官爵崇高，大小运行年至此，亦有迁官进财之喜。（三命指掌）
 
 
         //禄库
@@ -651,7 +762,7 @@ public class WuXingJingJiRule  implements BaseRule{
         def lutang = ["甲甲戌","乙乙酉","丙丙申","丁丁未","戊戊午","己己巳","庚庚辰",
                       "辛辛卯","辛辛丑","壬壬寅","壬壬子","癸癸亥"]
 
-        def tempData = ["自来言禄，但知甲禄在寅之类，殊未知禄堂为最贵，甲人得甲戌是也，以其甲为岁干，则甲之本位遁在戌,若更得诸位福神助发，必须大贵（李虚中书）"]
+        tempData = ["自来言禄，但知甲禄在寅之类，殊未知禄堂为最贵，甲人得甲戌是也，以其甲为岁干，则甲之本位遁在戌,若更得诸位福神助发，必须大贵（李虚中书）"]
         if (lutang.contains(nianGan+shiZhu)) {
             tempData.add(0,nianGan+"人"+shiZhu+"时柱")
             mapResult["【禄堂】"]=tempData
