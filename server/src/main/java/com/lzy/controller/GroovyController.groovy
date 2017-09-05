@@ -6,6 +6,7 @@ import com.lzy.domain.AnalyzeResult
 import com.lzy.repository.MatchRuleRepository
 import com.lzy.rule.CoreRule
 import com.lzy.rule.LiangXiangRunRule
+import com.lzy.rule.ReferenceRule
 import com.lzy.rule.ShenShaRule
 import com.lzy.rule.ShiZhanRule
 import com.lzy.rule.WomanRule
@@ -30,13 +31,14 @@ class GroovyController {
 
     final static def listRule = [new WuXingJingJiRule()]
     final static def mapRule = [
-
+            "参考":new ReferenceRule(),
             "核心":new CoreRule(),
             "神煞":new ShenShaRule(),
             "实务":new ShiZhanRule(),
             "女命":new WomanRule(),
             "五行精纪":new WuXingJingJiRule(),
             "梁湘润":new LiangXiangRunRule()
+
     ]
 
     @RequestMapping(method= RequestMethod.GET)
