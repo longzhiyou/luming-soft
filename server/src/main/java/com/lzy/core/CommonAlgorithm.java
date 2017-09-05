@@ -853,6 +853,20 @@ public class CommonAlgorithm {
         return "";
     }
 
+    public   String getWuXingChangShengJue(String wuxing,String changshengName){
+
+        //获取五行索引
+        int wuxingIndex = listWuXing.indexOf(wuxing);
+
+        if (mapChangShengJueName.containsKey(changshengName)) {
+            changshengName = mapChangShengJueName.get(changshengName);
+        }
+        int changshengIndex = listChangShengJue.indexOf(changshengName);
+
+        return tableTianGanChangShengJue[wuxingIndex][changshengIndex];
+
+
+    }
 
 
     /**

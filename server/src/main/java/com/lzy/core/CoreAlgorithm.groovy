@@ -233,6 +233,16 @@ class CoreAlgorithm {
             "水":"巳"
     ]
 
+    //五行死
+    static  wuxingsi=[
+            "木":"申",
+            "火":"亥",
+            "土":"亥",
+            "金":"寅",
+            "水":"巳"
+    ]
+
+
     //支藏天干
     static  zhicangtiangan=[
             "子":"癸",
