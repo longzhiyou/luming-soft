@@ -124,7 +124,7 @@ class ShenShaRule {
                           "丑":"戍"
                         ]
 
-       matchStr = leitingsha.get(nianZhi)
+       matchStr = leitingsha.get(yueZhi)
        if (matchStr==shiZhi) {
            mapResult["【雷霆煞-月支对时支】"]="忽然遇难,祸起萧墙。如游泳淹死，登山失足坠山，驾驶昏睡出车祸。"
        }
