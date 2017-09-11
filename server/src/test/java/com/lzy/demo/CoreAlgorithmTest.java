@@ -98,6 +98,13 @@ public class CoreAlgorithmTest {
 
     }
 
+    @Test
+    public void getZiNvGong(){
+        Object ziNvGong = CoreAlgorithm.getZiNvGong("子", "酉");
+
+        System.out.println("子女宫:"+ ziNvGong);
+
+    }
 
 
 
