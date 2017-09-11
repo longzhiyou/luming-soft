@@ -1,12 +1,8 @@
 package com.lzy.demo;
 
-import com.lzy.core.CommonAlgorithm;
 import com.lzy.core.CoreAlgorithm;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.Set;
 
 /**
  * User: longzhiyou
@@ -101,6 +97,8 @@ public class CoreAlgorithmTest {
     @Test
     public void getZiNvGong(){
         Object ziNvGong = CoreAlgorithm.getZiNvGong("子", "酉");
+
+
 
         System.out.println("子女宫:"+ ziNvGong);
 

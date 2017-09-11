@@ -5,6 +5,8 @@ import com.lzy.core.CommonAlgorithm
 import com.lzy.core.CoreAlgorithm
 import com.lzy.core.ShenShaAlgorithm
 
+import static com.lzy.core.CoreAlgorithm.wuxingkewo
+
 /**
  *  子女规则
  * Created by bukeyan on 2017/6/18.
@@ -114,38 +116,22 @@ class ChildrenRule {
         * [2017-09-11 add by longzhiyou]
         */
 
-       //行索引是时辰,列索引是月份
-       def minggong = [
-           ["卯","寅","丑","子","亥","戌","酉","申","未","午","巳","辰"],
-           ["寅","丑","子","亥","戌","酉","申","未","午","巳","辰","卯"],
-           ["丑","子","亥","戌","酉","申","未","午","巳","辰","卯","寅"],
-           ["子","亥","戌","酉","申","未","午","巳","辰","卯","寅","丑"],
-           ["亥","戌","酉","申","未","午","巳","辰","卯","寅","丑","子"],
-           ["戌","酉","申","未","午","巳","辰","卯","寅","丑","子","亥"],
-           ["酉","申","未","午","巳","辰","卯","寅","丑","子","亥","戌"],
-           ["申","未","午","巳","辰","卯","寅","丑","子","亥","戌","酉"],
-           ["未","午","巳","辰","卯","寅","丑","子","亥","戌","酉","申"],
-           ["午","巳","辰","卯","寅","丑","子","亥","戌","酉","申","未"],
-           ["巳","辰","卯","寅","丑","子","亥","戌","酉","申","未","午"],
-           ["辰","卯","寅","丑","子","亥","戌","酉","申","未","午","巳"]
-       ]
-       def shizhiIndex = CoreAlgorithm.shiershi.indexOf(shiZhi)
-       def yuezhizhiIndex = CoreAlgorithm.shieryue.indexOf(yueZhi)
-       matchStr  = minggong[shizhiIndex][yuezhizhiIndex]
+       def ziNvGong = CoreAlgorithm.getZiNvGong("子", "酉")
 
-       //子息宫（儿女宫）：命宫逆推第五宫即是
-       def nannvgong = ["子":"申",
-                        "丑":"酉",
-                        "寅":"戌",
-                        "卯":"亥",
-                        "辰":"子",
-                        "巳":"丑",
-                        "午":"寅",
-                        "未":"卯",
-                        "申":"辰",
-                        "酉":"巳",
-                        "戌":"午",
-                        "亥":"未"]
+       def gender = bazi.getGender()
+       if (gender!="女") {
+           //我生之五行
+           def s = CoreAlgorithm.getWuxingwosheng()[commonAlgorithm.getJiaZiWuXing(nianZhu)]
+           s= commonAlgorithm.getWuXingChangShengJueName(s,ziNvGong)
+           mapResult["子女宫长生诀"]= s
+
+       }else {
+           //克我五行
+           def s = CoreAlgorithm.getWuxingkewo()[commonAlgorithm.getJiaZiWuXing(nianZhu)]
+           s= commonAlgorithm.getWuXingChangShengJueName(s,ziNvGong)
+           mapResult["子女宫长生诀"]= s
+       }
+
 
        mapResult
    }
