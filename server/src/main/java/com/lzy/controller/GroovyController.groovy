@@ -12,6 +12,7 @@ import com.lzy.rule.ShenShaRule
 import com.lzy.rule.ShiZhanRule
 import com.lzy.rule.WomanRule
 import com.lzy.rule.WuXingJingJiRule
+import com.lzy.rule.XuLeWuRule
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
@@ -39,7 +40,8 @@ class GroovyController {
             "实务":new ShiZhanRule(),
             "女命":new WomanRule(),
             "五行精纪":new WuXingJingJiRule(),
-            "梁湘润":new LiangXiangRunRule()
+            "梁湘润":new LiangXiangRunRule(),
+            "徐乐吾":new XuLeWuRule()
 
     ]
 
