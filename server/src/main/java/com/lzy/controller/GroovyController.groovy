@@ -4,6 +4,7 @@ import com.lzy.core.BaZi
 import com.lzy.core.CommonAlgorithm
 import com.lzy.domain.AnalyzeResult
 import com.lzy.repository.MatchRuleRepository
+import com.lzy.rule.ChildrenRule
 import com.lzy.rule.CoreRule
 import com.lzy.rule.LiangXiangRunRule
 import com.lzy.rule.ReferenceRule
@@ -12,6 +13,7 @@ import com.lzy.rule.ShenShaRule
 import com.lzy.rule.ShiZhanRule
 import com.lzy.rule.WomanRule
 import com.lzy.rule.WuXingJingJiRule
+import com.lzy.rule.XuLeWuRule
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
@@ -38,8 +40,10 @@ class GroovyController {
             "神煞":new ShenShaRule(),
             "实务":new ShiZhanRule(),
             "女命":new WomanRule(),
+            "子女":new ChildrenRule(),
             "五行精纪":new WuXingJingJiRule(),
-            "梁湘润":new LiangXiangRunRule()
+            "梁湘润":new LiangXiangRunRule(),
+            "徐乐吾":new XuLeWuRule()
 
     ]
 
