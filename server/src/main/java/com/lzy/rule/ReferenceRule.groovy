@@ -13,10 +13,14 @@ import com.lzy.core.CommonAlgorithm
      Object matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
 
          def mapResult = [:]
-         mapResult["御定子平"] = yudingziping(bazi, commonAlgorithm)
-         mapResult["十干体相"] = shigantixiang(bazi, commonAlgorithm)
-         mapResult["滴天髓十干"] = ditiansui(bazi, commonAlgorithm)
-         mapResult["十干喜忌诗诀【管见子平】"] = guanjianziping(bazi, commonAlgorithm)
+         mapResult["【御定子平】"] = yudingziping(bazi, commonAlgorithm)
+         mapResult["【拦江网十干】"] = lanjiangwang(bazi, commonAlgorithm)
+
+         mapResult["【滴天髓十干】"] = ditiansui(bazi, commonAlgorithm)
+         mapResult["【管见子平-十干喜忌诗诀】"] = guanjianziping(bazi, commonAlgorithm)
+         mapResult["【天元赋】"] = tianyuanfu(bazi, commonAlgorithm)
+         mapResult["【十干体相】"] = shigantixiang(bazi, commonAlgorithm)
+
 
 
          //十干喜忌诗诀【管见子平】
@@ -45,12 +49,22 @@ import com.lzy.core.CommonAlgorithm
 
              mapResult["【日干】"+riGan]=[
                      ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
              ]
 
 
          }else if (riGan=="乙") {
              mapResult["【日干】"+riGan]=[
                      ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
              ]
 
 
@@ -58,6 +72,11 @@ import com.lzy.core.CommonAlgorithm
          }else if (riGan=="丙") {
              mapResult["【日干】"+riGan]=[
                      ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
              ]
 
 
@@ -65,33 +84,180 @@ import com.lzy.core.CommonAlgorithm
          }else if (riGan=="丁") {
              mapResult["【日干】"+riGan]=[
                      ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
              ]
          }else if (riGan=="戊") {
              mapResult["【日干】"+riGan]=[
                      ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
              ]
          }else if (riGan=="己") {
              mapResult["【日干】"+riGan]=[
                      ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
              ]
          }else if (riGan=="庚") {
              mapResult["【日干】"+riGan]=[
                      ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
              ]
 
          }else if (riGan=="辛") {
              mapResult["【日干】"+riGan]=[
                      ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
              ]
 
          }else if (riGan=="壬") {
              mapResult["【日干】"+riGan]=[
                      ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
              ]
 
          }else if (riGan=="癸") {
              mapResult["【日干】"+riGan]=[
                      ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+             ]
+         }
+
+         mapResult
+     }
+
+     //拦江网
+     static Object lanjiangwang(BaZi bazi, CommonAlgorithm commonAlgorithm) {
+         def mapResult = [:]
+
+         def riGan = bazi.getRiGan()
+         if (riGan=="甲") {
+
+             mapResult["【日干】"+riGan]=[
+                     ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+             ]
+
+
+         }else if (riGan=="乙") {
+             mapResult["【日干】"+riGan]=[
+                     ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+             ]
+
+
+
+         }else if (riGan=="丙") {
+             mapResult["【日干】"+riGan]=[
+                     ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+             ]
+
+
+
+         }else if (riGan=="丁") {
+             mapResult["【日干】"+riGan]=[
+                     ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+             ]
+         }else if (riGan=="戊") {
+             mapResult["【日干】"+riGan]=[
+                     ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+             ]
+         }else if (riGan=="己") {
+             mapResult["【日干】"+riGan]=[
+                     ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+             ]
+         }else if (riGan=="庚") {
+             mapResult["【日干】"+riGan]=[
+                     ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+             ]
+
+         }else if (riGan=="辛") {
+             mapResult["【日干】"+riGan]=[
+                     ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+             ]
+
+         }else if (riGan=="壬") {
+             mapResult["【日干】"+riGan]=[
+                     ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+             ]
+
+         }else if (riGan=="癸") {
+             mapResult["【日干】"+riGan]=[
+                     ""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
+                     ,""
              ]
          }
 
@@ -156,6 +322,154 @@ import com.lzy.core.CommonAlgorithm
          }else if (riGan=="癸") {
              mapResult["【日干】"+riGan]=[
                      ""
+             ]
+         }
+
+         mapResult
+     }
+
+
+     //唐.一行禅师【天元赋】
+     static Object tianyuanfu(BaZi bazi, CommonAlgorithm commonAlgorithm) {
+         def mapResult = [:]
+
+         def riGan = bazi.getRiGan()
+         if (riGan=="甲") {
+
+             mapResult["【日干】"+riGan]=[
+                      "【正印】甲得癸而滋荣，衣食自然丰足。"
+                     ,"【七杀】阳木甲逢庚败，枝梢不得无伤。"
+                     ,"【食神】食堂福寿崇高，皆言甲到丙乡"
+                     ,"甲逢丁而成焰，资财累岁多朽。"
+                     ,"甲憎乙向，逢之自己多灾。"
+                     ,"甲见辛而化官，刚柔相济。"
+                     ,"甲己相逢，化土为福，则夫妇遐昌。"
+                     ,""
+                     ,""
+                     ,""
+             ]
+
+
+         }else if (riGan=="乙") {
+             mapResult["【日干】"+riGan]=[
+                     " 【正印】乙伴壬而获福，天赐禄位高崇。"
+                     ,"【七杀】阴木乙遇辛金，茎叶自然有损。"
+                     ,"【食神】朝省闻贵优升，盖为乙居丁舍"
+                     ,"乙遇丙而化灰，金玉自消难聚。"
+                     ,"乙被甲临，反与人为助。"
+                     ,"乙见庚而为福，兄弟同乡。"
+                     ,"乙庚各合，成金得位，则东西类化。"
+                     ,""
+                     ,""
+                     ,""
+             ]
+
+
+
+         }else if (riGan=="丙") {
+             mapResult["【日干】"+riGan]=[
+                      "丙乙交会，平生福寿超群，出世深成才业。"
+                     ,"炎炎丙火，遇壬而赫赫无光。"
+                     ,"官禄并叠，丙食戊而成功"
+                     ,"天元正败，丙见己而伤残。"
+                     ,"丙最输丁"
+                      ,"水火既济，却言丙对癸乡。"
+                      ,"丙辛化水，智显则必主文章。"
+                      ,""
+                      ,""
+                      ,""
+             ]
+
+
+
+         }else if (riGan=="丁") {
+             mapResult["【日干】"+riGan]=[
+                      "丁无正印诀"
+                     ,"烁烁阴丁，逢癸而明辉自暗。"
+                     ,"谷麦盈仓，丁啖己而有旺。"
+                     ,"干禄全轻，丁值戊而衰弱。"
+                     ,"丁嫌暗丙"
+                      ,"意气相承，乃是丁归壬舍。"
+                      ,"丁壬为木，聪明则近善多仁。"
+                      ,""
+                      ,""
+                      ,""
+             ]
+         }else if (riGan=="戊") {
+             mapResult["【日干】"+riGan]=[
+                      "戊印丁兮，似虎居山谷之威。"
+                     ,"戊居甲位，惟赖庚方能吉。"
+                     ,"要得丰足，无过戊得逢庚。"
+                     ,""
+                     ,"戊同己兮，多生脾胃之疾。" ,""
+                      ,"戊临乙位，得木而生成。"
+                      ,"戊癸得化，禄位崇高，二者相逢，三才可立。"
+                      ,""
+                      ,""
+             ]
+         }else if (riGan=="己") {
+             mapResult["【日干】"+riGan]=[
+                      "己交丙兮，象龙得风云之势。"
+                     ,"己坐乙乡，知是干头有鬼。"
+                     ,"欲问高迁，全赖己加辛地。"
+                     ,""
+                     ,"己共戊兮，反有奔波之事。" ,""
+                      ,"己向甲乡，阴遇阳而可贵。"
+                      ,""
+                      ,""
+                      ,""
+             ]
+         }else if (riGan=="庚") {
+             mapResult["【日干】"+riGan]=[
+                      "庚逢己土，官禄有余。"
+                     ,"庚逢丙战，势自倾危"
+                     ,"满堂金玉，庚禄有壬。"
+                     ,"庚中见癸，荡散资财。"
+                     ,"柔能制刚，多因辛与庚期，大重之余，乃是辛居庚地。" ,""
+                      ,"白虎通道，庚加丁临"
+                      ,""
+                      ,""
+                      ,""
+             ]
+
+         }else if (riGan=="辛") {
+             mapResult["【日干】"+riGan]=[
+                      "辛到戊乡，衣食自足。"
+                     ,"辛被丁侵，克伐成害"
+                     ,"广置田园，辛能食癸。"
+                     ,"辛禄遇壬，熔消福禄。"
+                     ,"辛忌庚方" ,""
+                      ,"太阴得路，辛归丙舍"
+                      ,""
+                      ,""
+                      ,""
+             ]
+
+         }else if (riGan=="壬") {
+             mapResult["【日干】"+riGan]=[
+                      "壬水得辛，福寿无疆。"
+                     ,"壬忧戊至，蹇气难通"
+                     ,"壬食甲而有旺，众福如麻。"
+                     ,"年少逢灾，壬伤乙运。"
+                     ,"壬行癸厄" ,""
+                      ,"壬于己兮，远泛洪波。"
+                      ,""
+                      ,""
+                      ,""
+             ]
+
+         }else if (riGan=="癸") {
+             mapResult["【日干】"+riGan]=[
+                      "癸庚相逢，偏饶仆马。"
+                     ,"癸怕己临，迟晦惊惶"
+                     ,"癸向乙而生成，入食列鼎。"
+                     ,"祖财随废，癸被甲侵。"
+                     ,"癸喜戊兮，澄澜漂渺。"
+                      ,""
+                      ,""
+                      ,""
+                      ,""
+                      ,""
              ]
          }
 
