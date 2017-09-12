@@ -1558,6 +1558,7 @@ public class RiYueRule implements BaseRule{
                 mapResult["【神峰通考定格局诀-甲日定格】"] = ["三月财星藏辰库"]
             }else if (yueZhi=="巳"){
                 mapResult["【神峰通考定格局诀-甲日定格】"] = ["巳为食神财暗伏"]
+                mapResult["【子平真诠格局】"] = zipingzhenquangeju["财格"]
             }else if (yueZhi=="午"){
                 mapResult["【神峰通考定格局诀-甲日定格】"] = ["午月丁火伤官格"]
             }else if (yueZhi=="未"){
@@ -1587,6 +1588,7 @@ public class RiYueRule implements BaseRule{
                 mapResult["【神峰通考定格局诀-乙日定格】"] = ["三月财官俱杂气"]
             }else if (yueZhi=="巳"){
                 mapResult["【神峰通考定格局诀-乙日定格】"] = ["巳中伤官财星端"]
+                mapResult["【子平真诠格局】"] = zipingzhenquangeju["财格"]
             }else if (yueZhi=="午"){
                 mapResult["【神峰通考定格局诀-乙日定格】"] = ["午提丁火食神格"]
             }else if (yueZhi=="未"){
@@ -1623,8 +1625,10 @@ public class RiYueRule implements BaseRule{
                 mapResult["【神峰通考定格局诀-丙日定格】"] = ["未取伤官宜伤尽"]
             }else if (yueZhi=="申"){
                 mapResult["【神峰通考定格局诀-丙日定格】"] = ["申是偏财喜旺神"]
+                mapResult["【子平真诠格局】"] = zipingzhenquangeju["财格"]
             }else if (yueZhi=="酉"){
                 mapResult["【神峰通考定格局诀-丙日定格】"] = ["酉月财旺生官格"]
+                mapResult["【子平真诠格局】"] = zipingzhenquangeju["财格"]
             }else if (yueZhi=="戌"){
                 mapResult["【神峰通考定格局诀-丙日定格】"] = ["戌上杂气为食神"]
             }else if (yueZhi=="亥"){
@@ -1819,9 +1823,10 @@ public class RiYueRule implements BaseRule{
                 mapResult["【神峰通考定格局诀-癸日定格】"] = ["卯月食神定是真"]
             }else if (yueZhi=="辰"){
                 mapResult["【神峰通考定格局诀-癸日定格】"] = ["辰中杂气是正官"]
+                mapResult["【子平真诠格局】"] = zipingzhenquangeju["正官格"]
             }else if (yueZhi=="巳"){
                 mapResult["【神峰通考定格局诀-癸日定格】"] = ["巳月正财官便是"]
-                mapResult["【子平真诠格局】"] = zipingzhenquangeju["正官格"]
+
 
             }else if (yueZhi=="午"){
                 mapResult["【神峰通考定格局诀-癸日定格】"] = ["午月偏财又偏官"]
