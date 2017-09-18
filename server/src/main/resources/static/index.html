@@ -405,25 +405,12 @@
                 for (var i = 0; i < info.length; i++) {
                     data.push({"主题":info[i].subject,"匹配结果":info[i].analyzeResult});
                 }
-                $('#json-renderer').jsonViewer(data);
+                $('#json-renderer').jsonViewer(data, {collapsed: false });
+
 
 
             });
 
-//            var temp = $scope.bazi;
-//
-//// Get json-data by javascript-object
-//            var data = {
-//                "firstName": "Jonh",
-//                "lastName": "Smith",
-//                "phones": [
-//                    "123-45-67",
-//                    "987-65-43"
-//                ]
-//            };
-
-
-//            alert("analyze");
         }
 
     });

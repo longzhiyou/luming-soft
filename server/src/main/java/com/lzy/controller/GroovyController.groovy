@@ -34,8 +34,9 @@ class GroovyController {
 
     final static def listRule = [new WuXingJingJiRule()]
     final static def mapRule = [
-            "参考":new ReferenceRule(),
+
             "日月":new RiYueRule(),
+            "日柱":new ReferenceRule(),
             "核心":new CoreRule(),
             "神煞":new ShenShaRule(),
             "实务":new ShiZhanRule(),
