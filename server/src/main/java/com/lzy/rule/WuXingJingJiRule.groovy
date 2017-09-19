@@ -38,6 +38,7 @@ public class WuXingJingJiRule  implements BaseRule{
         def listMingZhu = bazi.getListMingZhu()
 
         def yunGan = bazi.getYunGan()
+        def yunZhu = bazi.getYunZhu()
         def liunianGan = bazi.getLiunianGan()
 
         def taiGan = bazi.getTaiGan()
@@ -775,6 +776,76 @@ public class WuXingJingJiRule  implements BaseRule{
             tempData.add(0,nianGan+"人"+shiZhu+"日柱")
             mapResult["【禄堂】"]=tempData
         }
+
+        /**
+         *  第十三卷
+         * [2017-09-19 add by longzhiyou]
+         */
+
+        /**
+         * 【福星贵】一名文星贵，玉门关集，『禄干福神』
+         * 甲丙相邀入虎乡，更游鼠穴最高强，戊猴己未丁宜亥，乙癸逢牛卯禄昌，庚趁马头辛到巳，壬骑龙背喜非常。
+         * 用法:
+         * 1.年干对时支
+         * 参考: 如蔡君谟，壬子年、癸卯月、庚戌日、庚辰时，壬骑龙背，又贵在卯巳得辰，是谓福星扶贵人。（紫虚局）
+         *
+         * 如甲人见甲寅或甲子，乙人得乙丑，丙人得丙寅或丙子，丁人得丁亥，戊人得戊申，
+         * 己人得己未，庚人得庚午，辛人得辛巳，壬人得壬辰，癸人得癸丑，为文星入华馆。
+         *
+         * http://blog.sina.com.cn/s/blog_6064c6590102vqpk.html
+         * [2017-09-19 add by longzhiyou]
+         */
+        def fuxinggui = ["甲":["寅","子"]
+                         ,"丙":["寅","子"]
+                         ,"戊":["申"]
+                         ,"己":["未"]
+                         ,"丁":["亥"]
+                         ,"乙":["丑","卯"]
+                         ,"癸":["丑","卯"]
+                         ,"庚":["午"]
+                         ,"辛":["巳"]
+                         ,"壬":["辰"]
+
+        ]
+
+        mapResult = fuxinggui[nianGan]
+        if (mapResult.contains(shiZhi)) {
+            mapResult["【福星贵】年干对时支"]=["甲丙相邀入虎乡，更游鼠穴最高强，戊猴己未丁宜亥，乙癸逢牛卯禄昌，庚趁马头辛到巳，壬骑龙背喜非常。"]
+        }
+
+
+        //文星入华馆
+        def wenxingruhuaguan = ["甲":["甲寅","甲子"]
+                                ,"乙":["乙丑"]
+                                ,"丙":["丙寅","丙子"]
+                                ,"丁":["丁亥"]
+                                ,"戊":["戊申"]
+                                ,"己":["己未"]
+                                ,"庚":["庚午"]
+                                ,"辛":["辛巳"]
+                                ,"壬":["壬辰"]
+                                ,"癸":["癸丑"]
+
+
+        ]
+
+        mapResult = wenxingruhuaguan[nianGan]
+        if (mapResult.contains(shiZhu)) {
+            mapResult["【文星入华馆】年干对时柱"] = nianGan+"人见"+mapResult.toString()
+        }
+        if (mapResult.contains(riZhu)) {
+            mapResult["【文星入华馆】年干对日柱"] = nianGan+"人见"+mapResult.toString()
+        }
+        if (mapResult.contains(yunZhu)) {
+            mapResult["【文星入华馆】年干对运柱"] = nianGan+"人见"+mapResult.toString()
+        }
+
+        /**
+         * 第十八卷
+         * [2017-09-19 add by longzhiyou]
+         */
+
+        //【本家食神】
 
         mapResult
     }
