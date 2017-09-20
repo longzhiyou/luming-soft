@@ -104,6 +104,16 @@ public class CoreAlgorithmTest {
 
     }
 
+    @Test
+    public void getLiangZhuGe(){
+        Object liangZhuGe = CoreAlgorithm.getLiangZhuGe("甲戌", "壬申");
+
+
+        System.out.println(liangZhuGe);
+
+    }
+
+
 
 
 }
