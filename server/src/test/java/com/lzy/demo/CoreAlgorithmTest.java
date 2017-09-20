@@ -106,8 +106,9 @@ public class CoreAlgorithmTest {
 
     @Test
     public void getLiangZhuGe(){
-        Object liangZhuGe = CoreAlgorithm.getLiangZhuGe("甲戌", "壬申");
-
+//        Object liangZhuGe = CoreAlgorithm.getLiangZhuGe("甲辰", "壬辰");
+        Object liangZhuGe = CoreAlgorithm.getJiaZiByWeiShu("癸亥", 6);
+        liangZhuGe = CoreAlgorithm.getJiaZiByWeiShuAfter("己巳", 6);
 
         System.out.println(liangZhuGe);
 
