@@ -808,8 +808,8 @@ public class WuXingJingJiRule  implements BaseRule{
 
         ]
 
-        mapResult = fuxinggui[nianGan]
-        if (mapResult.contains(shiZhi)) {
+        mapRule = fuxinggui[nianGan]
+        if (mapRule.contains(shiZhi)) {
             mapResult["【福星贵】年干对时支"]=["甲丙相邀入虎乡，更游鼠穴最高强，戊猴己未丁宜亥，乙癸逢牛卯禄昌，庚趁马头辛到巳，壬骑龙背喜非常。"]
         }
 
@@ -829,14 +829,14 @@ public class WuXingJingJiRule  implements BaseRule{
 
         ]
 
-        mapResult = wenxingruhuaguan[nianGan]
-        if (mapResult.contains(shiZhu)) {
+        mapRule = wenxingruhuaguan[nianGan]
+        if (mapRule.contains(shiZhu)) {
             mapResult["【文星入华馆】年干对时柱"] = nianGan+"人见"+mapResult.toString()
         }
-        if (mapResult.contains(riZhu)) {
+        if (mapRule.contains(riZhu)) {
             mapResult["【文星入华馆】年干对日柱"] = nianGan+"人见"+mapResult.toString()
         }
-        if (mapResult.contains(yunZhu)) {
+        if (mapRule.contains(yunZhu)) {
             mapResult["【文星入华馆】年干对运柱"] = nianGan+"人见"+mapResult.toString()
         }
 
@@ -846,6 +846,22 @@ public class WuXingJingJiRule  implements BaseRule{
          */
 
         //【本家食神】
+        def nianshishen = commonAlgorithm.getTianGanShiShen(nianGan, "食神")
+        mapRule = [
+                "谓如甲食丙，甲子人见丙子之类是也，得此者非大富，即大贵。"
+                ,"月不如日，日不如时，若互换生旺带禄贵者，无不贵显。"
+                ,"一名隔十三食神，古诗云:论命先论隔十三，命中带得入朝参，金鱼束带浑闲事，若见魁星定面南。"
+                ,"甲辰、丁未、庚戌、 癸丑四位为真魁星。如汪状元，戊戌见庚戌时，是见魁星也。"
+        ]
+        if (nianZhi==yueZhi&&nianshishen==yueGan) {
+            mapResult["【本家食神】年柱对月柱"] = mapRule
+        }
+        if (nianZhi==riZhi&&nianshishen==riGan) {
+            mapResult["【本家食神】年柱对日柱"] = mapRule
+        }
+        if (nianZhi==shiZhi&&nianshishen==shiGan) {
+            mapResult["【本家食神】年柱对时柱"] = mapRule
+        }
 
         mapResult
     }
