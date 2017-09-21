@@ -212,6 +212,8 @@ class CoreAlgorithm {
         kongwang.get(ganzhi2) == kongwang.get(ganzhi1)
 
     }
+
+
     /**
      *  获取夹柱
      * [2017-08-25 add by longzhiyou]

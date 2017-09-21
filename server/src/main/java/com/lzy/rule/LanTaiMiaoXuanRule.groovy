@@ -77,6 +77,60 @@ public class LanTaiMiaoXuanRule implements BaseRule{
          */
 
 
+        def xun = [:]
+        xun[CoreAlgorithm.kongwang[nianZhu].toString()]=0
+        xun[CoreAlgorithm.kongwang[yueZhu].toString()]=0
+        xun[CoreAlgorithm.kongwang[riZhu].toString()]=0
+        xun[CoreAlgorithm.kongwang[shiZhu].toString()]=0
+        xun[CoreAlgorithm.kongwang[taiZhu].toString()]=0
+
+        xun[CoreAlgorithm.kongwang[nianZhu].toString()]+=1
+        xun[CoreAlgorithm.kongwang[yueZhu].toString()]+=1
+        xun[CoreAlgorithm.kongwang[riZhu].toString()]+=1
+        xun[CoreAlgorithm.kongwang[shiZhu].toString()]+=1
+        xun[CoreAlgorithm.kongwang[taiZhu].toString()]+=1
+
+
+        if (xun.size()==5) {
+            mapResult["【五福集祥，则伟人间出】"]=["年月日时胎，各出一旬者，止有四旬者则非"]
+        }
+
+
+
+        def sansiwei = [:]
+        sansiwei[CoreAlgorithm.kongwang[nianZhu]]=0
+        sansiwei[CoreAlgorithm.kongwang[yueZhu]]=0
+        sansiwei[CoreAlgorithm.kongwang[riZhu]]=0
+        sansiwei[CoreAlgorithm.kongwang[shiZhu]]=0
+
+
+        sansiwei[CoreAlgorithm.kongwang[nianZhu]]+=1
+        sansiwei[CoreAlgorithm.kongwang[yueZhu]]+=1
+        sansiwei[CoreAlgorithm.kongwang[riZhu]]+=1
+        sansiwei[CoreAlgorithm.kongwang[shiZhu]]+=1
+
+        if (sansiwei.size()==1) {
+            mapResult["【一旬中睦集和气，麟阁标名】"]=["年月日时，共出一旬者是也。"
+                                         ,"又为一旬包裹唤天格。探真歌云:四位循环共一旬，还同兄弟一家人，玉堂厚禄数千户，金榜题名显二亲。合得者宜此断"
+            ]
+        }
+
+        if (sansiwei.containsValue(3)||sansiwei.containsValue(4)) {
+            mapResult["【一旬内，三位四位，为公为卿】"]=["年月日时在旬内是也。又兼逢官星，又见贵人，纳音相生，正合此格"]
+        }
+
+        mapRule = ["甲子":"癸酉","甲寅":"癸亥"
+                   ,"甲辰":"癸丑","甲午":"癸卯","甲申":"癸巳"]
+        if (mapRule.containsKey(nianZhu)&& mapRule[nianZhu]==shiZhu) {
+            mapResult["【一旬包裹，独操千里之权】"]=["甲寅人见癸亥、甲辰人得癸丑、甲午人得癸卯、甲申人得癸巳、甲戌人得癸未、甲子人得癸酉"]
+        }
+
+
+        ruleValue = CoreAlgorithm.getJiaZiByWeiShu(nianZhu, 2)
+        if (ruleValue==shiZhu) {
+            mapResult["【虚一待用】"]=["天干地支均隔一位，如甲子人见丙寅"]
+        }
+
         //大衍虚一，常人必无:大衍之数五十，其用四十九之数，得之者，合于大衍。自本命数至四十九位是也
         ruleValue = CoreAlgorithm.getJiaZiByWeiShu(nianZhu, 48)
         if (ruleValue==shiZhu) {
@@ -90,6 +144,7 @@ public class LanTaiMiaoXuanRule implements BaseRule{
                     ,"一岁有二十四气，自立春以始，积五日则为一候，积三候则为一气，二气则为一月，所以一年统为七十二候二十四气。"
             ]
         }
+
 
 
         ruleValue = CoreAlgorithm.getJiaZiByWeiShu(nianZhu, 5)
@@ -146,6 +201,24 @@ public class LanTaiMiaoXuanRule implements BaseRule{
 
 
 
+        def temp1 = CoreAlgorithm.getJiaZiByWeiShu(nianZhu, 3)
+        def temp2 = CoreAlgorithm.getJiaZiByWeiShu(nianZhu, 7)
+        if (temp1==shiZhu||temp2==shiZhu) {
+            mapResult["【四位八位包藏，有用者名士大夫，无用者富家巨室】"]=[
+                    "丙寅至己巳，为四位包藏，癸酉为八位包藏，余皆仿此"]
+        }
+
+
+         temp1 = CoreAlgorithm.getJiaZiByWeiShu(nianZhu, 2)
+         temp2 = CoreAlgorithm.getJiaZiByWeiShuAfter(nianZhu, 2)
+
+        if (temp1==shiZhu||temp2==shiZhu) {
+            mapResult["【居三隔三，象三才既分之后】"]=["得年干支的前后三位，如丙寅人得己巳或己未"
+                                           ,"一生二，二生三，三生万物，故数至于三者，无穷之生施也。所谓居三阳者，自本命顺数至第三位者是也。如丙寅得戊辰，戊辰见庚午，庚午见壬申之类。盖一而二，二而三，是天地人三才之既分也。三才既居，造化以成，万物之原，人兹以立，人命合此三数，安得不为奇哉"
+
+
+            ]
+        }
 
         //三十六大贵，值之者，黄甲标名
         ruleValue = CoreAlgorithm.getJiaZiByWeiShu(nianZhu, 35)
