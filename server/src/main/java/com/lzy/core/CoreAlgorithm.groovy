@@ -271,9 +271,9 @@ class CoreAlgorithm {
     }
 
     //从后往前术数
-    static def getJiaZiByWeiShuAfter(start, shu){
+    static def getJiaZiByWeiShuAfter(start, int shu){
 
-        def index1 = jiazi.indexOf(start)
+        int index1 = jiazi.indexOf(start)
 
         jiazi[index1-shu]
 

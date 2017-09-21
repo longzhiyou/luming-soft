@@ -119,6 +119,15 @@ public class LanTaiMiaoXuanRule implements BaseRule{
             ]
         }
 
+        ruleValue = CoreAlgorithm.getJiaZiByWeiShu(nianZhu, 6)
+        if (ruleValue==shiZhu) {
+            mapResult["【七星拱揖，轻清者学士翰林，重浊者胄子武弁】"]=["如甲子见庚午为七星拱揖，余皆仿此"
+                    ,"为年干的正官而地支冲年支"
+
+            ]
+        }
+
+
         ruleValue = CoreAlgorithm.getJiaZiByWeiShu(nianZhu, 30)
         if (ruleValue==shiZhu) {
             mapResult["【天地中分，奇才以产】"]=["天干同地支冲，即见年柱的第30位"
@@ -127,6 +136,15 @@ public class LanTaiMiaoXuanRule implements BaseRule{
 
             ]
         }
+
+        ruleValue = CoreAlgorithm.getJiaZiByWeiShu(nianZhu, 4)
+        if (ruleValue==shiZhu) {
+            mapResult["【五星拱揖，轻清者学士翰林，重浊者胄子武弁】"]=["如甲子见戊辰，为五星拱揖，余皆仿此"
+
+            ]
+        }
+
+
 
 
         //三十六大贵，值之者，黄甲标名
