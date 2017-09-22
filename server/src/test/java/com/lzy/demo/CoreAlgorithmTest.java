@@ -96,7 +96,8 @@ public class CoreAlgorithmTest {
 
     @Test
     public void getZiNvGong(){
-        Object ziNvGong = CoreAlgorithm.getZiNvGong("子", "酉");
+//        Object ziNvGong = CoreAlgorithm.getZiNvGong("子", "酉");
+        Object ziNvGong = CoreAlgorithm.getMingGong("寅", "子");
 
 
 

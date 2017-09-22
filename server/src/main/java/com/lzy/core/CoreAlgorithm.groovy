@@ -12,6 +12,7 @@ class CoreAlgorithm {
     static shiershi = ["寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥","子", "丑"]
 
     //行索引是时辰,列索引是月份
+
     static minggong = [
             ["卯","寅","丑","子","亥","戌","酉","申","未","午","巳","辰"],
             ["寅","丑","子","亥","戌","酉","申","未","午","巳","辰","卯"],
@@ -27,11 +28,55 @@ class CoreAlgorithm {
             ["辰","卯","寅","丑","子","亥","戌","酉","申","未","午","巳"]
     ]
 
+    //地支
+    static dizhi = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"]
+
     //获取命宫
     static getMingGong(yueZhi,shiZhi){
+        /**
+         *
+         掌上推命宫法 歌诀如下：
+         手掌查宫要记清，子起正月逆上行。
+         生时起于月支上，顺数直到卯上停。
+         命宫在卯君须记，逢卯安命记心中。
+
+         其法以排山掌子位为正月，也就是将正月固定在子位上，
+         逆数亥为二月，戌为三月，酉为四月，申为五月，未为六月，午为七月，已为八月，辰为九月，卯为十月，寅为十一月，丑为十二月，
+         然后再把出生时间安在这个月支上，顺数至卯，卯就是命宫。如已求出命宫地支，再按“五虎遁”起月法定出命宫天干。
+         子息宫（儿女宫）：命宫逆推第五宫即是。
+
+         【起命宫例】 五行精纪
+         凡起命宫，看当生太阳在何宫，以本生时加太阳顺数见卯为命宫。如当生是卯时，即太阳在处，便是命宫，约法正月太
+         阳在子，二月在亥，一月一移，依次数之。
+
+         如1994年五月二十日酉时生人，在手掌子位上起正月，逆数至五月（出生月）即正月在子、二月在亥、三月在戌、四月酉、五月在申落下，
+         再将出生时的酉字加在申字上顺数，看卯字落在何字上，何字就是命宮。戌在酉，亥在戌，一直顺行数至“卯”，恰好卯字落在“寅”字上。逢卯安命,故“寅”就是命宫。
+         */
+        /**
+         *  1: 取月份对应地支索引
+         *  2: (14-月索引)%12是太阳对应的宫位索引
+         *  3: 取时辰地支索引计算出到卯的长度(取绝对值)
+         *  4. 根据2获取的索引＋3对应的长度%12 就是命宫对应的索引
+         * [2017-09-22 add by longzhiyou]
+         */
         def shizhiIndex = shiershi.indexOf(shiZhi)
         def yuezhizhiIndex = shieryue.indexOf(yueZhi)
-        return minggong[shizhiIndex][yuezhizhiIndex]
+         def str = minggong[shizhiIndex][yuezhizhiIndex]
+
+        def yueIndex = dizhi.indexOf(yueZhi)
+//        def taiyang = dizhi[(14-yueIndex)%12]
+        def taiyangIndex = (14-yueIndex)%12
+
+        def shiIndex = dizhi.indexOf(shiZhi)
+        def distance = 3-shiIndex
+        if (shiIndex>3) {
+            distance = 3-shiIndex+12
+        }
+        
+        def minggongindex = (taiyangIndex+distance)%12
+        def match = dizhi[minggongindex]
+
+        return str
     }
 
     //子息宫（儿女宫）：命宫逆推第五宫即是
