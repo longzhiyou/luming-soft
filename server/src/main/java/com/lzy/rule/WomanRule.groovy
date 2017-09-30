@@ -4,6 +4,7 @@ import com.lzy.core.BaZi
 import com.lzy.core.CommonAlgorithm
 import com.lzy.core.CoreAlgorithm
 import com.lzy.core.ShenShaAlgorithm
+import org.raistlic.common.permutation.Permutation
 
 /**
  *  女命规则
@@ -84,6 +85,58 @@ import com.lzy.core.ShenShaAlgorithm
 
         //通法论式-女命详解p110
 
+        //
+        def wangzhu = ["甲寅","乙卯","丙午","丁巳","戊午","丁巳","庚申","辛酉","壬子","癸亥"]
+        def containsCangGan = commonAlgorithm.containsCangGan(yueGan, yueZhi)
+        if (wangzhu.contains(yueZhu)||containsCangGan) {
+            mapResult["【女命在月柱绝对不要通根成格】"]="比如甲寅，月上是壬子 癸亥 如果是甲乙木日主婚姻非常明显。如果问离婚是否还有老公，看时上是否有官"
+        }
+
+        if (riGan=="庚"&&(["亥","子","丑"].contains(yueZhi))) {
+            mapResult["【金清水冷，日锁鸾台】"]=[
+                    "冷漠 冷冰冰 冰山美人。好命也就是有钱。日锁鸾台-在嫁不出去"
+                    ,"金冷水寒，大格局一定要丙丁"
+                    ,"大格局一定要丙丁"
+            ]
+        }
+
+
+        //土燥火炎，夜寒衾帐
+        def xiaji = ["巳","午","未"]
+        if (["戊","己"].contains(riGan)&&xiaji.contains(yueZhi)) {
+
+            def strxiaji = xiaji.toString()
+            def huoju = ["寅","午","戌"].toString()
+            for(List<String> list : Permutation.of(listMingZhi, 3)){
+
+                String key =list.toString()
+                if(strxiaji==key||huoju==key){
+                    mapResult["【土燥火炎，夜寒衾帐】"]="火土局，无论男女，一般无用，火烧土变成灰"
+                }
+
+            }
+        }
+
+        //重官重印，绿鬓孤眠
+
+        def relation = commonAlgorithm.getShiShenRelation(riGan, yueGan)
+
+        if (relation=="正官"||relation=="七杀"||relation=="正印"||relation=="偏印") {
+            if (wangzhu.contains(yueZhu)||containsCangGan) {
+                mapResult["【重官重印，绿鬓孤眠】"]=[
+                        "正官坐正官，没有婚姻，夫坐夫重叠，嫁给你还想原来的男友"
+                        ,"正官坐七杀，前面的没搞明白后面又来了"
+                        ,"正印座正印，太清高，有洁癖"
+                        ,"正印坐偏印，言清行浊"
+                        ,"绿鬓孤眠-》年纪轻轻,就没老公了.一再强调，不能在月柱通根成格"
+                ]
+            }
+        }
+
+//        三刑带鬼，始终克子伤夫。
+//        （ 巳 庚寅 甲申日，45年。 如果巳在时上。一辈子。同理，男命正财坐三刑，老婆也有几个。劝客户 老公没什么的，自己多存一些钱）
+
+
         def yima = ShenShaAlgorithm.yima.get(riZhi)
         if (listMingZhi.count(yima)>1){
 
@@ -150,11 +203,17 @@ import com.lzy.core.ShenShaAlgorithm
         }
 
         if(commonAlgorithm.getShiShenDiZhi(riGan,"正印")==yueZhi&& listMingGan.contains(pianyingan)){
-            mapResult["【用正印而逢枭，兰阶夜冷。】"]="渭泾论"
+            mapResult["【用正印而逢枭，兰阶夜冷。】"]=
+                    ["印本为我之生母，无条件的关爱与我，却得枭神后母浊杂，则失其母性而从后母。" ,
+                     "与女命而言，印主正婚、正的名份，得枭神引偏，主失婚、失位、失名份，故云兰阶夜冷"
+                    ,"一辈子没有 男人了，甲生 壬子月，此处的用是月令格"
+                     ,"渭泾论"
+                    ]
         }
 
         if(commonAlgorithm.getShiShenDiZhi(riGan,"偏印")==yueZhi&& listMingGan.contains(zhengyingan)){
-            mapResult["【用枭神而遇印，玉树春荣。】"]=["印本为我之生母，无条件的关爱与我，却得枭神后母浊杂，则失其母性而从后母。与女命而言，印主正婚、正的名份，得枭神引偏，主失婚、失位、失名份，故云兰阶夜冷"
+            mapResult["【用枭神而遇印，玉树春荣。】"]=["月偏印，时正印则好，偏印带正印，有男人" ,
+                                                 "与女命而言，印主正婚、正的名份，得枭神引偏，主失婚、失位、失名份，故云兰阶夜冷"
                                          ,"渭泾论"]
         }
 

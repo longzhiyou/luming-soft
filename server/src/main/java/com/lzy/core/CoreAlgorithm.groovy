@@ -5,6 +5,107 @@ package com.lzy.core
  */
 class CoreAlgorithm {
 
+    //阴阳
+    static  infoYinYang = ["阴", "阳"]
+
+    //天干
+    static  infoTianGan = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"]
+
+    //地支
+    static  infoDiZhi = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"]
+
+    //天干禄地支
+    static mapTianGanLu =[
+            "甲":"寅",
+            "乙":"卯",
+            "丙":"巳",
+            "丁":"午",
+            "戊":"巳",
+            "己":"午",
+            "庚":"申",
+            "辛":"酉",
+            "壬":"亥",
+            "癸":"子"]
+
+    //天干旺
+    static infoWangZhu = ["甲寅","乙卯","丙午","丁巳","戊午","丁巳","庚申","辛酉","壬子","癸亥"]
+
+
+
+    //五行
+    static  infoWuXing = ["木", "火", "土", "金", "水"]
+
+    //长生诀
+    static  infoChangShengJue = ["长生","沐浴","冠带","临官","帝旺","衰","病","死","墓","绝","胎","养"]
+    //长生诀不同的名称
+    static mapChangShengJueName =
+            [
+               "生":"长生",
+               "败":"沐浴",
+               "禄":"临官",
+               "旺":"帝旺",
+               "刃":"帝旺",
+               "阳刃":"帝旺",
+               "羊刃":"帝旺",
+                "库":"墓"
+            ]
+
+    //十二月
+    static  infoHour= ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"]
+
+    //十二时
+    static infoMonth = ["寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥","子", "丑"]
+
+
+
+    //三合
+    static infoMuJu  = ["亥","卯","未"]
+    static infoHuoJu = ["寅","午","戌"]
+    static infoJinJu = ["巳","酉","丑"]
+    static infoShuiJu= ["申","子","辰"]
+
+    //三会
+    static infoMuFang  = ["寅","卯","辰"]
+    static infoHuoFang = ["巳","午","未"]
+    static infoJinFang = ["申","酉","戌"]
+    static infoShuiFang= ["亥","子","丑"]
+
+    //天干六合
+    static infoTianGanWuHe  = ["甲己","乙庚","丙辛","丁壬","戊癸"]
+    //天干六合属性
+    static  attributeTianGanWuHe=[
+            "甲己":[huaqi:"土",info:""],
+            "乙庚":[huaqi:"金",info:""],
+            "丙辛":[huaqi:"水",info:""],
+            "丁壬":[huaqi:"木",info:""],
+            "戊癸":[huaqi:"火",info:""]
+    ]
+
+    //地支六合
+    static infoDiZhiLiuHe  = ["子丑","寅亥","卯戌","辰酉","巳申","午未"]
+
+    //六冲
+    static infoDiZhiLiuChong  = ["子午","丑未","寅申","卯酉","辰戌","巳亥"]
+
+    //六害
+    static infoDiZhiLiuHai  = ["子未","丑午","寅巳","卯辰","申亥","酉戌"]
+
+    //三刑
+    //无礼
+    static infoWuLiXing = ["子卯"]
+
+    //恃势之刑
+    static infoShiShiXing = ["寅巳申"]
+
+    //无恩之刑
+    static infoWuEnXing = ["丑戌未"]
+
+    //自刑
+    static infoZiXing = ["辰午酉亥"]
+
+
+
+
     //十二月
     static shieryue = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"]
 
