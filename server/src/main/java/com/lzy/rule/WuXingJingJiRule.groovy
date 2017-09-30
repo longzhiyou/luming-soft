@@ -568,7 +568,7 @@ public class WuXingJingJiRule  implements BaseRule{
         }
 
         if ([yunGan,liunianGan].contains(strings[0][0])&&[yunGan,liunianGan].contains(strings[0][1])) {
-            mapResult["官卿"]=strings[1]+" 取十干所生及所克是也，谓如甲木生丙火，克之戊土之类，如甲人见丙戊是也.大小运行年至此，亦有迁官进财之喜。（三命指掌） "
+            mapResult["官卿-运,流年"]=strings[1]+" 取十干所生及所克是也，谓如甲木生丙火，克之戊土之类，如甲人见丙戊是也.大小运行年至此，亦有迁官进财之喜。（三命指掌） "
         }
 
 
