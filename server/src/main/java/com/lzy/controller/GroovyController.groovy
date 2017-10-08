@@ -9,6 +9,7 @@ import com.lzy.rule.CoreRule
 import com.lzy.rule.LanTaiMiaoXuanRule
 import com.lzy.rule.LiangXiangRunRule
 import com.lzy.rule.ReferenceRule
+import com.lzy.rule.RiShiRule
 import com.lzy.rule.RiYueRule
 import com.lzy.rule.ShenShaRule
 import com.lzy.rule.ShiZhanRule
@@ -36,6 +37,8 @@ class GroovyController {
     final static def listRule = [new WuXingJingJiRule()]
     final static def mapRule = [
 
+
+            "日时":new RiShiRule(),
             "兰台妙选":new LanTaiMiaoXuanRule(),
             "五行精纪":new WuXingJingJiRule(),
             "日月":new RiYueRule(),
