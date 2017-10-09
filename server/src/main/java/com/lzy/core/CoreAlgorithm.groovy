@@ -72,6 +72,17 @@ class CoreAlgorithm {
 
     //天干六合
     static infoTianGanWuHe  = ["甲己","乙庚","丙辛","丁壬","戊癸"]
+    static boolean isTianGanHe(gan1, gan2){
+
+        if (infoTianGanWuHe.contains(gan1+gan2)||infoTianGanWuHe.contains(gan2+gan1)) {
+            return true
+        }
+
+        return false
+
+    }
+
+
     //天干六合属性
     static  attributeTianGanWuHe=[
             "甲己":[huaqi:"土",info:""],
@@ -80,6 +91,15 @@ class CoreAlgorithm {
             "丁壬":[huaqi:"木",info:""],
             "戊癸":[huaqi:"火",info:""]
     ]
+
+    static def getTianGanHeWuXing(gan1, gan2){
+
+        if (infoTianGanWuHe.contains(gan1+gan2)) {
+            attributeTianGanWuHe.get(gan1+gan2).huaqi
+        }else if (infoTianGanWuHe.contains(gan2+gan1)){
+            attributeTianGanWuHe.get(gan2+gan1).huaqi
+        }
+    }
 
     //地支六合
     static infoDiZhiLiuHe  = ["子丑","寅亥","卯戌","辰酉","巳申","午未"]

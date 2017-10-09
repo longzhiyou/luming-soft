@@ -2,8 +2,6 @@ package com.lzy.rule
 
 import com.lzy.core.BaZi
 import com.lzy.core.CommonAlgorithm
-import org.python.antlr.ast.If
-import sun.tools.tree.IfStatement
 
 /**
  *  日时系统规则

@@ -115,6 +115,16 @@ public class CoreAlgorithmTest {
 
     }
 
+    @Test
+    public void demo(){
+        Object obj = CoreAlgorithm.getTianGanHeWuXing("乙","己");
+
+        System.out.println(obj);
+
+    }
+
+
+
 
 
 
