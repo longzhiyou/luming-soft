@@ -2380,10 +2380,11 @@ public class RiYueRule implements BaseRule{
 
 
         mapResult["【神峰通考定格局诀】"] =  dinggejujue(bazi,commonAlgorithm)
+        mapResult["【金不换】"] =  jinbuhuan(bazi,commonAlgorithm)
         mapResult["【子平真诠】"] =  zipingzhenquan(bazi,commonAlgorithm)
 
         mapResult["【四明丁丑版 栏江网】"] =  simingdingchou(bazi,commonAlgorithm)
-        mapResult["【金不换】"] =  jinbuhuan(bazi,commonAlgorithm)
+
 
 
 
