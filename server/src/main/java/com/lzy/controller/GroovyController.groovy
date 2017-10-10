@@ -41,11 +41,12 @@ class GroovyController {
             "日时":new RiShiRule(),
             "兰台妙选":new LanTaiMiaoXuanRule(),
             "五行精纪":new WuXingJingJiRule(),
+            "实务":new ShiZhanRule(),
             "日月":new RiYueRule(),
             "日柱":new ReferenceRule(),
-            "核心":new CoreRule(),
+//            "核心":new CoreRule(),
             "神煞":new ShenShaRule(),
-            "实务":new ShiZhanRule(),
+
             "女命":new WomanRule(),
             "子女":new ChildrenRule(),
 
