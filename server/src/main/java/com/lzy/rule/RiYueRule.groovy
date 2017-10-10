@@ -12,6 +12,288 @@ import com.lzy.core.CommonAlgorithm
 public class RiYueRule implements BaseRule{
 
 
+    //金不换
+    def jinbuhuan(BaZi bazi, CommonAlgorithm commonAlgorithm){
+
+        def mapResult = [:]
+        def yueZhi =bazi.getYueZhi()
+        def riGan = bazi.getRiGan()
+
+        if (riGan=="甲"){
+            if(yueZhi=="寅"){
+
+            }else if (yueZhi=="卯"){
+
+            }else if (yueZhi=="辰"){
+
+            }else if (yueZhi=="巳"){
+
+            }else if (yueZhi=="午"){
+
+            }else if (yueZhi=="未"){
+
+            }else if (yueZhi=="申"){
+
+            }else if (yueZhi=="酉"){
+
+            }else if (yueZhi=="戌"){
+
+            }else if (yueZhi=="亥"){
+
+            }else if (yueZhi=="子"){
+
+            }else if (yueZhi=="丑"){
+
+            }
+
+        }else if (riGan=="乙"){
+            if(yueZhi=="寅"){
+
+            }else if (yueZhi=="卯"){
+
+            }else if (yueZhi=="辰"){
+
+            }else if (yueZhi=="巳"){
+
+            }else if (yueZhi=="午"){
+
+            }else if (yueZhi=="未"){
+
+            }else if (yueZhi=="申"){
+
+            }else if (yueZhi=="酉"){
+
+            }else if (yueZhi=="戌"){
+
+            }else if (yueZhi=="亥"){
+
+            }else if (yueZhi=="子"){
+
+            }else if (yueZhi=="丑"){
+
+            }
+
+        }else if (riGan=="丙"){
+            if(yueZhi=="寅"){
+
+            }else if (yueZhi=="卯"){
+
+            }else if (yueZhi=="辰"){
+
+            }else if (yueZhi=="巳"){
+
+            }else if (yueZhi=="午"){
+
+            }else if (yueZhi=="未"){
+
+            }else if (yueZhi=="申"){
+
+            }else if (yueZhi=="酉"){
+
+            }else if (yueZhi=="戌"){
+
+            }else if (yueZhi=="亥"){
+
+            }else if (yueZhi=="子"){
+
+            }else if (yueZhi=="丑"){
+
+            }
+
+        }else if (riGan=="丁"){
+            if(yueZhi=="寅"){
+
+            }else if (yueZhi=="卯"){
+
+            }else if (yueZhi=="辰"){
+
+            }else if (yueZhi=="巳"){
+
+            }else if (yueZhi=="午"){
+
+            }else if (yueZhi=="未"){
+
+            }else if (yueZhi=="申"){
+
+            }else if (yueZhi=="酉"){
+
+            }else if (yueZhi=="戌"){
+
+            }else if (yueZhi=="亥"){
+
+            }else if (yueZhi=="子"){
+
+            }else if (yueZhi=="丑"){
+
+            }
+
+        }else if (riGan=="戊"){
+            if(yueZhi=="寅"){
+
+            }else if (yueZhi=="卯"){
+
+            }else if (yueZhi=="辰"){
+
+            }else if (yueZhi=="巳"){
+
+            }else if (yueZhi=="午"){
+
+            }else if (yueZhi=="未"){
+
+            }else if (yueZhi=="申"){
+
+            }else if (yueZhi=="酉"){
+
+            }else if (yueZhi=="戌"){
+
+            }else if (yueZhi=="亥"){
+
+            }else if (yueZhi=="子"){
+
+            }else if (yueZhi=="丑"){
+
+            }
+
+        }else if (riGan=="己"){
+            if(yueZhi=="寅"){
+
+            }else if (yueZhi=="卯"){
+
+            }else if (yueZhi=="辰"){
+
+            }else if (yueZhi=="巳"){
+
+            }else if (yueZhi=="午"){
+
+            }else if (yueZhi=="未"){
+
+            }else if (yueZhi=="申"){
+
+            }else if (yueZhi=="酉"){
+
+            }else if (yueZhi=="戌"){
+
+            }else if (yueZhi=="亥"){
+
+            }else if (yueZhi=="子"){
+
+            }else if (yueZhi=="丑"){
+
+            }
+
+        }else if (riGan=="庚"){
+            if(yueZhi=="寅"){
+
+            }else if (yueZhi=="卯"){
+
+            }else if (yueZhi=="辰"){
+
+            }else if (yueZhi=="巳"){
+
+            }else if (yueZhi=="午"){
+
+            }else if (yueZhi=="未"){
+
+            }else if (yueZhi=="申"){
+
+            }else if (yueZhi=="酉"){
+
+            }else if (yueZhi=="戌"){
+
+            }else if (yueZhi=="亥"){
+
+            }else if (yueZhi=="子"){
+
+            }else if (yueZhi=="丑"){
+
+            }
+
+        }else if (riGan=="辛"){
+            if(yueZhi=="寅"){
+
+            }else if (yueZhi=="卯"){
+
+            }else if (yueZhi=="辰"){
+
+            }else if (yueZhi=="巳"){
+
+            }else if (yueZhi=="午"){
+
+            }else if (yueZhi=="未"){
+
+            }else if (yueZhi=="申"){
+
+            }else if (yueZhi=="酉"){
+
+            }else if (yueZhi=="戌"){
+
+            }else if (yueZhi=="亥"){
+
+            }else if (yueZhi=="子"){
+
+            }else if (yueZhi=="丑"){
+
+            }
+
+        }else if (riGan=="壬"){
+            if(yueZhi=="寅"){
+
+            }else if (yueZhi=="卯"){
+
+            }else if (yueZhi=="辰"){
+
+            }else if (yueZhi=="巳"){
+
+            }else if (yueZhi=="午"){
+
+            }else if (yueZhi=="未"){
+
+            }else if (yueZhi=="申"){
+
+            }else if (yueZhi=="酉"){
+
+            }else if (yueZhi=="戌"){
+
+            }else if (yueZhi=="亥"){
+
+            }else if (yueZhi=="子"){
+
+            }else if (yueZhi=="丑"){
+
+            }
+
+        }else if (riGan=="癸"){
+            if(yueZhi=="寅"){
+
+            }else if (yueZhi=="卯"){
+
+            }else if (yueZhi=="辰"){
+
+            }else if (yueZhi=="巳"){
+
+            }else if (yueZhi=="午"){
+
+            }else if (yueZhi=="未"){
+
+            }else if (yueZhi=="申"){
+
+            }else if (yueZhi=="酉"){
+
+            }else if (yueZhi=="戌"){
+
+            }else if (yueZhi=="亥"){
+
+            }else if (yueZhi=="子"){
+
+            }else if (yueZhi=="丑"){
+
+            }
+
+        }
+
+
+    }
+
     //定格局诀
     def dinggejujue(BaZi bazi, CommonAlgorithm commonAlgorithm){
 
@@ -2101,6 +2383,7 @@ public class RiYueRule implements BaseRule{
         mapResult["【子平真诠】"] =  zipingzhenquan(bazi,commonAlgorithm)
 
         mapResult["【四明丁丑版 栏江网】"] =  simingdingchou(bazi,commonAlgorithm)
+        mapResult["【金不换】"] =  jinbuhuan(bazi,commonAlgorithm)
 
 
 
