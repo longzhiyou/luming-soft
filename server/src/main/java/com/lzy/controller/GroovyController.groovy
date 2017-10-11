@@ -13,6 +13,7 @@ import com.lzy.rule.RiShiRule
 import com.lzy.rule.RiYueRule
 import com.lzy.rule.ShenShaRule
 import com.lzy.rule.ShiZhanRule
+import com.lzy.rule.SuiYunRule
 import com.lzy.rule.WomanRule
 import com.lzy.rule.WuXingJingJiRule
 import com.lzy.rule.XuLeWuRule
@@ -42,6 +43,7 @@ class GroovyController {
             "兰台妙选":new LanTaiMiaoXuanRule(),
             "五行精纪":new WuXingJingJiRule(),
             "实务":new ShiZhanRule(),
+            "岁运": new SuiYunRule(),
             "日月":new RiYueRule(),
             "日柱":new ReferenceRule(),
 //            "核心":new CoreRule(),
