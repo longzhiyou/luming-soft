@@ -973,6 +973,51 @@ public class WuXingJingJiRule  implements BaseRule{
 //        莹和尚注云：譬如丙辰土命，见癸巳，丙禄在巳，以水为财，劫杀却居巳，财既绝矣，命又衰矣，即曰小盈大亏，恐是
 //        劫财之地。（珞琭子）
 
+        /**
+         * 【五行正印】
+         *  乙丑金印、癸未木印、壬辰水印、甲戌火印、丙辰土印
+         * [2017-10-17 add by longzhiyou]
+         */
+        def wuxingzhengyin = ["金乙丑",
+                              "木癸未",
+                              "水壬辰",
+                              "火甲戌",
+                              "土丙辰"
+        ]
+        if (wuxingzhengyin.contains(nianzhuwuxing+shiZhu)) {
+
+            mapResult[nianZhu+"人"+shiZhu+"本家五行正印"] = [
+                    "其中更带禄马、夹贵、华盖，须作出将入相断之"
+            ]
+        }else if (wuxingzhengyin.contains(nianzhuwuxing+riZhu)) {
+
+            mapResult[nianZhu+"人"+riZhu+"本家五行正印"] = [
+                    "其中更带禄马、夹贵、华盖，须作出将入相断之"
+            ]
+        }
+
+
+        /**
+         * 夹贵正印
+                丙丁人得甲戌
+                壬癸人得丙辰壬辰
+         * [2017-10-17 add by longzhiyou]
+         */
+        def jiaguizhengyin = ["丙甲戌","丁甲戌","壬甲戌","丁甲戌",
+                              "壬丙辰","癸丙辰","壬壬辰","癸壬辰"
+        ]
+
+        if (jiaguizhengyin.contains(nianGan+shiZhu)) {
+
+            mapResult[nianGan+"人时柱夹贵正印"] = [
+                    "出将入相之格"
+            ]
+        }else if (jiaguizhengyin.contains(nianGan+riZhu)) {
+
+            mapResult[nianGan+"人日柱夹贵正印"] = [
+                    "出将入相之格"
+            ]
+        }
 
 
         mapResult

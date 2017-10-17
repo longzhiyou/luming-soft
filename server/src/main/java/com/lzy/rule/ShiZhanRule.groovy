@@ -8,10 +8,10 @@ import com.lzy.core.JiaZiAlgorithm
  *  实战规则
  * Created by bukeyan on 2017/6/18.
  */
-public class ShiZhanRule implements BaseRule{
+ class ShiZhanRule implements BaseRule{
 
     @Override
-    public def matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
+     def matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
 
         def mapResult = [:]
         def mapRule = [:]
@@ -51,6 +51,16 @@ public class ShiZhanRule implements BaseRule{
         def gender = bazi.getGender()
 
         /**
+         *  分出大类,分别讨论
+         *  层次,富贵-男命
+         *  婚姻
+         *  健康寿夭
+         *  子女
+         *
+         * [2017-10-13 add by longzhiyou]
+         */
+
+        /**
          * 甲己年：三月，戊戌。七月，癸亥。十月，丙申。十一月，丁亥
          * 乙庚年：四月，壬申。九月，乙巳。
          * 丙辛年：三月，辛巳。九月，庚辰。十月，甲辰。
@@ -85,7 +95,7 @@ public class ShiZhanRule implements BaseRule{
          */
         //五行缺一规则
 
-        //层次,富贵-男命
+
         /**
          * 婚姻-女命重点
          *  男命用年柱纳音所克五行，引到日支妻宫.
