@@ -49,6 +49,82 @@ import com.lzy.core.JiaZiAlgorithm
 
         def luZhi = commonAlgorithm.getLuZhi(nianGan)
         def gender = bazi.getGender()
+        def nianzhuwuxing = commonAlgorithm.getJiaZiWuXing(nianZhu)
+
+
+
+
+        /**
+         * 【五行真日时】
+         乙酉日庚辰时为精金、丁巳日丙午时为精火、癸亥日壬子时为精水、
+         己丑日戊辰时为精土、甲寅日丁卯时为精木。以上主富贵（广信集）
+         * [2017-10-20 add by longzhiyou]
+         */
+        if (riZhu=="乙酉"&&shiZhu=="庚辰") {
+            mapResult["【五行真日时】主富贵（广信集）"]="乙酉日庚辰时为精金"
+        }
+        if (riZhu=="丁巳"&&shiZhu=="丙午") {
+            mapResult["【五行真日时】主富贵（广信集）"]="丁巳日丙午时为精火"
+        }
+        if (riZhu=="癸亥"&&shiZhu=="壬子") {
+            mapResult["【五行真日时】主富贵（广信集）"]="癸亥日壬子时为精水"
+        }
+        if (riZhu=="己丑"&&shiZhu=="戊辰") {
+            mapResult["【五行真日时】主富贵（广信集）"]="己丑日戊辰时为精土"
+        }
+        if (riZhu=="甲寅"&&shiZhu=="丁卯") {
+            mapResult["【五行真日时】主富贵（广信集）"]="甲寅日丁卯时为精木"
+        }
+
+        /**
+         *  【论五行真贵】神白经 纳音五行对应河图五行阳干透出并带合
+         火人丙日辛时辛日丙时、木人甲日己时己日甲时、土人戊日癸时癸日戊时、
+         水人壬日丁时丁日壬时、金人庚日乙时乙日庚时。重犯福减。
+         * [2017-10-20 add by longzhiyou]
+         */
+        def wuxingzhengui=[
+                "火人丙日辛时",
+                "火人辛日丙时",
+
+                "木人甲日己时",
+                "木人己日甲时",
+
+                "土人戊日癸时",
+                "土人癸日戊时",
+
+                "水人壬日丁时",
+                "水人丁日壬时",
+
+                "金人庚日乙时",
+                "金人乙日庚时"
+
+        ]
+        matchStr=nianzhuwuxing+"人"+riGan+"日"+shiGan+"时"
+        if (wuxingzhengui.contains(matchStr)) {
+            mapResult["【【论五行真贵】神白经 纳音五行对应河图五行阳干透出并带合】重犯福减"]=matchStr
+        }
+
+//        /**
+//         *  【五行真气取干化与纳音同类】
+//         壬子壬午真木、己酉己卯真土、丙子丙午真水、戊子戊午真火、乙丑乙未庚辰庚戌真金
+//         * [2017-10-20 add by longzhiyou]
+//         */
+//        if (listMingZhu.contains("壬子")&&listMingZhu.contains("壬午")) {
+//            mapResult["【五行真气取干化与纳音同类-真木】"]="壬子壬午真木"
+//        }
+//        if (listMingZhu.contains("己酉")&&listMingZhu.contains("己卯")) {
+//            mapResult["【五行真气取干化与纳音同类-真土】"]="己酉己卯真土"
+//        }
+//        if (listMingZhu.contains("壬子")&&listMingZhu.contains("壬午")) {
+//            mapResult["【五行真气取干化与纳音同类】"]="丙子丙午真水"
+//        }
+//        if (listMingZhu.contains("壬子")&&listMingZhu.contains("壬午")) {
+//            mapResult["【五行真气取干化与纳音同类】"]="戊子戊午真火"
+//        }
+//        if (listMingZhu.contains("壬子")&&listMingZhu.contains("壬午")) {
+//            mapResult["【五行真气取干化与纳音同类】"]="戊子戊午真火"
+//        }
+
 
         /**
          *  分出大类,分别讨论
