@@ -3,6 +3,7 @@ package com.lzy.rule;
 import com.lzy.core.BaZi;
 import com.lzy.core.CommonAlgorithm
 import com.lzy.core.JiaZiAlgorithm
+import sun.tools.tree.IfStatement
 
 /**
  *  实战规则
@@ -35,6 +36,8 @@ import com.lzy.core.JiaZiAlgorithm
         def shiZhi = bazi.getShiZhi()
         def shiZhu = bazi.getShiZhu()
 
+        def taiZhu = bazi.getTaiZhu()
+
         def listMingGan = bazi.getListMingGan()
         def listMingZhi = bazi.getListMingZhi()
         def listMingZhu = bazi.getListMingZhu()
@@ -52,6 +55,46 @@ import com.lzy.core.JiaZiAlgorithm
         def nianzhuwuxing = commonAlgorithm.getJiaZiWuXing(nianZhu)
 
 
+
+        /**
+         * 天地德合
+         * [2017-10-20 add by longzhiyou]
+         */
+
+        if(commonAlgorithm.isShuangHe(nianZhu, shiZhu)){
+            def data=["天地德合"]
+            mapResult["【年-时双合】"]=data
+            if(commonAlgorithm.isYiXun(nianZhu,shiZhu)){
+                data.push("君臣庆会-干支俱合一旬之内")
+                mapResult["【年-时双合】"]=data
+            }
+        }
+
+        def wuming=[nianZhu,yueZhu,riZhu,shiZhu,taiZhu]
+        def wumingmatch=[]
+        wuming.each {
+            def wuxing = commonAlgorithm.getJiaZiWuXing(it)
+            if(!wumingmatch.contains(wuxing)){
+                wumingmatch.push(wuxing)
+            }
+
+        }
+
+        if(wumingmatch.size()==1){
+            mapResult["【一气为根】"]="年月日时胎五行同是:"+wumingmatch[0]
+        }
+
+        def liangganlianzhu=[
+                "甲乙",
+                "丙丁",
+                "戊己",
+                "庚辛",
+                "壬癸",
+        ]
+
+        if(nianGan+yueGan==riGan+shiGan && liangganlianzhu.contains(nianGan+yueGan)){
+            mapResult["【两干连珠】"]=["年月与日时天干同"]
+        }
 
 
         /**
@@ -103,6 +146,41 @@ import com.lzy.core.JiaZiAlgorithm
         if (wuxingzhengui.contains(matchStr)) {
             mapResult["【【论五行真贵】神白经 纳音五行对应河图五行阳干透出并带合】重犯福减"]=matchStr
         }
+
+       def zuoxiayouhua = [
+               "壬午":["丁禄在午 壬与丁合","最为福深幽"],
+               "丁亥":["壬禄在亥 丁与壬合","最为福深幽"],
+               "戊子":["癸禄在子 戊与癸合","聪明"],
+               "甲午":["己禄在午 甲与己合","在寅午戌月得地,亦主有小亨"],
+               "辛巳":["丙禄在巳 辛与丙合","辛巳权谋"],
+               "癸巳":["戊禄在巳 癸与戊合","贵中有酒色之疾，损寿"],
+       ]
+        if(zuoxiayouhua.containsKey(riZhu)){
+            mapResult["【坐下有化-日柱】"]=zuoxiayouhua.get(riZhu)
+        }
+
+        if(listMingZhu.contains("辛亥")&&listMingZhu.contains("丁巳")) {
+            mapResult["【真气交互格】辛亥-丁巳 两柱要紧邻"]=["辛亥金人得丁巳土，有丁壬合，真木往来，有丙辛合，真水往来","交互真气全，宰相命"]
+
+        }
+        if(listMingZhu.contains("癸亥")&&listMingZhu.contains("丁巳")) {
+            mapResult["【真气交互格】癸亥-丁巳 两柱要紧邻"]=["丁巳土人得癸亥水，有戊癸合，真火往来，有丁壬合，真木往来","交互真气全，宰相命"]
+
+        }
+
+        if(listMingZhu.contains("戊午")&&listMingZhu.contains("壬子")) {
+            mapResult["【真气交互格】戊午-壬子 两柱要紧邻"]=["戊午火见壬子木，中有丁壬真木，戊癸真火","交互全，两府命"]
+
+        }
+        if(listMingZhu.contains("丙申")&&listMingZhu.contains("乙酉")) {
+            mapResult["【真气交互格】丙申-乙酉 两柱要紧邻"]=["丙申见乙酉，中有丙辛真水，乙庚真金","交互全，两府命"]
+
+        }
+        if(listMingZhu.contains("庚寅")&&listMingZhu.contains("己卯")) {
+            mapResult["【真气交互格】庚寅-己卯 两柱要紧邻"]=["庚寅得己卯，中有甲己真土，乙庚真金","交互全，两府命"]
+
+        }
+
 
 //        /**
 //         *  【五行真气取干化与纳音同类】
@@ -255,6 +333,35 @@ import com.lzy.core.JiaZiAlgorithm
         if(tongweike==yunZhu){
             mapResult["【运柱纳音同位克年柱】"] = "运柱:"+yunZhu+" 年柱:"+nianZhu
         }
+
+        if(!yunZhu.isEmpty()){
+            def info = JiaZiAlgorithm.mapJiaZiInfo.get(yunZhu)
+            if (riZhu==info.nayingeyike){
+                mapResult["【大运纳音隔一相克日柱】"] = "大运:"+yunZhu.toString()+" 日柱:"+riZhu.toString()
+            }
+
+            if (riZhu==info.nayinmuguike){
+                mapResult["【大运纳音墓鬼相克日柱】"] = "大运:"+yunZhu.toString()+" 日柱:"+riZhu.toString()
+            }
+
+            if(info.nayinkongwangke.contains(riZhu)){
+                mapResult["【大运纳音空亡相克日柱】"] = "日柱:"+riZhu.toString()+ "空亡在-大运:"+yunZhu.toString()
+            }
+
+            if (nianZhu==info.nayingeyike){
+                mapResult["【大运纳音隔一相克年柱】"] = "大运:"+yunZhu.toString()+" 年柱:"+nianZhu.toString()
+            }
+
+            if (nianZhu==info.nayinmuguike){
+                mapResult["【大运纳音墓鬼相克年柱】"] = "大运:"+yunZhu.toString()+" 年柱:"+nianZhu.toString()
+            }
+
+            if(info.nayinkongwangke.contains(nianZhu)){
+                mapResult["【大运纳音空亡相克年柱】"] = "年柱:"+nianZhu.toString()+ "空亡在-大运:"+yunZhu.toString()
+            }
+
+        }
+
 
         if(!liunianZhu.isEmpty()){
             def info = JiaZiAlgorithm.mapJiaZiInfo.get(liunianZhu)
