@@ -1,9 +1,8 @@
-package com.lzy.rule;
+package com.lzy.rule
 
-import com.lzy.core.BaZi;
+import com.lzy.core.BaZi
 import com.lzy.core.CommonAlgorithm
 import com.lzy.core.JiaZiAlgorithm
-import sun.tools.tree.IfStatement
 
 /**
  *  实战规则

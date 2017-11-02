@@ -1,7 +1,8 @@
-package com.lzy.rule
+package com.lzy.rule.theory
 
 import com.lzy.core.BaZi
 import com.lzy.core.CommonAlgorithm
+import com.lzy.rule.BaseRule
 
 /**
  *  三命通会规则

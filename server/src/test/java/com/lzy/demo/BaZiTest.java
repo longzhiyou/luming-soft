@@ -2,10 +2,10 @@ package com.lzy.demo;
 
 import com.lzy.core.BaZi;
 import com.lzy.core.CommonAlgorithm;
-import com.lzy.rule.LiangXiangRunRule;
+import com.lzy.rule.theory.LiangXiangRunRule;
 import com.lzy.rule.NianShiRule;
 import com.lzy.rule.ShiZhanRule;
-import com.lzy.rule.WuXingJingJiRule;
+import com.lzy.rule.theory.WuXingJingJiRule;
 import org.junit.Test;
 
 import javax.script.ScriptException;

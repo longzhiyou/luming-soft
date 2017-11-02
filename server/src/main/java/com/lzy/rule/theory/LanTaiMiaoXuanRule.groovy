@@ -1,8 +1,9 @@
-package com.lzy.rule
+package com.lzy.rule.theory
 
 import com.lzy.core.BaZi
 import com.lzy.core.CommonAlgorithm
 import com.lzy.core.CoreAlgorithm
+import com.lzy.rule.BaseRule
 
 /**
  *  兰台妙选规则

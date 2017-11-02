@@ -1,7 +1,8 @@
-package com.lzy.rule
+package com.lzy.rule.theory
 
 import com.lzy.core.BaZi
 import com.lzy.core.CommonAlgorithm
+import com.lzy.rule.BaseRule
 
 /**
  *  穷通宝鉴规则
@@ -11,6 +12,6 @@ public class QiongTongBaoJIanRule implements BaseRule{
 
     @Override
     def matchRule(BaZi bazi, CommonAlgorithm commonAlgorithm) {
-        return null;
+        return null
     }
 }

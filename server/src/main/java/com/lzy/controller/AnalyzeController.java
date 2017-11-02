@@ -7,7 +7,7 @@ import com.lzy.domain.AnalyzeResult;
 import com.lzy.entity.MatchRule;
 import com.lzy.repository.MatchRuleRepository;
 import com.lzy.rule.BaseRule;
-import com.lzy.rule.WuXingJingJiRule;
+import com.lzy.rule.theory.WuXingJingJiRule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
