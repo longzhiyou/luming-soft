@@ -14,6 +14,7 @@ import com.lzy.rule.ShenShaRule
 import com.lzy.rule.ShiZhanRule
 import com.lzy.rule.SuiYunRule
 import com.lzy.rule.WomanRule
+import com.lzy.rule.theory.TheoryRule
 import com.lzy.rule.theory.WuXingJingJiRule
 import com.lzy.rule.theory.XuLeWuRule
 import org.springframework.beans.factory.annotation.Autowired
@@ -38,6 +39,7 @@ class GroovyController {
     final static def mapRule = [
 
 
+            "理论":new TheoryRule(),
             "日时":new RiShiRule(),
             "兰台妙选":new LanTaiMiaoXuanRule(),
             "五行精纪":new WuXingJingJiRule(),
