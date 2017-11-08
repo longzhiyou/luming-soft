@@ -53,7 +53,22 @@ import com.lzy.core.JiaZiAlgorithm
         def gender = bazi.getGender()
         def nianzhuwuxing = commonAlgorithm.getJiaZiWuXing(nianZhu)
 
+        /**
+         *  天月德同
+         *  阳干逢四库月
+         * [2017-11-08 add by longzhiyou]
+         */
 
+        def tianyuedetong=["辰壬","戌丙","丑庚","未甲"]
+        matchStr=nianGan+"年人生"+yueZhi+"月"
+        if (tianyuedetong.contains(yueZhi+nianGan)) {
+            mapResult["【天月德同】"]=matchStr
+        }
+
+        matchStr=riGan+"日人生"+yueZhi+"月"
+        if (tianyuedetong.contains(yueZhi+riGan)) {
+            mapResult["【天月德同】"]=matchStr
+        }
 
         /**
          * 天地德合
