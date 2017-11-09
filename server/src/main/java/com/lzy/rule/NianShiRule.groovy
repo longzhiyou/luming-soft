@@ -42,19 +42,19 @@ class NianShiRule implements BaseRule{
         */
 
 
-       def nianzhuIndex = CoreAlgorithm.jiazi.indexOf(nianZhu)
-       def mapRule = []
-       int size = CoreAlgorithm.jiazirule.size()
-       for(int i=0;i<size;i++){
-           if (shiZhu==CoreAlgorithm.jiazirulematrix[nianzhuIndex][i]) {
-               mapRule.push(CoreAlgorithm.jiazirule[i])
-           
-           }
-       }
-
-       if (mapRule.size()>0) {
-           mapResult["【年时吉祥规则】"]=mapRule
-       }
+//       def nianzhuIndex = CoreAlgorithm.jiazi.indexOf(nianZhu)
+//       def mapRule = []
+//       int size = CoreAlgorithm.jiazi.size()
+//       for(int i=0;i<size;i++){
+//           if (shiZhu==CoreAlgorithm.jiazirulematrix[nianzhuIndex][i]) {
+//               mapRule.push(CoreAlgorithm.jiazirule[i])
+//
+//           }
+//       }
+//
+//       if (mapRule.size()>0) {
+//           mapResult["【年时吉祥规则】"]=mapRule
+//       }
 
 
 
