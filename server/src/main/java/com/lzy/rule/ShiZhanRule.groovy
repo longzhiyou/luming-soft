@@ -89,6 +89,14 @@ import com.lzy.core.JiaZiAlgorithm
         }
 
         /**
+         *  辛卯日时，名曰白虎闭目，火年必损眼，其余辛与卯字者，亦忌之。（并广信集）
+         * [2017-11-17 add by longzhiyou]
+         */
+        if (riZhu=="辛卯"&& shiZhu=="辛卯") {
+            mapResult["【白虎闭目】"] = "辛卯日时，名曰白虎闭目，火年必损眼，其余辛与卯字者，亦忌之。（并广信集）"
+        }
+
+        /**
          *  岁 运 柱形成 生旺库 罗网。
          * [2017-11-17 add by longzhiyou]
          */
