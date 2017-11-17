@@ -46,6 +46,10 @@ import com.lzy.core.JiaZiAlgorithm
         def yunZhi = bazi.getYunZhi()
         def yunZhu = bazi.getYunZhu()
 
+        def xingNianGan = bazi.getXingnianan()
+        def xingNianZhi = bazi.getXingnianZhi()
+        def xingNianZhu = bazi.getXingnianZhu()
+
         def liunianGan = bazi.getLiunianGan()
         def liunianZhi = bazi.getLiunianZhi()
         def liunianZhu = bazi.getLiunianZhu()
@@ -58,7 +62,7 @@ import com.lzy.core.JiaZiAlgorithm
          *  全阴全阳
          *  五行缺一规则
          *  日月地支对冲-婚姻
-         *
+         * 井栏斜冲
          *  三合三会透干-五行性
          *  （明式）三合（会）- 梁湘润《格局生旺库今论》“明式”三合财 地支不必坐财禄，只要有三个‘支藏天干’之财，譬如丁日主----见三个‘巳’----巳中有‘庚’----即是三庚财----古典三合财”
          *  墓库运
@@ -68,6 +72,21 @@ import com.lzy.core.JiaZiAlgorithm
          *
          * [2017-11-17 add by longzhiyou]
          */
+
+        /**
+         *  井栏斜冲
+         *  申日辰时，未日亥时，寅日戌时，丑日巳时互换，皆为井栏斜冲，主难妻，
+         更带食神，名绝房杀，主多女少男。如甲辰壬申，带倒食者，尤紧。古赋，井栏对敌，荘子鼓盆而歌，谓此也。日是自
+         刑，主妻多病，日坐沐浴杀，主得美妻多不廉。
+         * [2017-11-17 add by longzhiyou]
+         */
+
+        def jinglanxiechong = ["申辰","未亥","寅戌","丑巳"]
+        if (jinglanxiechong.contains(riZhi+shiZhi)|| jinglanxiechong.contains(shiZhi+riZhi)) {
+            mapResult["【井栏斜冲】"+riZhi+"日"+shiZhi+"时"] = ["井栏对敌，荘子鼓盆而歌，谓此也。"
+                                                         ,"日是自刑，主妻多病，日坐沐浴杀，主得美妻多不廉"
+            ]
+        }
 
         /**
          *  岁 运 柱形成 生旺库 罗网。
@@ -98,8 +117,53 @@ import com.lzy.core.JiaZiAlgorithm
              庚午辛已风中烛，戊寅己卯亦重伤。
              壬辰戌兼癸丑未，未别浮生入鬼乡。
              用法:不必考虑格局。只要日主四柱地支没有临官、帝旺根,大运逢如上败亡大运（即和日元禄位相克的大运）,轻则败落，重则死伤。
+
+
+         * 五行精纪
+         * 【急脚杀】
+         此以干支相克，只如甲乙属木、申酉属金，金克木也。
+
+         甲乙申酉见阎王，丙丁亥子切须防，庚辛巳午如风烛，戊己寅卯亦重伤，壬癸辰戌加丑未，永别浮生入鬼乡。（并三命篡
+         局）
+
+         广信集作天鬼截路杀，若甲人见申，乙人见酉，生时带着，支干皆有者，定夭。如甲人见庚申是，支干皆有也。太岁与
+         大运逢之，主多孝服，更与小运并，主死。
+
+         金书命诀云：行年二位临斯位，自察前程有盛衰。
+
+         应该是走杀运重
          * [2017-11-17 add by longzhiyou]
          */
+
+        def shiganlujue = ["甲乙申酉见阎王，丙丁亥子切须防，庚辛巳午如风烛，戊己寅卯亦重伤，壬癸辰戌加丑未，永别浮生入鬼乡"
+                ,"太岁与大运逢之，主多孝服，更与小运并，主死"
+                ,"如甲人见庚申,生时支干皆有者，定夭"
+        ]
+        def jijiaosha = [ "甲":["申"]
+                         ,"乙":["酉"]
+                         ,"丙":["亥"]
+                         ,"丁":["子"]
+                         ,"戊":["寅"]
+                         ,"己":["卯"]
+                         ,"庚":["巳"]
+                         ,"辛":["午"]
+                         ,"壬":["辰","戌"]
+                         ,"癸":["丑","未"]
+                        ]
+        matchStr = jijiaosha.get(nianGan)
+        if (matchStr.contains(shiZhi)) {
+            mapResult["【急脚杀-年干对时支】"] =shiganlujue
+        }
+        if (matchStr.contains(yunZhi)) {
+
+            mapResult["【急脚杀-年干对运支】"] = shiganlujue
+
+            if (matchStr.contains(xingNianZhi)) {
+                mapResult["【急脚杀-年干对运支-行年支】"] = [
+                        "与小运并，主死"
+                ]
+            }
+        }
 
         matchStr = "败亡大运,轻则败落，重则死伤"
         if (riGan=="甲") {
