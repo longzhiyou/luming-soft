@@ -19,404 +19,451 @@
 
     <div class="container-fluid">
 
+        <div class="row">
+            <form role="form" ng-submit="analyze()">
 
-        <form role="form" ng-submit="analyze()">
-
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <label >性别</label>
-                    <select  ng-model="bazi.gender">
-                        <option value="男">男</option>
-                        <option value="女">女</option>
-                    </select>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <label >性别</label>
+                        <select  ng-model="bazi.gender">
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
 
 
-            <div class="panel panel-primary">
-                <!-- Default panel contents -->
-                <div class="panel-heading">源命信息</div>
+                <div class="panel panel-primary">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">源命信息</div>
 
-                <!-- Table -->
-                <table class="table">
-                    <!--<thead>-->
-                    <!--<tr>-->
-                    <!--<th>年柱</th>-->
-                    <!--<th>月柱</th>-->
-                    <!--<th>日柱</th>-->
-                    <!--<th>时柱</th>-->
-                    <!--</tr>-->
-                    <!--</thead>-->
-                    <tbody>
-                    <tr>
-                        <th class="row" scope="row">
-                            <label >年干</label>
-                            <select  ng-model="bazi.niangan">
-                                <option value="甲">甲</option>
-                                <option value="乙">乙</option>
-                                <option value="丙">丙</option>
-                                <option value="丁">丁</option>
-                                <option value="戊">戊</option>
-                                <option value="己">己</option>
-                                <option value="庚">庚</option>
-                                <option value="辛">辛</option>
-                                <option value="壬">壬</option>
-                                <option value="癸">癸</option>
-                            </select>
-                        </th>
-                        <td>
-                            <label >月干</label>
-                            <select ng-model="bazi.yuegan">
-                                <option value="甲">甲</option>
-                                <option value="乙">乙</option>
-                                <option value="丙">丙</option>
-                                <option value="丁">丁</option>
-                                <option value="戊">戊</option>
-                                <option value="己">己</option>
-                                <option value="庚">庚</option>
-                                <option value="辛">辛</option>
-                                <option value="壬">壬</option>
-                                <option value="癸">癸</option>
+                    <!-- Table -->
+                    <table class="table">
+                        <!--<thead>-->
+                        <!--<tr>-->
+                        <!--<th>年柱</th>-->
+                        <!--<th>月柱</th>-->
+                        <!--<th>日柱</th>-->
+                        <!--<th>时柱</th>-->
+                        <!--</tr>-->
+                        <!--</thead>-->
+                        <tbody>
+                        <tr>
+                            <th class="row" scope="row">
+                                <label >年干</label>
+                                <select  ng-model="bazi.niangan">
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
+                                </select>
+                            </th>
+                            <td>
+                                <label >月干</label>
+                                <select ng-model="bazi.yuegan">
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
 
-                            </select>
-                        </td>
-                        <td>
-                            <label >日干</label>
-                            <select  ng-model="bazi.rigan">
-                                <option value="甲">甲</option>
-                                <option value="乙">乙</option>
-                                <option value="丙">丙</option>
-                                <option value="丁">丁</option>
-                                <option value="戊">戊</option>
-                                <option value="己">己</option>
-                                <option value="庚">庚</option>
-                                <option value="辛">辛</option>
-                                <option value="壬">壬</option>
-                                <option value="癸">癸</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label >日干</label>
+                                <select  ng-model="bazi.rigan">
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
 
-                            </select>
-                        </td>
-                        <td>
-                            <label >时干</label>
-                            <select ng-model="bazi.shigan">
-                                <option value="甲">甲</option>
-                                <option value="乙">乙</option>
-                                <option value="丙">丙</option>
-                                <option value="丁">丁</option>
-                                <option value="戊">戊</option>
-                                <option value="己">己</option>
-                                <option value="庚">庚</option>
-                                <option value="辛">辛</option>
-                                <option value="壬">壬</option>
-                                <option value="癸">癸</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label >时干</label>
+                                <select ng-model="bazi.shigan">
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
 
-                            </select>
-                        </td>
-                        <td>
-                            <label >胎干</label>
-                            <select ng-model="bazi.taigan">
-                                <option value="甲">甲</option>
-                                <option value="乙">乙</option>
-                                <option value="丙">丙</option>
-                                <option value="丁">丁</option>
-                                <option value="戊">戊</option>
-                                <option value="己">己</option>
-                                <option value="庚">庚</option>
-                                <option value="辛">辛</option>
-                                <option value="壬">壬</option>
-                                <option value="癸">癸</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label >胎干</label>
+                                <select ng-model="bazi.taigan">
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
 
-                            </select>
-                        </td>
-                        <td>
-                            <label >命干</label>
-                            <select ng-model="bazi.minggan">
-                                <option value="甲">甲</option>
-                                <option value="乙">乙</option>
-                                <option value="丙">丙</option>
-                                <option value="丁">丁</option>
-                                <option value="戊">戊</option>
-                                <option value="己">己</option>
-                                <option value="庚">庚</option>
-                                <option value="辛">辛</option>
-                                <option value="壬">壬</option>
-                                <option value="癸">癸</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label >命干</label>
+                                <select ng-model="bazi.minggan">
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
 
-                            </select>
-                        </td>
-                        <td>
-                            <label >身干</label>
-                            <select ng-model="bazi.shengan">
-                                <option value="甲">甲</option>
-                                <option value="乙">乙</option>
-                                <option value="丙">丙</option>
-                                <option value="丁">丁</option>
-                                <option value="戊">戊</option>
-                                <option value="己">己</option>
-                                <option value="庚">庚</option>
-                                <option value="辛">辛</option>
-                                <option value="壬">壬</option>
-                                <option value="癸">癸</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label >身干</label>
+                                <select ng-model="bazi.shengan">
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
 
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <label >年支</label>
-                            <select ng-model="bazi.nianzhi">
-                                <option value="子">子</option>
-                                <option value="丑">丑</option>
-                                <option value="寅">寅</option>
-                                <option value="卯">卯</option>
-                                <option value="辰">辰</option>
-                                <option value="巳">巳</option>
-                                <option value="午">午</option>
-                                <option value="未">未</option>
-                                <option value="申">申</option>
-                                <option value="酉">酉</option>
-                                <option value="戌">戌</option>
-                                <option value="亥">亥</option>
-                            </select>
-                        </th>
-                        <td>
-                            <label >月支</label>
-                            <select ng-model="bazi.yuezhi">
-                                <option value="子">子</option>
-                                <option value="丑">丑</option>
-                                <option value="寅">寅</option>
-                                <option value="卯">卯</option>
-                                <option value="辰">辰</option>
-                                <option value="巳">巳</option>
-                                <option value="午">午</option>
-                                <option value="未">未</option>
-                                <option value="申">申</option>
-                                <option value="酉">酉</option>
-                                <option value="戌">戌</option>
-                                <option value="亥">亥</option>
-                            </select>
-                        </td>
-                        <td>
-                            <label >日支</label>
-                            <select ng-model="bazi.rizhi">
-                                <option value="子">子</option>
-                                <option value="丑">丑</option>
-                                <option value="寅">寅</option>
-                                <option value="卯">卯</option>
-                                <option value="辰">辰</option>
-                                <option value="巳">巳</option>
-                                <option value="午">午</option>
-                                <option value="未">未</option>
-                                <option value="申">申</option>
-                                <option value="酉">酉</option>
-                                <option value="戌">戌</option>
-                                <option value="亥">亥</option>
-                            </select>
-                        </td>
-                        <td>
-                            <label >时支</label>
-                            <select ng-model="bazi.shizhi">
-                                <option value="子">子</option>
-                                <option value="丑">丑</option>
-                                <option value="寅">寅</option>
-                                <option value="卯">卯</option>
-                                <option value="辰">辰</option>
-                                <option value="巳">巳</option>
-                                <option value="午">午</option>
-                                <option value="未">未</option>
-                                <option value="申">申</option>
-                                <option value="酉">酉</option>
-                                <option value="戌">戌</option>
-                                <option value="亥">亥</option>
-                            </select>
-                        </td>
-                        <td >
-                            <label >胎支</label>
-                            <select ng-model="bazi.taizhi">
-                                <option value="子">子</option>
-                                <option value="丑">丑</option>
-                                <option value="寅">寅</option>
-                                <option value="卯">卯</option>
-                                <option value="辰">辰</option>
-                                <option value="巳">巳</option>
-                                <option value="午">午</option>
-                                <option value="未">未</option>
-                                <option value="申">申</option>
-                                <option value="酉">酉</option>
-                                <option value="戌">戌</option>
-                                <option value="亥">亥</option>
-                            </select>
-                        </td>
-                        <td >
-                            <label >命支</label>
-                            <select ng-model="bazi.mingzhi">
-                                <option value="子">子</option>
-                                <option value="丑">丑</option>
-                                <option value="寅">寅</option>
-                                <option value="卯">卯</option>
-                                <option value="辰">辰</option>
-                                <option value="巳">巳</option>
-                                <option value="午">午</option>
-                                <option value="未">未</option>
-                                <option value="申">申</option>
-                                <option value="酉">酉</option>
-                                <option value="戌">戌</option>
-                                <option value="亥">亥</option>
-                            </select>
-                        </td>
-                        <td >
-                            <label >身支</label>
-                            <select ng-model="bazi.shenzhi">
-                                <option value="子">子</option>
-                                <option value="丑">丑</option>
-                                <option value="寅">寅</option>
-                                <option value="卯">卯</option>
-                                <option value="辰">辰</option>
-                                <option value="巳">巳</option>
-                                <option value="午">午</option>
-                                <option value="未">未</option>
-                                <option value="申">申</option>
-                                <option value="酉">酉</option>
-                                <option value="戌">戌</option>
-                                <option value="亥">亥</option>
-                            </select>
-                        </td>
-                    </tr>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label >年支</label>
+                                <select ng-model="bazi.nianzhi">
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </th>
+                            <td>
+                                <label >月支</label>
+                                <select ng-model="bazi.yuezhi">
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label >日支</label>
+                                <select ng-model="bazi.rizhi">
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label >时支</label>
+                                <select ng-model="bazi.shizhi">
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </td>
+                            <td >
+                                <label >胎支</label>
+                                <select ng-model="bazi.taizhi">
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </td>
+                            <td >
+                                <label >命支</label>
+                                <select ng-model="bazi.mingzhi">
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </td>
+                            <td >
+                                <label >身支</label>
+                                <select ng-model="bazi.shenzhi">
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </td>
+                        </tr>
 
-                    </tbody>
-                </table>
-            </div>
+                        </tbody>
+                    </table>
+                </div>
 
-            <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading">大运流年</div>
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">大运流年</div>
 
-                <!-- Table -->
-                <table class="table">
-                    <tbody>
-                    <tr>
+                    <!-- Table -->
+                    <table class="table">
+                        <tbody>
+                        <tr>
 
-                        <td >
-                            <label >运干</label>
-                            <select  ng-model="bazi.yungan">
-                                <option value="甲">甲</option>
-                                <option value="乙">乙</option>
-                                <option value="丙">丙</option>
-                                <option value="丁">丁</option>
-                                <option value="戊">戊</option>
-                                <option value="己">己</option>
-                                <option value="庚">庚</option>
-                                <option value="辛">辛</option>
-                                <option value="壬">壬</option>
-                                <option value="癸">癸</option>
-                            </select>
-                        </td>
-                        <td>
-                            <label >流年干</label>
-                            <select ng-model="bazi.liuniangan">
-                                <option value="甲">甲</option>
-                                <option value="乙">乙</option>
-                                <option value="丙">丙</option>
-                                <option value="丁">丁</option>
-                                <option value="戊">戊</option>
-                                <option value="己">己</option>
-                                <option value="庚">庚</option>
-                                <option value="辛">辛</option>
-                                <option value="壬">壬</option>
-                                <option value="癸">癸</option>
+                            <td >
+                                <label >运干</label>
+                                <select  ng-model="bazi.yungan">
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label >流年干</label>
+                                <select ng-model="bazi.liuniangan">
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
 
-                            </select>
-                        </td>
+                                </select>
+                            </td>
 
-                        <td>
-                            <label >行年干</label>
-                            <select  ng-model="bazi.xingniangan">
-                                <option value="甲">甲</option>
-                                <option value="乙">乙</option>
-                                <option value="丙">丙</option>
-                                <option value="丁">丁</option>
-                                <option value="戊">戊</option>
-                                <option value="己">己</option>
-                                <option value="庚">庚</option>
-                                <option value="辛">辛</option>
-                                <option value="壬">壬</option>
-                                <option value="癸">癸</option>
+                            <td>
+                                <label >行年干</label>
+                                <select  ng-model="bazi.xingniangan">
+                                    <option value="甲">甲</option>
+                                    <option value="乙">乙</option>
+                                    <option value="丙">丙</option>
+                                    <option value="丁">丁</option>
+                                    <option value="戊">戊</option>
+                                    <option value="己">己</option>
+                                    <option value="庚">庚</option>
+                                    <option value="辛">辛</option>
+                                    <option value="壬">壬</option>
+                                    <option value="癸">癸</option>
 
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
 
-                        <td>
-                            <label >运支</label>
-                            <select ng-model="bazi.yunzhi">
-                                <option value="子">子</option>
-                                <option value="丑">丑</option>
-                                <option value="寅">寅</option>
-                                <option value="卯">卯</option>
-                                <option value="辰">辰</option>
-                                <option value="巳">巳</option>
-                                <option value="午">午</option>
-                                <option value="未">未</option>
-                                <option value="申">申</option>
-                                <option value="酉">酉</option>
-                                <option value="戌">戌</option>
-                                <option value="亥">亥</option>
-                            </select>
-                        </td>
-                        <td>
-                            <label >流年支</label>
-                            <select ng-model="bazi.liunianzhi">
-                                <option value="子">子</option>
-                                <option value="丑">丑</option>
-                                <option value="寅">寅</option>
-                                <option value="卯">卯</option>
-                                <option value="辰">辰</option>
-                                <option value="巳">巳</option>
-                                <option value="午">午</option>
-                                <option value="未">未</option>
-                                <option value="申">申</option>
-                                <option value="酉">酉</option>
-                                <option value="戌">戌</option>
-                                <option value="亥">亥</option>
-                            </select>
-                        </td>
+                            <td>
+                                <label >运支</label>
+                                <select ng-model="bazi.yunzhi">
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label >流年支</label>
+                                <select ng-model="bazi.liunianzhi">
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </td>
 
-                        <td>
-                            <label >行年支</label>
-                            <select ng-model="bazi.xingnianzhi">
-                                <option value="子">子</option>
-                                <option value="丑">丑</option>
-                                <option value="寅">寅</option>
-                                <option value="卯">卯</option>
-                                <option value="辰">辰</option>
-                                <option value="巳">巳</option>
-                                <option value="午">午</option>
-                                <option value="未">未</option>
-                                <option value="申">申</option>
-                                <option value="酉">酉</option>
-                                <option value="戌">戌</option>
-                                <option value="亥">亥</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <!--<tr>-->
-                    <!--<th scope="row">3</th>-->
-                    <!--<td>Larry</td>-->
-                    <!--<td>the Bird</td>-->
-                    <!--<td>@twitter</td>-->
-                    <!--</tr>-->
-                    </tbody>
-                </table>
-            </div>
+                            <td>
+                                <label >行年支</label>
+                                <select ng-model="bazi.xingnianzhi">
+                                    <option value="子">子</option>
+                                    <option value="丑">丑</option>
+                                    <option value="寅">寅</option>
+                                    <option value="卯">卯</option>
+                                    <option value="辰">辰</option>
+                                    <option value="巳">巳</option>
+                                    <option value="午">午</option>
+                                    <option value="未">未</option>
+                                    <option value="申">申</option>
+                                    <option value="酉">酉</option>
+                                    <option value="戌">戌</option>
+                                    <option value="亥">亥</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!--<tr>-->
+                        <!--<th scope="row">3</th>-->
+                        <!--<td>Larry</td>-->
+                        <!--<td>the Bird</td>-->
+                        <!--<td>@twitter</td>-->
+                        <!--</tr>-->
+                        </tbody>
+                    </table>
+                </div>
+
+            </form>
 
 
+        </div>
 
+        <div class="row">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseXingNian">
+                            行年-传统算法
+                        </a>
+                    </h4>
+
+                </div>
+                <div  id="collapseXingNian" class="panel-collapse collapse ">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon3">出生年</span>
+                                    <input type="number" class="form-control"
+                                           aria-describedby="basic-addon3"
+                                           ng-model="year"
+                                    >
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-info" ng-click="calculateXingNian()">计算</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table">
+
+                        <tbody>
+                        <tr ng-repeat="item in xingnian" ng-init="outerIndex = $index">
+                            <td ng-repeat="item_data in item">
+                                <p>{{ outerIndex*10+$index+year }}年</p>
+                                <p>{{ outerIndex*10+$index+1 }}岁</p>
+                                <p>{{item_data}}</p>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+
+        </div>
+        <div class="row">
             <button type="submit" class="btn btn-primary">分析</button>
+            <div id="json-renderer"></div>
+        </div>
 
-        </form>
-
-        <div id="json-renderer"></div>
     </div>
 
 
@@ -442,7 +489,7 @@
 
 
         $scope.bazi = {
-            "gender":"男",
+            "gender":"女",
             "niangan":"丙",
             "nianzhi":"子",
             "yuegan":"丙",
@@ -466,7 +513,67 @@
             "xingniangan":"丁",
             "xingnianzhi":"亥"
         };
+        $scope.year = 1984;
+        $scope.xingnian=[[],[],[],[],[],[],[],[],[],[]];
+
         $scope.analyze=analyze;
+        $scope.calculateXingNian=calculateXingNian;
+
+
+
+        var sixtyJiaZi= [
+            "甲子","乙丑","丙寅","丁卯","戊辰","己巳","庚午","辛未","壬申","癸酉",
+            "甲戌","乙亥","丙子","丁丑","戊寅","己卯","庚辰","辛巳","壬午","癸未",
+            "甲申","乙酉","丙戌","丁亥","戊子","己丑","庚寅","辛卯","壬辰","癸巳",
+            "甲午","乙未","丙申","丁酉","戊戌","己亥","庚子","辛丑","壬寅","癸卯",
+            "甲辰","乙巳","丙午","丁未","戊申","己酉","庚戌","辛亥","壬子","癸丑",
+            "甲寅","乙卯","丙辰","丁巳","戊午","己未","庚申","辛酉","壬戌","癸亥"
+        ];
+
+        function getJiaZiIndex(jiazi) {
+            for(var i=0;i<60;i++){
+                if (sixtyJiaZi[i]===jiazi) {
+                    return i;
+                }
+            }
+            return 0 ;
+        }
+
+        //计算行年
+        function calculateXingNian() {
+            //传统算法 男-丙寅顺行 女-壬申逆行
+            //丙寅索引 2 壬申索引 8
+
+            if ($scope.bazi.gender==="男") {
+
+                for(var i=0;i<100;i++){
+
+                    $scope.xingnian[parseInt(i/10)][i%10]= sixtyJiaZi[(i+2)%60];
+                }
+            }
+            else {
+                for(var j=0;j<100;j++){
+
+                    var index = (8-j)%60;
+                    if (index<0) {
+                        index = 60+index;
+                    }
+
+                    $scope.xingnian[parseInt(j/10)][j%10]= sixtyJiaZi[index];
+
+                }
+            }
+
+
+            console.log($scope.xingnian);
+
+        }
+        function calculateXingNianShiZhu() {
+
+            //时柱 阳男阴女-顺行 阴男阳女-逆行
+
+
+        }
 
         function analyze(){
 
@@ -484,6 +591,11 @@
             });
 
         }
+
+        function init() {
+            calculateXingNian();
+        }
+        init();
 
     });
 </script>
