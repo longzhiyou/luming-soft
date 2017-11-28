@@ -57,6 +57,18 @@ import com.lzy.core.JiaZiAlgorithm
         def luZhi = commonAlgorithm.getLuZhi(nianGan)
         def gender = bazi.getGender()
         def nianzhuwuxing = commonAlgorithm.getJiaZiWuXing(nianZhu)
+
+        /**
+         * 六金中惟庚戌尤喜巳，盖火库中金也。若见乙巳，虽纳音属火，而乙与庚合，化为真金亦无碍。
+         * [2017-11-28 add by longzhiyou]
+         */
+        if (nianZhu=="庚戌") {
+            if (shiZhi=="巳" || riZhi=="") {
+                mapResult["【庚戌年见日或时巳】"] = ["六金中惟庚戌尤喜巳，盖火库中金也。若见乙巳，虽纳音属火，而乙与庚合，化为真金亦无碍。"]
+            }
+        
+        }
+        
         /**
          *  重新整理
          *  全阴全阳
