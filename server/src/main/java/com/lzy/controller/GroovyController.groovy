@@ -38,15 +38,15 @@ class GroovyController {
     final static def listRule = [new WuXingJingJiRule()]
     final static def mapRule = [
 
-            "实务":new ShiZhanRule(),
-            "日时":new RiShiRule(),
-            "兰台妙选":new LanTaiMiaoXuanRule(),
-            "五行精纪":new WuXingJingJiRule(),
+//            "实务":new ShiZhanRule(),
+//            "日时":new RiShiRule(),
+//            "兰台妙选":new LanTaiMiaoXuanRule(),
+//            "五行精纪":new WuXingJingJiRule(),
 //            "核心":new CoreRule(),
-            "神煞":new ShenShaRule(),
-            "女命":new WomanRule(),
-            "理论":new TheoryRule(),
-            "岁运": new SuiYunRule(),
+//            "神煞":new ShenShaRule(),
+//            "女命":new WomanRule(),
+//            "理论":new TheoryRule(),
+//            "岁运": new SuiYunRule(),
             "日月":new RiYueRule(),
             "日柱":new ReferenceRule(),
             "子女":new ChildrenRule(),
