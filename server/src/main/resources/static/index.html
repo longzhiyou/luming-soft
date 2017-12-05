@@ -414,7 +414,10 @@
 
 
         </div>
+        <div class="row">
+            <button ng-click="analyze()" class="btn btn-primary">分析</button>
 
+        </div>
         <div class="row">
             <div class="panel panel-info">
                 <div class="panel-heading">
@@ -459,10 +462,55 @@
                 </div>
 
         </div>
+
         <div class="row">
-            <button ng-click="analyze()" class="btn btn-primary">分析</button>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseXingNianShiChen">
+                            行年-时辰算法
+                        </a>
+                    </h4>
+
+                </div>
+                <div  id="collapseXingNianShiChen" class="panel-collapse collapse ">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <span class="input-group-addon" >出生年</span>
+                                    <input type="number" class="form-control"
+                                           ng-model="year"
+                                    >
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-info" ng-click="calculateXingNianShiZhu()">计算</button>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table">
+
+                        <tbody>
+                        <tr ng-repeat="item in xingnianShiZhu" ng-init="outerIndex = $index">
+                            <td ng-repeat="item_data in item">
+                                <p>{{ outerIndex*10+$index+year }}年</p>
+                                <p>{{ outerIndex*10+$index+1 }}岁</p>
+                                <p>{{item_data}}</p>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
             <div id="json-renderer"></div>
         </div>
+
 
     </div>
 
@@ -515,9 +563,17 @@
         };
         $scope.year = 1984;
         $scope.xingnian=[[],[],[],[],[],[],[],[],[],[]];
+        $scope.xingnianShiZhu=[[],[],[],[],[],[],[],[],[],[]];
+
+        var yangGan = ["甲","丙","戊","庚","壬"];
+        function isYangGan(gan) {
+            var index = yangGan.indexOf(gan);
+            return index > 0;
+        }
 
         $scope.analyze=analyze;
         $scope.calculateXingNian=calculateXingNian;
+        $scope.calculateXingNianShiZhu=calculateXingNianShiZhu;
 
 
 
@@ -569,8 +625,30 @@
 
         }
         function calculateXingNianShiZhu() {
+            //获取时柱
+            var startIndex = sixtyJiaZi.indexOf($scope.bazi.shigan+$scope.bazi.shizhi);
 
             //时柱 阳男阴女-顺行 阴男阳女-逆行
+            if (($scope.bazi.gender==="男" && isYangGan($scope.bazi.niangan)) || ($scope.bazi.gender==="女"&& !isYangGan($scope.bazi.niangan)) ) {
+                console.log("阳男阴女");
+                for(var i=0;i<100;i++){
+
+                    $scope.xingnianShiZhu[parseInt(i/10)][i%10]= sixtyJiaZi[(i+startIndex)%60];
+                }
+
+            }else {
+                for(var j=0;j<100;j++){
+
+                    var index = (startIndex-j)%60;
+                    if (index<0) {
+                        index = 60+index;
+                    }
+
+                    $scope.xingnianShiZhu[parseInt(j/10)][j%10]= sixtyJiaZi[index];
+
+                }
+                console.log("阴男阳女");
+            }
 
 
         }
@@ -594,6 +672,7 @@
 
         function init() {
             calculateXingNian();
+            calculateXingNianShiZhu();
         }
         init();
 
