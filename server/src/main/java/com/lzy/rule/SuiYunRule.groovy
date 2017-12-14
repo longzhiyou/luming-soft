@@ -158,6 +158,13 @@ import com.lzy.core.CommonAlgorithm
 
         mapResult["【金不换】"] = jinbuhuan.get(riGan+yueZhi)
 
+        /**
+         *  五行精纪岁运法
+         *  1.年柱纳音引到大运地支长生诀
+         *  
+         * [2017-12-05 add by longzhiyou]
+         */
+
         return mapResult
     }
 

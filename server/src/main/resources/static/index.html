@@ -633,13 +633,13 @@
                 console.log("阳男阴女");
                 for(var i=0;i<100;i++){
 
-                    $scope.xingnianShiZhu[parseInt(i/10)][i%10]= sixtyJiaZi[(i+startIndex)%60];
+                    $scope.xingnianShiZhu[parseInt(i/10)][i%10]= sixtyJiaZi[(i+startIndex+1)%60];
                 }
 
             }else {
                 for(var j=0;j<100;j++){
 
-                    var index = (startIndex-j)%60;
+                    var index = (startIndex-j-1)%60;
                     if (index<0) {
                         index = 60+index;
                     }
