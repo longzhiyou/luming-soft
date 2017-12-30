@@ -108,10 +108,11 @@ public class CoreAlgorithmTest {
     @Test
     public void getLiangZhuGe(){
 //        Object liangZhuGe = CoreAlgorithm.getLiangZhuGe("甲辰", "壬辰");
-        Object liangZhuGe = CoreAlgorithm.getJiaZiByWeiShu("癸亥", 6);
-        liangZhuGe = CoreAlgorithm.getJiaZiByWeiShuAfter("己巳", 6);
+        Object liangZhuGe = CoreAlgorithm.getJiaZiByWeiShu("乙卯", 5);
+        System.out.println("前："+liangZhuGe);
+        liangZhuGe = CoreAlgorithm.getJiaZiByWeiShuAfter("乙卯", 5);
 
-        System.out.println(liangZhuGe);
+        System.out.println("后："+liangZhuGe);
 
     }
 

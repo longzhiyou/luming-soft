@@ -334,10 +334,10 @@ public class WuXingJingJiRule  implements BaseRule{
          * [2017-08-31 add by longzhiyou]
          */
 
-        if (listMingZhi.contains(luZhi)) {
-            mapResult["【十干不杂】"]=["经云：五音不杂无淫乱之性，合居禄位也。"
-                                 ,"甲乙人在寅卯、丙丁人在巳午 庚辛人在申酉、壬癸人在亥子"]
-        }
+//        if (listMingZhi.contains(luZhi)) {
+//            mapResult["【十干不杂】"]=["经云：五音不杂无淫乱之性，合居禄位也。"
+//                                 ,"甲乙人在寅卯、丙丁人在巳午 庚辛人在申酉、壬癸人在亥子"]
+//        }
 
         //荣神格
         matchStr = yueZhi+riGan+shiGan
@@ -603,10 +603,10 @@ public class WuXingJingJiRule  implements BaseRule{
                  "庚":"乙巳","辛":"丙辰","壬":"丁亥","癸":"戊子"]
         ruleValue= mapRule.get(nianGan)
         if (shiZhu==ruleValue) {
-            mapResult["【相合禄】时柱"]="年干和时干,地支六合年干禄支.禄若会见则富贵，相合则奋迅"
+            mapResult["【相合禄】时柱"]="年干合时干,地支六合年干禄支.禄若会见则富贵，相合则奋迅"
         }
         if (riZhu==ruleValue) {
-            mapResult["【禄头财】日柱"]="年干和时干,地支六合年干禄支.禄若会见则富贵，相合则奋迅"
+            mapResult["【相合禄】日柱"]="年干合时干,地支六合年干禄支.禄若会见则富贵，相合则奋迅"
         }
 
         //【食神带禄】
@@ -836,13 +836,13 @@ public class WuXingJingJiRule  implements BaseRule{
 
         mapRule = wenxingruhuaguan[nianGan]
         if (mapRule.contains(shiZhu)) {
-            mapResult["【文星入华馆】年干对时柱"] = nianGan+"人见"+mapResult.toString()
+            mapResult["【文星入华馆】年干对时柱"] = nianGan+"人见"+shiZhu+"时"
         }
         if (mapRule.contains(riZhu)) {
-            mapResult["【文星入华馆】年干对日柱"] = nianGan+"人见"+mapResult.toString()
+            mapResult["【文星入华馆】年干对日柱"] = nianGan+"人见"+riZhu+"日"
         }
         if (mapRule.contains(yunZhu)) {
-            mapResult["【文星入华馆】年干对运柱"] = nianGan+"人见"+mapResult.toString()
+            mapResult["【文星入华馆】年干对运柱"] = nianGan+"人见"+yunZhu+"运"
         }
 
         /**
