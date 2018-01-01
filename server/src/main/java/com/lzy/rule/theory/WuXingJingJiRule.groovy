@@ -54,6 +54,8 @@ public class WuXingJingJiRule  implements BaseRule{
         def listMingTaiGan = listMingGan+taiGan
         def listMingTaiZhu = listMingZhu+taiZhu
 
+        def nianzhuwuxing = commonAlgorithm.getJiaZiWuXing(nianZhu)
+
         //第一卷
         def mapNaYinLun=[
                 "甲子":[
@@ -782,6 +784,57 @@ public class WuXingJingJiRule  implements BaseRule{
             mapResult["【禄堂】"]=tempData
         }
 
+
+
+        /**
+         *  第十九卷
+         *  论库墓
+         * [2017-09-19 add by longzhiyou]
+         */
+
+        //【库头鬼】
+        mapRule=["甲":"辛未","乙":"辛未","丙":"壬戌","丁":"壬戌"
+                 ,"戊":"甲辰","己":"甲辰",
+                 "庚":"丁丑","辛":"丁丑","壬":"戊辰","癸":"戊辰"]
+        ruleValue= mapRule.get(nianGan)
+        if (shiZhu==ruleValue) {
+            mapResult["【库头鬼】时柱"]="甲乙人辛未、丙丁壬戌戊己辰 庚丑癸以上与轩车杀同，君子主早年科甲，常人艺业出俗。"
+        }
+        if (riZhu==ruleValue) {
+            mapResult["【库头鬼】日柱"]="甲乙人辛未、丙丁壬戌戊己辰 庚丑癸以上与轩车杀同，君子主早年科甲，常人艺业出俗。"
+        }
+
+        //【库头财】
+        mapRule=["甲":"己未","乙":"己未","丙":"庚戌","丁":"庚戌"
+                 ,"戊":"壬辰","己":"壬辰",
+                 "庚":"乙丑","辛":"乙丑","壬":"丙辰","癸":"丙辰"]
+        ruleValue= mapRule.get(nianGan)
+        if (shiZhu==ruleValue) {
+            mapResult["【库头财】时柱"]="君子多主财谷之任，常人家业从容却孤。"
+        }
+        if (riZhu==ruleValue) {
+            mapResult["【库头财】日柱"]="君子多主财谷之任，常人家业从容却孤。"
+        }
+         //【墓中鬼】
+
+
+        def wuxingmuzhonggui = ["金己丑",
+                              "木乙未",
+                              "水丙辰",
+                              "火壬戌",
+                              "土戊辰"
+        ]
+        if (wuxingmuzhonggui.contains(nianzhuwuxing+shiZhu)) {
+
+            mapResult["【墓中鬼】时柱"]="墓在鬼中，危疑者甚（珞琭子）"
+        }else if (wuxingmuzhonggui.contains(nianzhuwuxing+riZhu)) {
+
+            mapResult["【墓中鬼】日柱"]="墓在鬼中，危疑者甚（珞琭子）"
+        }
+
+
+
+
         /**
          *  第十三卷
          * [2017-09-19 add by longzhiyou]
@@ -883,7 +936,7 @@ public class WuXingJingJiRule  implements BaseRule{
 //        也。主富足优逸，一生无不足愁苦之叹。
 
 
-        def nianzhuwuxing = commonAlgorithm.getJiaZiWuXing(nianZhu)
+
         def heWuXing = CoreAlgorithm.getTianGanHeWuXing(nianGan, shiGan)
         if (heWuXing!=null) {
 
