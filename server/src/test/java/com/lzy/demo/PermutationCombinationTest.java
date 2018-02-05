@@ -123,8 +123,10 @@ public class PermutationCombinationTest {
     //问题三： 从五个数 1, 2, 3, 4, 5 中任取 3 个数进行排列，列出共有多少种排列方式
     @Test
     public void testPermutation1(){
-//        for(List<String> list : Permutation.of(Arrays.asList("子", "子", "戌", "卯"), 3))
-//            System.out.println(list);
+        Permutation<String> listPermutation = Permutation.of(Arrays.asList("1", "2", "3", "4"), 4);
+        for(List<String> list : listPermutation)
+            System.out.println(list);
+        System.out.println("共计:"+listPermutation.getPermutationCount());
     }
 
 
