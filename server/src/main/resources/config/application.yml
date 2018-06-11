@@ -10,31 +10,31 @@ spring:
     ansi:
       enabled: detect
 
-  datasource:
-      #h2
-#      url: jdbc:h2:file:~/.h2/supervisory;DB_CLOSE_ON_EXIT=FALSE
+#  datasource:
+#      #h2
+##      url: jdbc:h2:file:~/.h2/supervisory;DB_CLOSE_ON_EXIT=FALSE
+##      username: dev
+##      password: 123456
+##      driverClassName:   org.h2.Driver
+#
+#      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull
 #      username: dev
 #      password: 123456
-#      driverClassName:   org.h2.Driver
-
-      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false&zeroDateTimeBehavior=convertToNull
-      username: dev
-      password: 123456
-      driverClassName:  com.mysql.jdbc.Driver
-      tomcat:
-            test-while-idle: true
-            validation-query: SELECT 1
-  jpa:
-    properties:
-        hibernate:
-          dialect: org.hibernate.dialect.MySQL5Dialect
-#          dialect: org.hibernate.dialect.H2Dialect
-
-    hibernate:
-          naming:
-            strategy: org.hibernate.cfg.ImprovedNamingStrategy
-          ddl-auto: update
-    show-sql: true
+#      driverClassName:  com.mysql.jdbc.Driver
+#      tomcat:
+#            test-while-idle: true
+#            validation-query: SELECT 1
+#  jpa:
+#    properties:
+#        hibernate:
+#          dialect: org.hibernate.dialect.MySQL5Dialect
+##          dialect: org.hibernate.dialect.H2Dialect
+#
+#    hibernate:
+#          naming:
+#            strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#          ddl-auto: update
+#    show-sql: true
 
 # Set the file size limit (default 1Mb). If you want to specify that files be
 # unlimited set the multipart.maxFileSize property to -1.
